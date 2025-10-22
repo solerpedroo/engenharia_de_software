@@ -1,0 +1,81 @@
+// constante em JS/TS é definida da seguinte maneira:
+// usamos a palavra const, depois o nome da constante e imediatamente atribuimos um valor 
+const pi = 3.1415;
+
+const n = "Pedro Soler";
+// constante é imutável, portanto não pode ser reatribuída
+// n = "Pedro Henrique Contardi Soler";
+
+// INFERÊNCIA DE TIPOS
+const universidade = "PUC-Campinas";
+// por inferência o TS percebe que na primeira atribuição, no caso da constante a única, o tipo é um string, portano o TS 
+// determina que uma constante uma vez atribuída com string não muda, mas serve também para let e var
+
+// por inferência a TS define que a variável é do tipo number, se você imediatamente inicializar:
+let idade = 18;
+// se tentar fazer a reatribuição, não funcionará:
+// idade = "18";
+console.log(idade);
+
+// definindo tipos explicitamente
+let s: String;
+s = "Boa tade!";
+
+// boolean
+let sol: Boolean = true;
+//ou 
+// let sol;
+// sol = true;
+
+// Multi-TIPOS
+let notaEstudante: String | Number = "A";
+notaEstudante = 10.0;
+
+// Any = qualquer coisa;
+let xpto: any = "Teste";
+xpto = true;
+xpto = 10;
+
+// criando um tipo nosso 
+// podemos usar a palavra type ou interface 
+
+// O tipo pessoa, é como se fosse (ingenuamente)
+// uma Struct que tem partes 
+// cada parte a gente chama de propriedade de uma pessoa (neste caso) - propriedade é uma característica
+interface Endereco{
+    logradouro: string;
+    numero?: number;
+    // o símbolo ? torna esse propriedade opcional, não precisa atribuir valor
+    complemento?: string;
+    bairro: string;
+    cidade: string;
+    estado: string;
+    cep: string;
+}
+
+let e: Endereco = {
+    logradouro: "Av. Brasil",
+    numero: 100,
+    bairro: "Centro",
+    cidade: "Campinas",
+    estado: "SP",
+    cep: "12345-123",
+}
+
+interface Pessoa{
+    nome: string;
+    idade: number;
+    endereco: Endereco;
+}
+
+let joao: Pessoa = {
+    nome: "João Pedro",
+    idade: 20,
+    endereco: e
+}
+
+console.log(joao);
+
+// para praticar:
+// Criar o tipo Professor, tipo Disciplina, tipo Aluno
+// voce pode colocar notas dentro de um atributo, notas do aluno

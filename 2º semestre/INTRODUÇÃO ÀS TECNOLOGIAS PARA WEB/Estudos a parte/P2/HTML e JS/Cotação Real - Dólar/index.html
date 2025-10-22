@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Cotação Real -> Dólar</title>
+    <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function calcularCotacao() {
+            // 1️⃣ Coletar as informações
+            const valor_real = parseFloat(document.getElementById("real").value);
+            const valor_cotacao = parseFloat(document.getElementById("cotacao").value);
+
+            // 2️⃣ Validar os valores
+            if (isNaN(valor_real) || isNaN(valor_cotacao) || valor_real <= 0 || valor_cotacao <= 0) {
+            alert("Por favor, insira valores válidos!");
+            return;
+            }
+
+            // 3️⃣ Calcular cotação
+            const convercao = valor_real / valor_cotacao;
+
+            // 4️⃣ Exibir o resultado
+            console.log(convercao);
+            document.getElementById("resultadoConversao").innerText = "A conversão é: U$ " + convercao.toFixed(2);
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Calcular Conversão</h1>
+    <p>Preencha todos os campos</p>
+
+    <label for="real">Quantidade em Reais: </label><br/>
+    <input id="real" type="text" placeholder="100" required><br/><br/>
+
+    <label for="cotacao">Cotação do Dólar: </label><br/>
+    <input id="cotacao" type="text" placeholder="5.70" required><br/><br/>
+
+    <button id="btnCalcularCotacao" onclick="calcularCotacao();">Calcular</button><br/><br/>
+
+    <p id="resultadoConversao"></p>
+</body>
+</html>

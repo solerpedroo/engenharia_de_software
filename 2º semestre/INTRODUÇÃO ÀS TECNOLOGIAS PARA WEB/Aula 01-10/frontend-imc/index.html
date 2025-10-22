@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <title>Calculadora de IMC</title>
+            <script>
+                // js..
+                async function calcularIMCServidor(){
+                    const p = document.getElementById("txtPeso").value;
+                    const a = document.getElementById("txtAltura").value;
+                    console.log(`Peso: ${p}`);
+                    console.log(`Altura: ${a}`);
+
+                    const response = await fetch;
+                    (
+                            "http://127.0.0.1:3000/calcularIMC",
+                            {
+                            method: "POST",
+                            body: {
+                                altura: a,
+                                peso: p
+                            }
+
+                        }
+                    );
+                    
+                    document.getElementById("resultado").innerHTML = await response.txt();
+
+                }
+            </script>
+        </head>
+        <body>
+            <input type="text" id="txtAltura", placeholder="Altura">
+            <input type="text" id="txtPeso", placeholder="Peso">
+            <button id="btnCalcular" onclick="">Calcular</button>
+            <p id="resultado"></p>
+        </body>
+</html>

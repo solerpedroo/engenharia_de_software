@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>IMC</title>
+    <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function calcularIMC() {
+            // 1️⃣ Coletar os dados
+            const peso = parseFloat(document.getElementById("txtPeso").value);
+            const altura = parseFloat(document.getElementById("txtAltura").value);
+
+            // 2️⃣ Validar os valores
+            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+            alert("Por favor, insira valores válidos!");
+            return;
+            }
+
+            // 3️⃣ Calcular IMC
+            const imc = peso / (altura * altura);
+
+            // 4️⃣ Exibir o resultado
+            console.log(imc);
+            document.getElementById("resultadoIMC").innerText = "Seu IMC é: " + imc.toFixed(2);
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Calcular IMC</h1>
+    <p>Preencha todos os campos</p>
+
+    <label for="txtAltura">Altura: </label><br/>
+    <p class="hint">(Em metros, usando ponto. Exemplos: 1.50, 1.77 etc)</p>
+    <input id="txtAltura" type="text" placeholder="1.70" required><br/><br/>
+
+    <label for="txtPeso">Peso:</label><br/>
+    <p class="hint">(Em KG, usando ponto ou não. Exemplos: 72.5, 90.5, 90.0 ou 90)</p> 
+    <input id="txtPeso" type="text" placeholder="90" required><br/><br/>
+
+    <button id="btnCalcularIMC" onclick="calcularIMC();">Calcular</button><br/><br/>
+
+    <!-- Aqui vamos mostrar o resultado do IMC -->
+    <p id="resultadoIMC"></p>
+</body>
+</html>

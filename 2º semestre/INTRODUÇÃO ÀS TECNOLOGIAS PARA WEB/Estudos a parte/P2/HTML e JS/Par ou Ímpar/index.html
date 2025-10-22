@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Par ou ímpar</title>
+    <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function verificar_num() {
+            // 1️⃣ Coletar as informações
+            const num = parseInt(document.getElementById("num").value);
+
+            // 2️⃣ Validar os valores
+            if (isNaN(num) || num <= 0) {
+            alert("Por favor, insira valores válidos!");
+            return;
+            }
+
+            // 3️⃣ Calcular idade
+            const resultado = (num % 2 == 0) ? 1 : 0;
+
+            // 4️⃣ Exibir o resultado
+            console.log(resultado);
+            if (resultado === 1){
+                document.getElementById("resultadoCalculo").innerText = "O número é par";
+            }
+            else{
+                document.getElementById("resultadoCalculo").innerText = "O número é ímpar";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Par ou Ímpar</h1>
+    <p>Preencha todos os campos</p>
+
+    <label for="num">Número inteiro: </label><br/>
+    <input id="num" type="text" placeholder="2" required><br/><br/>
+
+    <button id="btnCalcularResultado" onclick="verificar_num();">Calcular</button><br/><br/>
+
+    <p id="resultadoCalculo"></p>
+</body>
+</html>

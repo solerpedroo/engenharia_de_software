@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Idade</title>
+    <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function calcularDesconto() {
+            // 1️⃣ Coletar as informações
+            const preco = parseFloat(document.getElementById("preco").value);
+            const desconto = parseFloat(document.getElementById("desconto").value);
+
+            // 2️⃣ Validar os valores
+            if (isNaN(desconto) || isNaN(preco) || preco <= 0 || desconto <= 0) {
+            alert("Por favor, insira valores válidos!");
+            return;
+            }
+
+            // 3️⃣ Calcular idade
+            const V_final = preco - (preco * (desconto/100));
+
+            // 4️⃣ Exibir o resultado
+            console.log(V_final);
+            document.getElementById("resultadoDesconto").innerText = "O valor final com desconto é R$ " + V_final.toFixed(2);
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <p>Preencha todos os campos</p>
+
+    <label for="preco">Preço: R$ </label><br/>
+    <input id="preco" type="text" placeholder="100" required><br/><br/>
+
+    <label for="desconto">Desconto: </label><br/>
+    <input id="desconto" type="text" placeholder="10" required><br/><br/>
+
+    <button id="btnCalcularDesconto" onclick="calcularDesconto();">Calcular</button><br/><br/>
+
+    <p id="resultadoDesconto"></p>
+</body>
+</html>

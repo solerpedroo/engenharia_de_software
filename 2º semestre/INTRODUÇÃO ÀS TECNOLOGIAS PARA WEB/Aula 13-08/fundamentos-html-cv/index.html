@@ -1,0 +1,117 @@
+<!--na primeira informamos ao browser do usuario que este eh um arquivo HTML-->
+<!DOCTYPE html>
+<!-- devemos especificar em qual linguagem este documento está -->
+<!-- a titulo de exemplo, coloquei en (english), mas para portugues devemos colocar: pt-->
+<!-- consulte a lista de idiomas disponível: https://www.w3schools.com/tags/ref_country_codes.asp -->
+<html lang="en">
+    <!-- tag não semântica = diretivas para o browser-->
+    <head>
+        <meta charset="utf-8"/>
+        <!--title se refere ao texto que aparece na aba (titulo da aba)-->
+        <title>Mateus Dias</title>
+        <style>
+            /* aqui dentro é CSS */
+            /* especificador body = tudo quer for denifico aqui, aplicado ao body*/
+            body{
+                background-color: black;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            /*especificador p = tudo quer for definido em p, será aplicado a todos os p (parágrafos)*/
+            /*p {
+                color: yellow;
+            }*/
+            /*especificador é sempre o nome de uma tag HTML*/
+            h3{
+                color: green;
+            }
+            
+            /*quando usamos o ponto na frente de um nome específico, criamos uma classe de estilos*/
+            .textoAmarelo{
+                color: yellow;
+            }
+
+            .textoBranco{
+                color: white;
+            }
+
+            .textoAqua{
+                color: aqua;
+            }
+
+            .textoPink{
+                color: deeppink;
+            }
+
+            /*alinhamentos*/
+
+            .textoEsquerda{
+                text-align: left;
+            }
+
+            .textoDireita{
+                text-align: right;
+            }
+
+            .textoCentro{
+                text-align: center;
+            }
+
+
+        </style>
+    </head>
+    <!-- Conteúdo visivel no browser (aquilo que o usuário visualiza)-->
+    <body>
+        <!-- o atributo src significa SOURCE (fonte, ou seja: onde está o arquivo)-->
+        <img src="./img/foto.jpg">
+        <h1>Mateus Dias</h1>
+        <h2>Professor universitário</h2>
+        <hr/>
+        <h3 class="textoPink"><strong>Formação:</strong></h3>
+        <!-- lista de elementos não numerada (ul = unordered list)-->
+        <ul>
+            <li>Graduação em Análise de Sistemas - PUCC - 2004</li>
+            <li>Mestrado em Ciência da Informação - PUCC - 2007</li>
+            <li>Doutorado em Computação - MIT - (interrompido)</li>
+        </ul>
+        <h3><strong>Experiência:</strong></h3>
+        <ul>
+            <li>Dalet Software Solutions - Tel-aviv - IL - Founder</li>
+            <li>Letsfair Services Marketplace</li>
+            <li>PUC-Campinas - Professor</li>
+        </ul>
+        <h3><strong>Contatos:</strong></h3>
+        <!-- lista numerada -->
+        <ol>
+            <li>
+                Email: 
+                    <!-- o texto mailto (MAIL TO) significa que ao clicar no link, 
+                     o browser deve abrir por padrão o aplicativo usado para envio de emails
+                     (isso também é um pouco antigo, mas interessante de abordar - existem casos
+                     em que não há perigo de usar isso por exemplo, browsers que são
+                     construídos especificamente para máquinas industriais que não sofrerão com
+                     robôs varredores de endereços - porque não estão conectados de fato à Internet, mas
+                     somente numa rede protegida. Então ainda hoje é útil)-->
+                    <a href="mailto:mateus.dias@puc-campinas.edu.br">
+                        mateus.dias@puc-campinas.edu.br
+                    </a>
+            </li>
+            <li>
+                <!-- o atributo target com valor _blank informa ao browser que
+                 a página especificada no atributo href deve ser aberta numa nova aba (ou janela caso
+                 o navegador não possua abas - hoje em dia é bastante raro) -->
+                <a href="http://mateus.pro.br" target="_blank">Website pessoal</a>
+            </li>
+        </ol>
+        <h3 class="textoCentro"><strong>Teste</strong></h3>
+
+        <p class="textoPink textoEsquerda">
+            Primeiro Parágrafo. 
+        </p>
+
+        <p class="textoAqua textoDireita">
+            Segundo Parágrafo.
+        </p>
+
+    </body>
+</html>

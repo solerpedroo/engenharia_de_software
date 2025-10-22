@@ -1,0 +1,14 @@
+#content input{
+    border: 1px solid #575656;
+    color: black;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#content button{
+    border: 0;
+    background-color: #9c9b9b;
+    color: white;
+    padding: 5px;
+}

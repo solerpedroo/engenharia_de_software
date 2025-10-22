@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Idade</title>
+    <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function calcularIdade() {
+            // 1️⃣ Coletar as informações
+            const ano_nascimento = parseInt(document.getElementById("nascimento").value);
+            const ano_atual = parseInt(document.getElementById("atual").value);
+
+            // 2️⃣ Validar os valores
+            if (isNaN(ano_nascimento) || isNaN(ano_atual) || ano_nascimento <= 0 || ano_atual <= 0) {
+            alert("Por favor, insira valores válidos!");
+            return;
+            }
+
+            // 3️⃣ Calcular idade
+            const idade = ano_atual - ano_nascimento;
+
+            // 4️⃣ Exibir o resultado
+            console.log(idade);
+            document.getElementById("resultadoIdade").innerText = "A sua idade é " + idade;
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Calcular Idade</h1>
+    <p>Preencha todos os campos</p>
+
+    <label for="nascimento">Ano de nascimento: </label><br/>
+    <input id="nascimento" type="text" placeholder="1976" required><br/><br/>
+
+    <label for="atual">Ano atual: </label><br/>
+    <input id="atual" type="text" placeholder="2025" required><br/><br/>
+
+    <button id="btnCalcularIdade" onclick="calcularIdade();">Calcular</button><br/><br/>
+
+    <p id="resultadoIdade"></p>
+</body>
+</html>

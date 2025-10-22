@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar lados do triângulo</title>
+    <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function verificar_triangulo() {
+            // 1️⃣ Coletar as informações
+            const ladoA = parseFloat(document.getElementById("ladoA").value);
+            const ladoB = parseFloat(document.getElementById("ladoB").value);
+            const ladoC = parseFloat(document.getElementById("ladoC").value);
+
+            // 2️⃣ Validar os valores
+            if (isNaN(ladoA) || isNaN(ladoB) || isNaN(ladoC) || ladoA <= 0 || ladoB <= 0 || ladoC <= 0) {
+            alert("Por favor, insira valores válidos!");
+            return;
+            }
+
+            // 3️⃣ Calcular lado
+            if((ladoA < (ladoB+ladoC)) && (ladoB < (ladoA+ladoC)) && (ladoC < (ladoA+ladoB))){
+                console.log("Triângulo possível");
+                document.getElementById("resultadoCalculo").innerText = "Triângulo possível";
+            }
+            else{
+                console.log("Triângulo não possível"); 
+                document.getElementById("resultadoCalculo").innerText = "Triângulo não possível";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Triângulo possível?</h1>
+    <p>Preencha todos os campos</p>
+
+    <label for="ladoA">Lado A: </label><br/>
+    <input id="ladoA" type="text" placeholder="2" required><br/><br/>
+
+    <label for="ladoB">Lado B: </label><br/>
+    <input id="ladoB" type="text" placeholder="2" required><br/><br/>
+
+    <label for="ladoC">Lado C: </label><br/>
+    <input id="ladoC" type="text" placeholder="2" required><br/><br/>
+
+    <button id="btnCalcularResultado" onclick="verificar_triangulo();">Calcular</button><br/><br/>
+
+    <p id="resultadoCalculo"></p>
+</body>
+</html>

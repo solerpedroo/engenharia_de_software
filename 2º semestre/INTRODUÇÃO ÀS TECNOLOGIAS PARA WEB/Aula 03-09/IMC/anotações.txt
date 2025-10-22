@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>IMC</title>
+        <link href="styles/base.css" rel="stylesheet" type="text/css"/>
+        <script src="script.js"></script>
+         mover o script para um arquivo separado 
+            1 - crie um diretório no mesmo nível do styles chamado scripts
+            2 - crie um arquivo chamado imc.js
+            3 - mova o código do js para lá
+            4 - coloque o link do arquivo aqui, igual do css 
+        
+        <script>
+            // aqui temos código JS
+            function calcularIMC(peso, altura){
+                const imc = peso / (altura * altura);
+                return imc;
+            }
+
+            function main(){
+                // Passo 1 - obter os dados peso e altura (digitados pelo usuário)
+                const p = document.getElementById("txtPeso").value;
+                const a = document.getElementById("txtAltura").value;
+
+                //console.log(a);
+                //console.log(p);
+
+                // Fazer em casa - Passo 2 - verificar validar os dados
+
+                // Passo 3 - fazer o cálculo (chamando a função calcularIMC)
+                const imcResultante = calcularIMC(p, a);
+
+                // Passo 4 - imprimir o resultado
+                console.log(imcResultante);
+                // tarefa: além de imprimir o valor no console como está acima, mostrar na tela o valor para o usuário
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1>Calcular IMC</h1>
+        <p>Preecha todos os campos</p>
+        <label for="txtAltura">Altura: </label><br/>
+        <p class="hint">(Em metros, usando ponto. Exemplos: 1.50, 1.77 etc)</p>
+        <input id="txtAltura"
+                type="text"
+                placeholder="1.70"
+                required><br/><br/>
+        <label for="txtPeso">Peso:</label><br/>
+        <p class="hint">(Em KG, usando ponto ou não. Exemplos: 72.5, 90.5, 90.0 ou 90)</p> 
+        <input id="txtPeso"
+                type="text"
+                placeholder="90"
+                required><br/><br/>
+        <button id="btnCalcularIMC" onclick="main();">Calcular</button>       
+    </body>
+</html>
+
+html passado em sala 

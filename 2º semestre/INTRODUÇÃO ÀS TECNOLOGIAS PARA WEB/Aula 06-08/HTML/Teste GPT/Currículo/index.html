@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pedro Henrique Contardi Soler — Portfólio Profissional</title>
+<meta name="description" content="Portfólio profissional de Pedro Henrique Contardi Soler, aluno de Engenharia de Software pela PUC Campinas e Técnico em Informática pelo Senac Campinas." />
+<meta name="author" content="Pedro Henrique Contardi Soler" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter&display=swap" rel="stylesheet" />
+
+<style>
+  /* CSS Variables para fácil customização */
+  :root {
+    --clr-bg: #0d1117;
+    --clr-bg-alt: #161b22;
+    --clr-primary: #3b82f6; /* Azul vibrante */
+    --clr-primary-light: #60a5fa;
+    --clr-text-primary: #c9d1d9;
+    --clr-text-secondary: #8b949e;
+    --clr-accent: #58a6ff;
+    --clr-error: #f85149;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+  }
+
+  /* RESET */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background-color: var(--clr-bg);
+    color: var(--clr-text-primary);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  a {
+    color: var(--clr-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: var(--clr-primary-light);
+    outline: none;
+  }
+
+  /* HEADER FIXO TOPO */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(13, 17, 23, 0.85);
+    backdrop-filter: saturate(180%) blur(10px);
+    z-index: 999;
+    padding: 0.8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #21262d;
+  }
+
+  header nav a {
+    font-weight: 600;
+    margin-left: 2rem;
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+  }
+
+  header nav a:first-child {
+    margin-left: 0;
+  }
+
+  /* CONTAINER PRINCIPAL */
+  main {
+    max-width: 900px;
+    margin: 6.5rem auto 4rem;
+    padding: 0 1rem;
+    scroll-margin-top: 70px;
+  }
+
+  /* FOTO E TITULO */
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    user-select: none;
+  }
+
+  .hero img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--clr-primary);
+    box-shadow:
+      0 8px 20px rgba(59, 130, 246, 0.35);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .hero img:hover,
+  .hero img:focus {
+    outline: none;
+    transform: scale(1.05);
+    box-shadow:
+      0 12px 32px rgba(59, 130, 246, 0.6);
+  }
+
+  .hero h1 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: var(--clr-primary-light);
+    margin: 1.25rem 0 0.25rem;
+  }
+
+  .hero h2 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--clr-text-secondary);
+    margin: 0.1rem 0 0;
+    font-style: italic;
+  }
+
+  /* SEÇÃO TÍTULOS */
+  section {
+    margin-bottom: 3.5rem;
+  }
+
+  section h3 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--clr-primary);
+    border-left: 5px solid var(--clr-primary);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    user-select: none;
+    scroll-margin-top: 80px;
+  }
+
+  /* LISTAS EM GRID */
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    gap: 1rem 1.5rem;
+  }
+
+  ul li {
+    background-color: var(--clr-bg-alt);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(59, 130, 246, 0.25);
+    color: var(--clr-text-primary);
+    font-weight: 500;
+    line-height: 1.3;
+    transition:
+      transform 0.25s cubic-bezier(0.4,0,0.2,1),
+      box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+    cursor: default;
+  }
+
+  ul li:hover,
+  ul li:focus-visible {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 28px rgba(59, 130, 246, 0.5);
+    outline: none;
+  }
+
+  /* LINKS DE CONTATO */
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 1rem;
+    user-select: none;
+  }
+
+  .contact-links a {
+    color: var(--clr-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .contact-links a svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--clr-primary);
+    transition: fill 0.3s ease;
+  }
+
+  .contact-links a:hover,
+  .contact-links a:focus-visible {
+    color: var(--clr-primary-light);
+    outline: none;
+  }
+
+  .contact-links a:hover svg,
+  .contact-links a:focus-visible svg {
+    fill: var(--clr-primary-light);
+  }
+
+  /* FORMULÁRIO CONTATO AVANÇADO */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--clr-bg-alt);
+    border-radius: 14px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.25);
+    user-select: none;
+  }
+
+  form label {
+    display: block;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--clr-primary-light);
+    user-select: text;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+    background: var(--clr-bg);
+    border-radius: 10px;
+    border: 2px solid var(--clr-primary-light);
+    padding: 0.75rem 1rem;
+    color: var(--clr-text-primary);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  form input::placeholder,
+  form textarea::placeholder {
+    color: var(--clr-text-secondary);
+    font-style: italic;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 10px var(--clr-primary-light);
+  }
+
+  form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 1rem 0;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--clr-primary);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  form button:hover,
+  form button:focus-visible {
+    background-color: var(--clr-primary-light);
+    box-shadow: 0 10px 28px rgba(59, 130, 246, 0.7);
+    outline: none;
+  }
+
+  /* TOPO BUTTON */
+  #back-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: var(--clr-primary);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1000;
+  }
+
+  #back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #back-to-top svg {
+    fill: white;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* ANIMAÇÕES SUAVES DE ENTRADA DAS SEÇÕES */
+  section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  section:nth-of-type(1) { animation-delay: 0.15s; }
+  section:nth-of-type(2) { animation-delay: 0.3s; }
+  section:nth-of-type(3) { animation-delay: 0.45s; }
+  section:nth-of-type(4) { animation-delay: 0.6s; }
+  section:nth-of-type(5) { animation-delay: 0.75s; }
+  section:nth-of-type(6) { animation-delay: 0.9s; }
+  section:nth-of-type(7) { animation-delay: 1.05s; }
+  section:nth-of-type(8) { animation-delay: 1.2s; }
+
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section.visible {
+    animation-name: fadeSlideUp;
+  }
+
+  /* RESPONSIVO */
+  @media (max-width: 640px) {
+    header {
+      flex-direction: column;
+      padding: 1rem 1.5rem;
+    }
+    header nav a {
+      margin: 0.6rem 1rem 0 0;
+      font-size: 1rem;
+    }
+
+    ul {
+      grid-template-columns: 1fr;
+    }
+    main {
+      margin: 6.5rem 1rem 3rem;
+      max-width: 95vw;
+    }
+    .hero img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner" aria-label="Navegação principal">
+  <nav>
+    <a href="#hero" tabindex="0">Início</a>
+    <a href="#formacao" tabindex="0">Formação</a>
+    <a href="#experiencias" tabindex="0">Experiências</a>
+    <a href="#extracurriculares" tabindex="0">Extra Curriculares</a>
+    <a href="#idiomas" tabindex="0">Idiomas</a>
+    <a href="#projetos" tabindex="0">Projetos</a>
+    <a href="#premios" tabindex="0">Prêmios</a>
+    <a href="#certificacoes" tabindex="0">Certificações</a>
+    <a href="#habilidades" tabindex="0">Habilidades</a>
+    <a href="#contato" tabindex="0">Contato</a>
+  </nav>
+</header>
+
+<main role="main">
+
+  <section id="hero" class="visible" aria-label="Seção de apresentação">
+    <div class="hero" tabindex="0">
+      <img src="./img/foto.jpg" alt="Foto de Pedro Henrique Contardi Soler" loading="lazy" />
+      <h1>Pedro Henrique Contardi Soler</h1>
+      <h2>Aluno de Engenharia de Software pela PUC Campinas</h2>
+      <h2>Técnico em Informática formado pelo Senac Campinas</h2>
+      <div class="contact-links" aria-label="Links de contato">
+        <a href="mailto:pedrocsoler@hotmail.com" aria-label="Enviar e-mail para Pedro Henrique Contardi Soler" tabindex="0" rel="nofollow noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M22 6.5v11c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-11c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2zM4 8v10h16V8l-8 5-8-5z"></path></svg> E-mail
+        </a>
+        <a href="https://www.linkedin.com/in/pedro-henrique-contardi-soler" target="_blank" aria-label="Perfil do LinkedIn de Pedro Henrique Contardi Soler" tabindex="0" rel="nofollow noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4.75 8.75h4.5v11h-4.5v-11zM10.5 8.75h4.3v1.53h.06c.6-1.14 2.06-2.34 4.24-2.34 4.54 0 5.38 2.98 5.38 6.84v7.97h-4.5v-7.07c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.7 1.82-2.7 3.71v7.2h-4.5v-11z"></path></svg> LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao" aria-labelledby="formacao-title" class="visible">
+    <h3 id="formacao-title">Formação</h3>
+    <ul>
+      <li tabindex="0">Técnico em Informática - Senac Campinas</li>
+      <li tabindex="0">Graduação em Engenharia de Software - PUC Campinas</li>
+    </ul>
+  </section>
+
+  <section id="experiencias" aria-labelledby="experiencias-title" class="visible">
+    <h3 id="experiencias-title">Experiências</h3>
+    <ul>
+      <li tabindex="0">Founder Safe Vision Sistema de Segurança - Campinas</li>
+    </ul>
+  </section>
+
+  <section id="extracurriculares" aria-labelledby="extracurriculares-title" class="visible">
+    <h3 id="extracurriculares-title">Extra Curriculares</h3>
+    <ul>
+      <li tabindex="0">11ª Mostra de Ciências e Tecnologia Instituto 3M - 2023</li>
+      <li tabindex="0">Expo Ecomm Campinas - 2024</li>
+      <li tabindex="0">Startup Day - 2024</li>
+      <li tabindex="0">Campinas Innovation Week - 2024</li>
+      <li tabindex="0">Aula magna com Caito Maia - Branding e Marketing Digital - 2024</li>
+      <li tabindex="0">14ª Bragantec - 2024</li>
+      <li tabindex="0">12ª Mostra de Ciências e Tecnologia Instituto 3M - 2024</li>
+      <li tabindex="0">17ª Edição Empreenda Senac - 2024</li>
+      <li tabindex="0">Startup Day - 2025</li>
+      <li tabindex="0">12º Motiv.se PUC-Campinas - 2025</li>
+      <li tabindex="0">Campinas Innovation Week - 2025</li>
+    </ul>
+  </section>
+
+  <section id="idiomas" aria-labelledby="idiomas-title" class="visible">
+    <h3 id="idiomas-title">Idiomas</h3>
+    <ul>
+      <li tabindex="0">Português - Nativo (C2)</li>
+      <li tabindex="0">Inglês - Avançado (C1)</li>
+      <li tabindex="0">Espanhol - Básico (A2)</li>
+    </ul>
+  </section>
+
+  <section id="projetos" aria-labelledby="projetos-title" class="visible">
+    <h3 id="projetos-title">Projetos</h3>
+    <ul>
+      <li tabindex="0">Manual de Upgrade e Manutenção de Computadores - 2022</li>
+      <li tabindex="0">Mapeamento de pontos de descarte de lixo em Campinas - 2022</li>
+      <li tabindex="0">MaxWake - Sensor de Segurança Automotiva - 2023</li>
+      <li tabindex="0">Guia de Investimentos para Jovens - 2023</li>
+      <li tabindex="0">Safe Vision - Sistema de Segurança Rodoviária - 2024</li>
+      <li tabindex="0">FullControl - 2025</li>
+    </ul>
+  </section>
+
+  <section id="premios" aria-labelledby="premios-title" class="visible">
+    <h3 id="premios-title">Prêmios e reconhecimentos</h3>
+    <ul>
+      <li tabindex="0">Projeto Finalista (MaxWake) - 11ª Mostra de Ciências e Tecnologia - Instituto 3M - 2023</li>
+      <li tabindex="0">3ª Colocação (Safe Vision) - Categoria: Informática - 14ª Bragantec (Instituto Federal de São Paulo) - 2024</li>
+      <li tabindex="0">3ª Colocação (Safe Vision) - Categoria: Engenharia - 12ª Mostra de Ciências e Tecnologia - Instituto 3M - 2024</li>
+      <li tabindex="0">Projeto Semifinalista (Safe Vision) - 17ª Edição Empreenda Senac - 2024</li>
+      <li tabindex="0">2ª Colocação (Safe Vision) - 12º Motiv.se PUC-Campinas - 2025</li>
+    </ul>
+  </section>
+
+  <section id="certificacoes" aria-labelledby="certificacoes-title" class="visible">
+    <h3 id="certificacoes-title">Certificações e Cursos</h3>
+    <ul>
+      <li tabindex="0">Canva: criando vídeos com motion graphics (Alura)</li>
+      <li tabindex="0">Canva: crie designs digitais para redes sociais (Alura)</li>
+      <li tabindex="0">Canva: crie um e-book com apoio da Inteligência Artificial (Alura)</li>
+      <li tabindex="0">CashFlow (Bequest Digital)</li>
+      <li tabindex="0">ChatGPT: desvendando a IA em conversas e suas aplicações (Alura)</li>
+      <li tabindex="0">ChatGPT: otimizando a qualidade dos resultados (Alura)</li>
+      <li tabindex="0">Comunicação corporativa: usando PowerPoint de forma efetiva (Alura)</li>
+      <li tabindex="0">Construindo Lojas Profissionais (Bequest Digital)</li>
+      <li tabindex="0">Copywriting e Persuasão, a Arte da Venda (Bequest Digital)</li>
+      <li tabindex="0">Copywriting: criando textos persuasivos com Inteligência Artificial (Alura)</li>
+      <li tabindex="0">Criativos que Vendem (Bequest Digital)</li>
+      <li tabindex="0">Criação de conteúdo em vídeo: estratégias e otimizações (Alura)</li>
+      <li tabindex="0">Design de apresentações: trabalhando com o PowerPoint (Alura)</li>
+      <li tabindex="0">Design Thinking (Sebrae)</li>
+      <li tabindex="0">Estratégia de crescimento para startups (SantaderX)</li>
+      <li tabindex="0">Excel: domine o editor de planilhas (Alura)</li>
+      <li tabindex="0">Facebook Ads: campanha de vídeo e mensagem (Alura)</li>
+      <li tabindex="0">Facebook Ads: campanhas de remarketing (Alura)</li>
+      <li tabindex="0">Facebook Ads: campanhas para e-commerce (Alura)</li>
+      <li tabindex="0">Facebook Ads: criando campanhas de sucesso (Alura)</li>
+      <li tabindex="0">Funis de Vendas que mais Geram Resultados (Bequest Digital)</li>
+      <li tabindex="0">Funções com Excel: operações matemáticas e filtros (Alura)</li>
+      <li tabindex="0">Gestão do Conhecimento: otimize a busca e a organização de informações com IA (Alura)</li>
+      <li tabindex="0">Gestão financeira (Sebrae)</li>
+      <li tabindex="0">Gestão financeira: administre suas finanças na prática (Alura)</li>
+      <li tabindex="0">Inteligência Artificial: campanhas de Marketing Digital (Alura)</li>
+      <li tabindex="0">Inteligência Artificial: gestão de mídias sociais (Alura)</li>
+      <li tabindex="0">Inteligência Artificial: personalize estratégias de vendas com ChatGPT (Alura)</li>
+      <li tabindex="0">Inteligência artificial Generativa: Midjourney e ChatGPT (Alura)</li>
+      <li tabindex="0">Marketing Digital: explorando os conceitos (Alura)</li>
+      <li tabindex="0">Marketing digital para sua empresa: equipe comercial (Alura)</li>
+      <li tabindex="0">Mídias Sociais: estratégias para engajar o público (Alura)</li>
+      <li tabindex="0">Mudanças e Escolhas - Caminhos e possibilidades para fazer escolhas e decidir (Sebrae)</li>
+      <li tabindex="0">O que é E-mail Marketing? (Bequest Digital)</li>
+      <li tabindex="0">Oficina Se Liga no Empreendedorismo (PUC-Campinas)</li>
+      <li tabindex="0">Planejamento Estratégico (G4 Educação)</li>
+      <li tabindex="0">Plano de Marketing Digital: como criar e coordenar estratégias (Alura)</li>
+      <li tabindex="0">Produtos, Mineração e Fornecimento (Bequest Digital)</li>
+      <li tabindex="0">Psicologia financeira: maximizando o potencial financeiro (Alura)</li>
+      <li tabindex="0">Python: começando com a linguagem (Alura)</li>
+      <li tabindex="0">Página de Venda & Oferta (Bequest Digital)</li>
+      <li tabindex="0">Recursos Visuais com Excel: explorando gráficos e formatos (Alura)</li>
+      <li tabindex="0">Seminário A Universidade do Futuro e o Futuro da Universidade (PUC-Campinas)</li>
+      <li tabindex="0">Social Commerce: como alavancar suas vendas nas redes sociais (Alura)</li>
+      <li tabindex="0">Storytelling Como Ferramenta de Negócios (Sebrae)</li>
+      <li tabindex="0">Tecnologia da Informação (iEstudar)</li>
+      <li tabindex="0">Testes Facebook ADS (Bequest Digital)</li>
+      <li tabindex="0">Análise de métricas (Bequest Digital)</li>
+      <li tabindex="0">Análise de métricas para e-commerce: explorando conceitos (Alura)</li>
+      <li tabindex="0">Análise e Classificação de Faces: Visão Computacional com OpenCV (Alura)</li>
+      <li tabindex="0">Aprendizagem com IA: personalizando sua rotina com ChatGPT (Alura)</li>
+      <li tabindex="0">Assistente de Operação de Redes de Computadores (Senac Campinas)</li>
+      <li tabindex="0">Assistente de Suporte e Manutenção de Computadores (Senac Campinas)</li>
+      <li tabindex="0">Aula Magna com Caito Maia - Branding e Marketing Digital (Belas Artes e Chilli Beans)</li>
+      <li tabindex="0">Branding: criando uma marca forte (Alura)</li>
+      <li tabindex="0">Básico Facebook ADS (Bequest Digital)</li>
+      <li tabindex="0">Canva: criando apresentações comerciais (Alura)</li>
+      <li tabindex="0">TikTok Ads: funcionalidades e configurações para criar campanhas (Alura)</li>
+      <li tabindex="0">Tráfego Pago: Estratégias e Aplicações (Alura)</li>
+      <li tabindex="0">Visão Computacional: análise facial (Alura)</li>
+      <li tabindex="0">Visão Computacional com Arduino (Hotmart - Dev Ideias)</li>
+      <li tabindex="0">Workshop Se Liga na Argumentação (PUC-Campinas)</li>
+      <li tabindex="0">Workshop de Modelagem de Negócios (Inova Unicamp)</li>
+      <li tabindex="0">Workshop de Descoberta do Cliente Ideal e Negócios de Impacto Socioambiental (Inova Unicamp)</li>
+    </ul>
+  </section>
+
+  <section id="habilidades" aria-labelledby="habilidades-title" class="visible">
+    <h3 id="habilidades-title">Habilidades</h3>
+    <ul>
+      <li tabindex="0">Análise de métricas para E-commerce</li>
+      <li tabindex="0">Arduino</li>
+      <li tabindex="0">Branding e Definição de marca</li>
+      <li tabindex="0">Comunicação</li>
+      <li tabindex="0">Design Gráfico (Canva)</li>
+      <li tabindex="0">Design Thinking</li>
+      <li tabindex="0">Desenvolvimento de Software</li>
+      <li tabindex="0">E-commerce e Dropshipping</li>
+      <li tabindex="0">Edição de Vídeos</li>
+      <li tabindex="0">Empreendedorismo</li>
+      <li tabindex="0">Finanças</li>
+      <li tabindex="0">Inglês Avançado</li>
+      <li tabindex="0">Liderança de Projetos</li>
+      <li tabindex="0">Marketing Digital</li>
+      <li tabindex="0">Meta ADS e TikTok ADS</li>
+      <li tabindex="0">Microsoft Office</li>
+      <li tabindex="0">Organização e Planejamento</li>
+      <li tabindex="0">Planejamento Estratégico</li>
+      <li tabindex="0">Power BI</li>
+      <li tabindex="0">Programação (CSS, Firebase, HTML, MySQL, Portugol, Python)</li>
+      <li tabindex="0">Social Media</li>
+      <li tabindex="0">Solução de Problemas</li>
+      <li tabindex="0">Storytelling</li>
+      <li tabindex="0">Tráfego Pago e Tráfego Orgânico</li>
+      <li tabindex="0">Visão Computacional</li>
+    </ul>
+  </section>
+
+  <section id="contato" aria-labelledby="contato-title" class="visible">
+    <h3 id="contato-title">Contato</h3>
+    <form id="contactForm" novalidate aria-describedby="formStatus" aria-live="polite" role="form">
+      <label for="name">Nome completo</label>
+      <input type="text" id="name" name="name" placeholder="Seu nome completo" required aria-required="true" aria-describedby="nameError" />
+      <span id="nameError" class="error-message" aria-live="assertive"></span>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required aria-required="true" aria-describedby="emailError" />
+      <span id="emailError" class="error-message" aria-live="assertive"></span>
+
+      <label for="message">Mensagem</label>
+      <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem aqui" required aria-required="true" aria-describedby="messageError"></textarea>
+      <span id="messageError" class="error-message" aria-live="assertive"></span>
+
+      <button type="submit" aria-label="Enviar mensagem">Enviar Mensagem</button>
+      <div id="formStatus" role="alert" aria-live="assertive" style="margin-top: 1rem;"></div>
+    </form>
+  </section>
+
+</main>
+
+<button id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo" type="button" tabindex="0">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+  </svg>
+</button>
+
+<script>
+  // Animação da entrada das seções ao scroll
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.15});
+  sections.forEach(section => observer.observe(section));
+
+  // Botão voltar ao topo
+  const backToTopBtn = document.getElementById("back-to-top");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+    backToTopBtn.blur();
+  });
+
+  // Validação simples do formulário
+  const form = document.getElementById("contactForm");
+  const nameInput = form.elements["name"];
+  const emailInput = form.elements["email"];
+  const messageInput = form.elements["message"];
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const messageError = document.getElementById("messageError");
+  const formStatus = document.getElementById("formStatus");
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function showError(input, errorEl, message) {
+    errorEl.textContent = message;
+    input.setAttribute("aria-invalid", "true");
+  }
+
+  function clearError(input, errorEl) {
+    errorEl.textContent = "";
+    input.removeAttribute("aria-invalid");
+  }
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      showError(nameInput, nameError, "Por favor, insira seu nome.");
+      valid = false;
+    } else {
+      clearError(nameInput, nameError);
+    }
+
+    if (!emailInput.value.trim()) {
+      showError(emailInput, emailError, "Por favor, insira seu e-mail.");
+      valid = false;
+    } else if (!validateEmail(emailInput.value)) {
+      showError(emailInput, emailError, "E-mail inválido.");
+      valid = false;
+    } else {
+      clearError(emailInput, emailError);
+    }
+
+    if (!messageInput.value.trim()) {
+      showError(messageInput, messageError, "Por favor, insira uma mensagem.");
+      valid = false;
+    } else {
+      clearError(messageInput, messageError);
+    }
+
+    if (valid) {
+      formStatus.style.color = "var(--clr-primary-light)";
+      formStatus.textContent = "Mensagem enviada com sucesso! (Funcionalidade demo)";
+      form.reset();
+    } else {
+      formStatus.style.color = "var(--clr-error)";
+      formStatus.textContent = "Por favor, corrija os erros acima antes de enviar.";
+    }
+  });
+</script>
+
+</body>
+</html>

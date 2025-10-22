@@ -1,0 +1,4 @@
+node - v --> comando que mostra a versão do node instalada na máquina
+
+instalar binário de Node.js® pré-compilado
+
