@@ -1,0 +1,7 @@
+[submodule "1º semestre/TECNOLOGIAS EM TI/ESP32/TECTI_25"]
+	path = 1º semestre/TECNOLOGIAS EM TI/ESP32/TECTI_25
+	url = https://github.com/sergiolmm-pucc/TECTI_25.git
+
+[submodule "2º semestre/PROJETO INTEGRADOR II - ENGENHARIA DE SOFTWARE/PI_II_ES_TIME-23"]
+	path = 2º semestre/PROJETO INTEGRADOR II - ENGENHARIA DE SOFTWARE/PI_II_ES_TIME-23
+	url = https://github.com/Leonunciaroni/PI_II_ES_TIME-23.git
