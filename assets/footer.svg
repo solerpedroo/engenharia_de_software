@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#0064F5" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#58a6ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0064F5" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="rounded">
+      <rect width="900" height="160" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <rect width="900" height="160" fill="url(#bg)"/>
+    <rect x="0.5" y="0.5" width="899" height="159" rx="11.5" stroke="#30363d" stroke-width="1" fill="none"/>
+    <rect x="0" y="0" width="900" height="2" fill="url(#accent)" opacity="0.8"/>
+
+    <circle cx="100" cy="80" r="50" fill="#58a6ff" opacity="0.03"/>
+    <circle cx="800" cy="80" r="60" fill="#00b4d8" opacity="0.03"/>
+
+    <!-- Subtitle -->
+    <text x="450" y="44" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="700" font-size="12" fill="#58a6ff" letter-spacing="4" opacity="0">
+      ENGENHARIA DE SOFTWARE · PUC-CAMPINAS
+      <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.2s" fill="freeze"/>
+    </text>
+
+    <!-- Main headline -->
+    <text x="450" y="80" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="700" font-size="18" fill="#e6edf3" letter-spacing="0.5" opacity="0">
+      Construindo soluções com propósito e rigor técnico.
+      <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.4s" fill="freeze"/>
+    </text>
+
+    <!-- Buttons -->
+    <!-- LinkedIn -->
+    <rect x="215" y="100" width="140" height="40" rx="20" fill="#161b22" stroke="#30363d" stroke-width="1" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze"/>
+      <animate attributeName="stroke" values="#30363d;#58a6ff;#30363d" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="248" cy="120" r="4" fill="#58a6ff" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;1;0.5" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="285" y="125" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="600" font-size="14" fill="#e6edf3" letter-spacing="0.5" opacity="0">
+      LinkedIn
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze"/>
+    </text>
+
+    <!-- Email -->
+    <rect x="380" y="100" width="140" height="40" rx="20" fill="#161b22" stroke="#30363d" stroke-width="1" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/>
+      <animate attributeName="stroke" values="#30363d;#58a6ff;#30363d" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="418" cy="120" r="4" fill="#58a6ff" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;1;0.5" dur="2s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="450" y="125" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="600" font-size="14" fill="#e6edf3" letter-spacing="0.5" opacity="0">
+      Email
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/>
+    </text>
+
+    <!-- Portfolio -->
+    <rect x="545" y="100" width="140" height="40" rx="20" fill="#161b22" stroke="#30363d" stroke-width="1" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8s" fill="freeze"/>
+      <animate attributeName="stroke" values="#30363d;#58a6ff;#30363d" dur="3s" begin="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="574" cy="120" r="4" fill="#58a6ff" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;1;0.5" dur="2s" begin="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="615" y="125" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="600" font-size="14" fill="#e6edf3" letter-spacing="0.5" opacity="0">
+      Portfolio
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8s" fill="freeze"/>
+    </text>
+
+    <rect x="0" y="158" width="900" height="2" fill="url(#accent)" opacity="0.8"/>
+
+    <!-- Scanning line -->
+    <line x1="-50" y1="0" x2="-50" y2="160" stroke="#58a6ff" stroke-width="2" opacity="0.06">
+      <animate attributeName="x1" from="-50" to="950" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" from="-50" to="950" dur="8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>

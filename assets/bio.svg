@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120" viewBox="0 0 900 120" fill="none">
+  <defs>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="900" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#30363d" stop-opacity="0.4"/>
+      <stop offset="50%"  stop-color="#58a6ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#30363d" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="900" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#0d1117" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#161b22" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="899" height="119" rx="10" fill="url(#bgGrad)" stroke="url(#borderGrad)"/>
+
+  <!-- Side accent lines -->
+  <line x1="15" y1="20" x2="15" y2="100" stroke="#58a6ff" stroke-width="1.5" opacity="0.4"/>
+  <line x1="885" y1="20" x2="885" y2="100" stroke="#58a6ff" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Line 1 -->
+  <text x="450" y="42" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="500" font-size="14" fill="#8b949e" letter-spacing="0.3">
+    Repositório acadêmico de
+    <tspan fill="#58a6ff" font-weight="700">Engenharia de Software</tspan>
+    na PUC-Campinas — organizado por
+  </text>
+  <!-- Line 2 -->
+  <text x="450" y="68" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="500" font-size="14" fill="#8b949e" letter-spacing="0.3">
+    semestre, contendo materiais, projetos integradores e atividades práticas
+  </text>
+  <!-- Line 3 -->
+  <text x="450" y="94" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="500" font-size="14" fill="#e6edf3" letter-spacing="0.3">
+    desenvolvidos ao longo da graduação.
+  </text>
+</svg>

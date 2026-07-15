@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="80" viewBox="0 0 900 80">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#00b4d8"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#58a6ff" stop-opacity="0.5"/>
+      <stop offset="50%"  stop-color="#00b4d8" stop-opacity="1"/>
+      <stop offset="70%"  stop-color="#00b4d8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00b4d8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .pulse { animation: pulseAnim 4s infinite alternate cubic-bezier(0.4, 0, 0.2, 1); }
+    @keyframes pulseAnim {
+      0%   { opacity: 0.6; width: 40px;  transform: translateX(430px); }
+      100% { opacity: 1;   width: 140px; transform: translateX(380px); }
+    }
+  </style>
+  <text x="450" y="48" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="800" font-size="26" fill="#e6edf3" letter-spacing="4">
+    PROJETOS INTEGRADORES
+  </text>
+  <rect class="pulse" y="65" height="3" rx="1.5" fill="url(#accent)"/>
+  <rect x="150" y="66" width="600" height="1" fill="url(#line)" opacity="0.15"/>
+</svg>
