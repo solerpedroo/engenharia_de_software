@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="topAccent" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#58a6ff"/>
+      <stop offset="70%"  stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#00b4d8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="accentSolid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#00b4d8"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="900" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#30363d"/>
+      <stop offset="50%"  stop-color="#58a6ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#30363d"/>
+    </linearGradient>
+    <clipPath id="card">
+      <rect width="900" height="210" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <!-- Background -->
+    <rect width="900" height="210" fill="url(#bg)"/>
+
+    <!-- Subtle grid -->
+    <g opacity="0.025" stroke="#58a6ff" stroke-width="0.5">
+      <line x1="0" y1="52" x2="900" y2="52"/>
+      <line x1="0" y1="104" x2="900" y2="104"/>
+      <line x1="0" y1="156" x2="900" y2="156"/>
+      <line x1="225" y1="0" x2="225" y2="210"/>
+      <line x1="450" y1="0" x2="450" y2="210"/>
+      <line x1="675" y1="0" x2="675" y2="210"/>
+    </g>
+
+    <!-- Border -->
+    <rect x="0.5" y="0.5" width="899" height="209" rx="11.5" stroke="url(#borderGrad)" stroke-width="1" fill="none"/>
+
+    <!-- Top accent bar -->
+    <rect x="0" y="0" width="900" height="2" fill="url(#topAccent)" opacity="0.8"/>
+
+    <!-- Corner glow -->
+    <circle cx="860" cy="35" r="90" fill="#58a6ff" opacity="0.025"/>
+    <circle cx="860" cy="35" r="40" fill="#00b4d8" opacity="0.03"/>
+
+    <!-- Number badge -->
+    <rect x="24" y="25" width="62" height="62" rx="8" fill="#0d1117" stroke="url(#accentSolid)" stroke-width="1.5" stroke-opacity="0.5"/>
+    <text x="55" y="66" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="800" font-size="26" fill="url(#accentSolid)" opacity="0.9">01</text>
+    <text x="55" y="102" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="600" font-size="9" fill="#6e7681" letter-spacing="1.5">PI</text>
+
+    <!-- Title -->
+    <text x="112" y="57" text-anchor="start"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="800" font-size="20" fill="#e6edf3" letter-spacing="3">
+      PROJETO INTEGRADOR I
+    </text>
+
+    <!-- Subtitle -->
+    <text x="112" y="80" text-anchor="start"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="600" font-size="15" fill="#58a6ff">
+      Sistema de Sustentabilidade
+    </text>
+
+    <!-- Divider -->
+    <line x1="112" y1="93" x2="870" y2="93" stroke="#30363d" stroke-width="1" stroke-opacity="0.5"/>
+
+    <!-- Description -->
+    <text x="112" y="114" text-anchor="start"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="400" font-size="13" fill="#8b949e">
+      Sistema desenvolvido em Python com banco de dados SQL para calcular médias e registrar
+    </text>
+    <text x="112" y="132" text-anchor="start"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="400" font-size="13" fill="#8b949e">
+      atividades de sustentabilidade. Envolveu levantamento de requisitos funcionais e não
+    </text>
+    <text x="112" y="150" text-anchor="start"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="400" font-size="13" fill="#8b949e">
+      funcionais, modelagem de dados e entrega de relatório técnico completo.
+    </text>
+
+    <!-- Tags -->
+    <text x="112" y="178" text-anchor="start"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="600" font-size="12">
+      <tspan fill="#c9d1d9">Python</tspan>
+      <tspan fill="#58a6ff"> · </tspan>
+      <tspan fill="#c9d1d9">SQL</tspan>
+      <tspan fill="#58a6ff"> · </tspan>
+      <tspan fill="#c9d1d9">Requisitos</tspan>
+      <tspan fill="#58a6ff"> · </tspan>
+      <tspan fill="#c9d1d9">Documentação</tspan>
+    </text>
+
+    <!-- CTA -->
+    <text x="870" y="196" text-anchor="end"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+          font-weight="600" font-size="12" fill="#58a6ff" letter-spacing="0.3">
+      Ver repositório →
+    </text>
+  </g>
+</svg>

@@ -42,59 +42,27 @@
   <img src="assets/title-projetos.svg" alt="Projetos Integradores" />
 </h2>
 
-<div align="center">
-  <table>
-    <tr>
-      <td width="50%" valign="top" align="center">
-        <br />
-        <h3><a href="https://github.com/solerpedroo/projeto_integrador">Projeto Integrador I</a></h3>
-        <p><strong>Sistema de Sustentabilidade</strong></p>
-        <p align="left">
-          Sistema desenvolvido em Python com banco de dados SQL, com foco em calcular médias e registrar atividades de sustentabilidade. Envolveu levantamento de requisitos funcionais e não funcionais, modelagem de dados e entrega de relatório técnico completo.
-        </p>
-        <p>
-          <code>Python</code> <code>SQL</code> <code>Requisitos</code> <code>Documentação</code>
-        </p>
-        <a href="https://github.com/solerpedroo/projeto_integrador">
-          <img src="assets/btn-repo.svg" alt="Ver Repositório" />
-        </a>
-        <br /><br />
-      </td>
-      <td width="50%" valign="top" align="center">
-        <br />
-        <h3><a href="https://github.com/solerpedroo/PI_II_ES_TIME-23">Projeto Integrador II</a></h3>
-        <p><strong>NotaDez</strong></p>
-        <p align="left">
-          Plataforma web desenvolvida em equipe para gestão de notas e desempenho acadêmico. Aplicou fundamentos de Engenharia de Requisitos, metodologias de desenvolvimento de software, modelagem de banco de dados relacional e introdução às tecnologias para web.
-        </p>
-        <p>
-          <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>Banco de Dados</code> <code>Trabalho em Equipe</code>
-        </p>
-        <a href="https://github.com/solerpedroo/PI_II_ES_TIME-23">
-          <img src="assets/btn-repo.svg" alt="Ver Repositório" />
-        </a>
-        <br /><br />
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" valign="top" align="center">
-        <br />
-        <h3><a href="https://github.com/solerpedroo/ES-PI3-2026-T2-G03">Projeto Integrador III</a></h3>
-        <p><strong>Mescla Invest</strong></p>
-        <p>
-          Aplicativo mobile de simulação de ecossistema de investimentos com tokens digitais, desenvolvido em Flutter com Firebase. Integrou autenticação, banco de dados em tempo real, armazenamento de arquivos, funções em Node.js/TypeScript e design de experiência do usuário (UX/UI). Apresentado em banca para avaliação de viabilidade de negócio.
-        </p>
-        <p>
-          <code>Flutter</code> <code>Dart</code> <code>Firebase</code> <code>Node.js</code> <code>TypeScript</code> <code>UX/UI</code> <code>Mobile</code>
-        </p>
-        <a href="https://github.com/solerpedroo/ES-PI3-2026-T2-G03">
-          <img src="assets/btn-repo.svg" alt="Ver Repositório" />
-        </a>
-        <br /><br />
-      </td>
-    </tr>
-  </table>
-</div>
+<p align="center">
+  <a href="https://github.com/solerpedroo/projeto_integrador">
+    <img src="assets/card-pi1.svg" alt="Projeto Integrador I · Sistema de Sustentabilidade" width="900" style="max-width:100%; height:auto;" />
+  </a>
+</p>
+
+<br />
+
+<p align="center">
+  <a href="https://github.com/solerpedroo/PI_II_ES_TIME-23">
+    <img src="assets/card-pi2.svg" alt="Projeto Integrador II · NotaDez" width="900" style="max-width:100%; height:auto;" />
+  </a>
+</p>
+
+<br />
+
+<p align="center">
+  <a href="https://github.com/solerpedroo/ES-PI3-2026-T2-G03">
+    <img src="assets/card-pi3.svg" alt="Projeto Integrador III · Mescla Invest" width="900" style="max-width:100%; height:auto;" />
+  </a>
+</p>
 
 <br />
 <img src="assets/divider.svg" alt="" width="100%" />
