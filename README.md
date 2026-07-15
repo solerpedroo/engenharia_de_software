@@ -30,24 +30,9 @@
   <img src="assets/title-sobre.svg" alt="Sobre o Repositório" />
 </h2>
 
-<div align="center">
-  <table>
-    <tr>
-      <td width="50%" valign="top">
-        <h4>Instituição</h4>
-        <p>Pontifícia Universidade Católica de Campinas — <strong>PUC-Campinas</strong></p>
-        <h4>Curso</h4>
-        <p>Bacharelado em <strong>Engenharia de Software</strong></p>
-        <h4>Ingresso</h4>
-        <p>2025</p>
-      </td>
-      <td width="50%" valign="top">
-        <h4>Estrutura</h4>
-        <p>O repositório está organizado por semestre. Dentro de cada pasta, as disciplinas são separadas por subpastas contendo anotações, listas, projetos e materiais de estudo.</p>
-      </td>
-    </tr>
-  </table>
-</div>
+<p align="center">
+  <img src="assets/sobre-card.svg" alt="PUC-Campinas · Engenharia de Software · 2025" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 <img src="assets/divider.svg" alt="" width="100%" />
@@ -60,34 +45,52 @@
 <div align="center">
   <table>
     <tr>
-      <td width="50%" valign="top">
-        <h3 align="center">Projeto Integrador I</h3>
-        <p align="center"><strong>Sistema de Sustentabilidade</strong></p>
-        <p>
+      <td width="50%" valign="top" align="center">
+        <br />
+        <h3><a href="https://github.com/solerpedroo/projeto_integrador">Projeto Integrador I</a></h3>
+        <p><strong>Sistema de Sustentabilidade</strong></p>
+        <p align="left">
           Sistema desenvolvido em Python com banco de dados SQL, com foco em calcular médias e registrar atividades de sustentabilidade. Envolveu levantamento de requisitos funcionais e não funcionais, modelagem de dados e entrega de relatório técnico completo.
         </p>
-        <hr />
-        <p><code>Python</code> <code>SQL</code> <code>Requisitos</code> <code>Documentação</code></p>
-      </td>
-      <td width="50%" valign="top">
-        <h3 align="center"><a href="https://github.com/Leonunciaroni/PI_II_ES_TIME-23">Projeto Integrador II</a></h3>
-        <p align="center"><strong>NotaDez</strong></p>
         <p>
-          Plataforma web desenvolvida em equipe para gestão de notas e desempenho acadêmico. Aplicou os fundamentos de Engenharia de Requisitos, metodologias de desenvolvimento de software, modelagem de banco de dados relacional e introdução às tecnologias para web.
+          <code>Python</code> <code>SQL</code> <code>Requisitos</code> <code>Documentação</code>
         </p>
-        <hr />
-        <p><code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>Banco de Dados</code> <code>Trabalho em Equipe</code></p>
+        <a href="https://github.com/solerpedroo/projeto_integrador">
+          <img src="assets/btn-repo.svg" alt="Ver Repositório" />
+        </a>
+        <br /><br />
+      </td>
+      <td width="50%" valign="top" align="center">
+        <br />
+        <h3><a href="https://github.com/solerpedroo/PI_II_ES_TIME-23">Projeto Integrador II</a></h3>
+        <p><strong>NotaDez</strong></p>
+        <p align="left">
+          Plataforma web desenvolvida em equipe para gestão de notas e desempenho acadêmico. Aplicou fundamentos de Engenharia de Requisitos, metodologias de desenvolvimento de software, modelagem de banco de dados relacional e introdução às tecnologias para web.
+        </p>
+        <p>
+          <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>Banco de Dados</code> <code>Trabalho em Equipe</code>
+        </p>
+        <a href="https://github.com/solerpedroo/PI_II_ES_TIME-23">
+          <img src="assets/btn-repo.svg" alt="Ver Repositório" />
+        </a>
+        <br /><br />
       </td>
     </tr>
     <tr>
-      <td width="100%" valign="top" colspan="2">
-        <h3 align="center"><a href="https://github.com/solerpedroo/financapp">Projeto Integrador III</a></h3>
-        <p align="center"><strong>Mescla Invest</strong></p>
-        <p align="center">
+      <td colspan="2" valign="top" align="center">
+        <br />
+        <h3><a href="https://github.com/solerpedroo/ES-PI3-2026-T2-G03">Projeto Integrador III</a></h3>
+        <p><strong>Mescla Invest</strong></p>
+        <p>
           Aplicativo mobile de simulação de ecossistema de investimentos com tokens digitais, desenvolvido em Flutter com Firebase. Integrou autenticação, banco de dados em tempo real, armazenamento de arquivos, funções em Node.js/TypeScript e design de experiência do usuário (UX/UI). Apresentado em banca para avaliação de viabilidade de negócio.
         </p>
-        <hr />
-        <p align="center"><code>Flutter</code> <code>Dart</code> <code>Firebase</code> <code>Node.js</code> <code>TypeScript</code> <code>UX/UI</code> <code>Mobile</code></p>
+        <p>
+          <code>Flutter</code> <code>Dart</code> <code>Firebase</code> <code>Node.js</code> <code>TypeScript</code> <code>UX/UI</code> <code>Mobile</code>
+        </p>
+        <a href="https://github.com/solerpedroo/ES-PI3-2026-T2-G03">
+          <img src="assets/btn-repo.svg" alt="Ver Repositório" />
+        </a>
+        <br /><br />
       </td>
     </tr>
   </table>
@@ -104,7 +107,7 @@
 <br />
 
 <details open>
-  <summary><strong>1º Semestre — Concluído</strong></summary>
+  <summary><strong>1º Semestre · Concluído</strong></summary>
   <br />
 
   | Disciplina |
@@ -113,7 +116,7 @@
   | Práticas Empreendedoras |
   | Algoritmos de Programação, Projetos e Computação |
   | Tecnologias em TI |
-  | Projeto Integrador I — Engenharia de Software |
+  | Projeto Integrador I · Engenharia de Software |
   | Fundamentos de Sistemas de Informação e de Engenharia de Software |
   | Teologia e Fenômeno Humano |
   | Fundamentos de Teoria Geral de Sistemas |
@@ -125,13 +128,13 @@
 <br />
 
 <details open>
-  <summary><strong>2º Semestre — Concluído</strong></summary>
+  <summary><strong>2º Semestre · Concluído</strong></summary>
   <br />
 
   | Disciplina |
   |---|
   | Algoritmos e Linguagem de Programação |
-  | Projeto Integrador II — Engenharia de Software |
+  | Projeto Integrador II · Engenharia de Software |
   | Métodos de Engenharia de Software |
   | Engenharia e Elicitação de Requisitos |
   | Fundamentos de Engenharia de Sistemas |
@@ -144,7 +147,7 @@
 <br />
 
 <details open>
-  <summary><strong>3º Semestre — Concluído</strong></summary>
+  <summary><strong>3º Semestre · Concluído</strong></summary>
   <br />
 
   | Disciplina |
@@ -156,7 +159,7 @@
   | Análise e Projeto de Sistemas I |
   | Estrutura e Recuperação de Dados II |
   | Engenharia de Processos de Software |
-  | Projeto Integrador III — Engenharia de Software |
+  | Projeto Integrador III · Engenharia de Software |
   | Projeto de Interação e da Experiência do Usuário de Software |
 
 </details>
@@ -164,7 +167,7 @@
 <br />
 
 <details>
-  <summary><strong>4º Semestre — Em andamento</strong></summary>
+  <summary><strong>4º Semestre · Em andamento</strong></summary>
   <br />
 
   | Disciplina |
@@ -178,14 +181,14 @@
   | Paradigma e Programação Orientada à Objetos |
   | Noções de Cálculo Diferencial e Integral |
   | Fundamentos e Técnicas de Verificação e Validação de Software |
-  | Projeto Integrador IV — Engenharia de Software |
+  | Projeto Integrador IV · Engenharia de Software |
 
 </details>
 
 <br />
 
 <details>
-  <summary><strong>5º Semestre — Pendente</strong></summary>
+  <summary><strong>5º Semestre · Pendente</strong></summary>
   <br />
 
   | Disciplina |
@@ -195,7 +198,7 @@
   | Padrões e Arquitetura de Software |
   | Noções de Estatística Descritiva e Probabilidade |
   | Inteligência Artificial e Aprendizado de Máquina |
-  | Projeto Integrador V — Engenharia de Software |
+  | Projeto Integrador V · Engenharia de Software |
   | Tópicos de Tecnologia e de Programação |
   | Gerência de Configuração, Entrega e Integração Contínua |
   | Fundamentos de Teoria da Computação e Análise de Algoritmos |
@@ -205,13 +208,13 @@
 <br />
 
 <details>
-  <summary><strong>6º Semestre — Pendente</strong></summary>
+  <summary><strong>6º Semestre · Pendente</strong></summary>
   <br />
 
   | Disciplina |
   |---|
   | PF-Prática de Formação II |
-  | Projeto Integrador VI — Engenharia de Software |
+  | Projeto Integrador VI · Engenharia de Software |
   | Normas e Qualidade de Software |
   | Fundamentos de Comunicação de Dados e Redes de Computadores |
   | Programação Paralela e Distribuída |
@@ -226,7 +229,7 @@
 <br />
 
 <details>
-  <summary><strong>7º Semestre — Pendente</strong></summary>
+  <summary><strong>7º Semestre · Pendente</strong></summary>
   <br />
 
   | Disciplina |
@@ -239,14 +242,14 @@
   | Projeto e Governança de TI |
   | Gestão de Projetos em TI |
   | Elementos de Pesquisa Operacional e de Simulação |
-  | Atividades Complementares — Engenharia de Software |
+  | Atividades Complementares · Engenharia de Software |
 
 </details>
 
 <br />
 
 <details>
-  <summary><strong>8º Semestre — Pendente</strong></summary>
+  <summary><strong>8º Semestre · Pendente</strong></summary>
   <br />
 
   | Disciplina |

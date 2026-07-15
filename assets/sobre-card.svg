@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="130" viewBox="0 0 900 130" fill="none">
+  <defs>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="900" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#30363d" stop-opacity="0.4"/>
+      <stop offset="50%"  stop-color="#58a6ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#30363d" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="900" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#0d1117" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#161b22" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#00b4d8"/>
+    </linearGradient>
+    <linearGradient id="divLine" x1="30" y1="0" x2="870" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#30363d" stop-opacity="0"/>
+      <stop offset="20%"  stop-color="#30363d" stop-opacity="0.6"/>
+      <stop offset="80%"  stop-color="#30363d" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#30363d" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card background -->
+  <rect x="0.5" y="0.5" width="899" height="129" rx="10" fill="url(#bgGrad)" stroke="url(#borderGrad)"/>
+
+  <!-- Left accent line -->
+  <line x1="15" y1="18" x2="15" y2="112" stroke="#58a6ff" stroke-width="1.5" opacity="0.4"/>
+  <!-- Right accent line -->
+  <line x1="885" y1="18" x2="885" y2="112" stroke="#58a6ff" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Column separators -->
+  <line x1="300" y1="20" x2="300" y2="94" stroke="#30363d" stroke-width="1" opacity="0.6"/>
+  <line x1="600" y1="20" x2="600" y2="94" stroke="#30363d" stroke-width="1" opacity="0.6"/>
+
+  <!-- Col 1: Instituição -->
+  <text x="150" y="44" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="600" font-size="10" fill="#6e7681" letter-spacing="2">
+    INSTITUIÇÃO
+  </text>
+  <text x="150" y="70" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="700" font-size="16" fill="#e6edf3">
+    PUC-Campinas
+  </text>
+
+  <!-- Col 2: Curso -->
+  <text x="450" y="44" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="600" font-size="10" fill="#6e7681" letter-spacing="2">
+    CURSO
+  </text>
+  <text x="450" y="64" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="700" font-size="15" fill="#58a6ff">
+    Engenharia de Software
+  </text>
+  <text x="450" y="82" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="400" font-size="11" fill="#8b949e">
+    Bacharelado · Noturno
+  </text>
+
+  <!-- Col 3: Ingresso -->
+  <text x="750" y="44" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="600" font-size="10" fill="#6e7681" letter-spacing="2">
+    INGRESSO
+  </text>
+  <text x="750" y="70" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="700" font-size="22" fill="#e6edf3">
+    2025
+  </text>
+
+  <!-- Divider line -->
+  <line x1="30" y1="98" x2="870" y2="98" stroke="url(#divLine)" stroke-width="1"/>
+
+  <!-- Bottom tagline -->
+  <text x="450" y="117" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="400" font-size="11" fill="#6e7681" letter-spacing="0.3">
+    Organizado por semestre · materiais, projetos integradores e atividades práticas de cada disciplina
+  </text>
+</svg>
