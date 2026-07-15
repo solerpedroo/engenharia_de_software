@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resumo — Estudos Flutter · Dart · Firebase — Banca — Pedro Soler</title>
+<style>
+  :root{
+    --azul:#1d4ed8;
+    --azul-escuro:#1e3a8a;
+    --tinta:#1f2933;
+    --tinta-suave:#3b4453;
+    --cinza:#5b6470;
+    --linha:#e3e7ee;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    --mono:"JetBrains Mono","Cascadia Code","Consolas",monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:#aab1bd;font-family:var(--sans);color:var(--tinta);font-size:9.5pt;line-height:1.45;-webkit-font-smoothing:antialiased;}
+  .barra{position:sticky;top:0;z-index:99;background:#1e293b;color:#fff;padding:8px 16px;text-align:center;font-size:9pt;}
+  .barra button{background:var(--azul);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:9pt;}
+  .a4{width:210mm;min-height:297mm;margin:10mm auto;padding:14mm 15mm 16mm;background:#fff;box-shadow:0 6px 30px rgba(0,0,0,.25);}
+  .capa{border:1px solid var(--linha);border-top:6px solid var(--azul);border-radius:12px;padding:20px 24px 18px;margin-bottom:18px;background:linear-gradient(180deg,#fbfdff,#fff);}
+  .capa .kicker{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--azul);font-weight:700;margin:0 0 8px;}
+  .capa h1{font-family:var(--serif);font-size:20pt;line-height:1.15;margin:0 0 6px;color:var(--azul-escuro);}
+  .capa .sub{font-size:10pt;color:var(--tinta-suave);margin:4px 0 14px;}
+  .capa .meta{display:flex;flex-wrap:wrap;gap:6px 8px;border-top:1px dashed var(--linha);padding-top:12px;}
+  .capa-layout{display:flex;gap:20px;align-items:flex-start;}
+  .capa-principal{flex:1;min-width:0;}
+  .capa-qr{flex-shrink:0;text-align:center;width:128px;padding:10px 8px;border:1px solid var(--linha);border-radius:10px;background:#fff;}
+  .capa-qr img{display:block;width:112px;height:112px;margin:0 auto;border-radius:6px;}
+  .capa-qr-legenda{margin:8px 0 0;font-size:7.5pt;line-height:1.35;color:var(--tinta-suave);text-align:center;}
+  .capa-qr-legenda strong{display:block;margin-top:3px;font-size:7pt;color:var(--azul);word-break:break-all;}
+  .chip{font-size:8pt;font-weight:600;color:var(--tinta-suave);background:#eef3fb;border:1px solid #dbe6f7;border-radius:999px;padding:3px 9px;}
+  .chip.azul{background:var(--azul);color:#fff;border-color:var(--azul);}
+  h2{font-family:var(--serif);font-size:12pt;color:var(--azul-escuro);margin:18px 0 8px;padding:6px 0 6px 12px;border-left:4px solid var(--azul);background:linear-gradient(90deg,#f3f7fe,rgba(255,255,255,0));break-after:avoid;}
+  h3{font-size:10pt;color:var(--tinta);margin:12px 0 5px;font-weight:700;break-after:avoid;}
+  p{margin:5px 0;text-align:justify;}
+  ul{margin:5px 0;padding-left:18px;}
+  li{margin:2px 0;}
+  table{border-collapse:collapse;width:100%;margin:8px 0;font-size:8.5pt;break-inside:avoid;}
+  th{background:var(--azul-escuro);color:#fff;text-align:left;padding:5px 8px;font-weight:600;border:1px solid var(--azul-escuro);}
+  td{padding:4px 8px;border:1px solid var(--linha);vertical-align:top;}
+  tbody tr:nth-child(even){background:#f7f9fc;}
+  code{font-family:var(--mono);font-size:.88em;background:#f6f8fa;border:1px solid #e7ebf0;border-radius:4px;padding:0 4px;color:#b4357a;}
+  .intro{background:#f8fafc;border:1px solid var(--linha);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:9pt;}
+  .page-break{break-before:page;}
+  @media print{
+    body{background:#fff;}
+    .barra{display:none;}
+    .a4{margin:0;box-shadow:none;width:100%;min-height:auto;padding:12mm 14mm;}
+    h2{break-after:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="barra"><button onclick="window.print()">Imprimir / Salvar PDF</button></div>
+
+<div class="a4">
+
+<header class="capa">
+  <div class="capa-layout">
+    <div class="capa-principal">
+      <p class="kicker">Projeto Integrador III · Engenharia de Software · Documento para Banca</p>
+      <h1>Resumo dos Estudos — Flutter · Dart · Firebase Functions</h1>
+      <p class="sub">Síntese dos tópicos do arquivo de estudos completo do Pedro Soler</p>
+      <div class="meta">
+        <span class="chip azul">Pedro Soler</span>
+        <span class="chip">Disciplina: Projeto Integrador III</span>
+        <span class="chip">Stack: Flutter · Dart · TypeScript · Firebase</span>
+        <span class="chip">Versão: resumo (7 páginas)</span>
+      </div>
+    </div>
+    <aside class="capa-qr" aria-label="Link para estudos completos">
+      <a href="https://estudos-pi-iii.vercel.app/" target="_blank" rel="noopener noreferrer" title="Abrir estudos completos">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACEAQAAAAB5P74KAAABC0lEQVR4nM2Wwa0cMQxDnz5yf+pg+y9rO+BUwBwmlyQIsvAAQXSyBZsgTRnSlJ/j+uLX+LeZmdlrh5mdmT3GscU3U7F9wHAWlg5h9pnSi0z/cuazzLp5iNPwEt4DzSnOdMAfmwt8n+HQto2a3stTHBPBmOQJTklRUkw9xgkaWpPAKZ8vCO/tLrv081u/8THYGALJua5blOX27vydRdoqgXM+1dSQaHLOB7RGSvoAJ01ta+VJ/YhWiqXHfn0jXC5cQD699QffUW1AH/jellBiPfb97hchqyzJua5WIHdNn/NhltTX5Bqf9B3gtRclXvNAF9q0tMXz+qHsxRSWXh7OCRRQQiQc/6/5z+aW732mygQOT5FXAAAAAElFTkSuQmCC"
+          width="112"
+          height="112"
+          alt="QR Code para https://estudos-pi-iii.vercel.app/"
+        />
+      </a>
+      <p class="capa-qr-legenda">
+        Estes foram meus estudos completos (~180 páginas).
+        <strong>estudos-pi-iii.vercel.app</strong>
+      </p>
+    </aside>
+  </div>
+</header>
+
+<div class="intro">
+  <strong>Propósito:</strong> Este documento resume, tópico a tópico, as anotações de estudo sobre o código do MesclaInvest. O arquivo original permanece intacto como referência detalhada. Aqui cada item traz a ideia central em uma ou duas frases, agrupado por área técnica.
+</div>
+
+<h2>1. Backend — Cloud Functions, TypeScript e Balcão P2P</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td><code>passwordReset.ts</code> — types e <code>region</code></td><td>Aliases <code>SendResponse</code>, <code>VerifyResponse</code>, <code>ConfirmResponse</code> documentam o contrato de cada etapa em compile-time (não existem em runtime). <code>region: "us-central1"</code> deve coincidir com <code>FirebaseFunctions.instanceFor(region: ...)</code> no Flutter.</td></tr>
+<tr><td><code>email?: string</code></td><td><code>:</code> separa nome e tipo; <code>?</code> torna o parâmetro opcional (<code>undefined</code>). Validação com <code>if (!email)</code> é a defesa real em runtime.</td></tr>
+<tr><td><code>VerifyResetCodeResult</code></td><td><code>=</code> define alias de tipo; <code>|</code> une variantes (discriminated union com <code>ok: true/false</code>). Quebra de linha com <code>|</code> à esquerda é só estilo.</td></tr>
+<tr><td><code>Math.max(0, ...)</code></td><td>Ao liberar escrow, impede saldo bloqueado negativo se dados estiverem desalinhados.</td></tr>
+<tr><td><code>1e-9</code></td><td>Epsilon nas comparações de saldo — tolerância a imprecisão de float IEEE 754; não é “desconto” financeiro.</td></tr>
+<tr><td><code>{ merge: true }</code></td><td><code>set</code> mescla campos sem apagar o resto do documento; essencial ao atualizar só <code>tokensLockedInOrders</code> ou <code>brlLockedInOrders</code>.</td></tr>
+<tr><td><strong>Escrow</strong></td><td>Reserva temporária: compras bloqueiam BRL (<code>brlLockedInOrders</code>), vendas bloqueiam tokens (<code>tokensLockedInOrders</code>). Disponível = saldo − locked.</td></tr>
+<tr><td><code>trx</code> em <code>runTransaction</code></td><td>Abreviação de transaction — leituras/escritas atômicas; ou commita tudo ou nada, com retry em conflito.</td></tr>
+<tr><td><code>outer:</code> / <code>break outer</code></td><td>Label JS/TS para sair de dois <code>for</code> aninhados no match engine após um par executado.</td></tr>
+<tr><td><code>Record&lt;string, unknown&gt;</code></td><td>Objeto indexado por string com valores a tipar; meio-termo entre <code>any</code> e interface fixa ao ler Firestore.</td></tr>
+<tr><td><code>request.data?.action</code></td><td>Campo que roteia callables (<code>simulateWallet</code>, <code>passwordReset</code>, <code>twoFactor</code>). <code>?.`</code> optional chaining. Distinto de <code>ledger.op</code>.</td></tr>
+<tr><td><code>assertPositiveIntegerTokens</code></td><td>Garante tokens inteiros &gt; 0 ou lança <code>HttpsError</code> — tokens não são fracionáveis no modelo.</td></tr>
+<tr><td><strong>assert</strong> (funções vs testes)</td><td>Prefixo <code>assert*</code> = validação que lança <code>HttpsError</code>; <code>node:assert</code> nos testes verifica expectativas.</td></tr>
+<tr><td><code>clip(s, max)</code></td><td>Sanitiza strings (trim + limite de caracteres) sem lançar erro — diferente das funções <code>assert*</code>.</td></tr>
+</tbody>
+</table>
+
+<h2>2. Dart — linguagem, tipos e coleções</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td><code>=&gt;</code></td><td>Corpo expressão (getter, lambda, <code>createState</code>) — return implícito; não confundir com <code>&gt;=</code>.</td></tr>
+<tr><td><code>??</code> / <code>??=</code></td><td>Null-coalescing e atribuição condicional — fallback quando valor é null.</td></tr>
+<tr><td><code>?.`</code></td><td>Acesso seguro — se null, expressão vira null.</td></tr>
+<tr><td><code>late</code> / <code>late final</code></td><td>Inicialização adiada (ex.: <code>TabController</code> em <code>initState</code>); crash se ler antes de atribuir.</td></tr>
+<tr><td><code>static const</code></td><td>Constante de compile-time partilhada pela classe (padding, debounce, cores).</td></tr>
+<tr><td><code>extension</code></td><td>Adiciona getters/métodos a tipos existentes (<code>BalcaoOperacaoTipo.verboInfinitivo</code>, <code>ValuationPeriod.chipLabel</code>).</td></tr>
+<tr><td><code>sealed class</code></td><td>Família fechada de estados (<code>StartupDetailLoadState</code>: Loading / NotFound / Ready) com <code>switch</code> exhaustivo.</td></tr>
+<tr><td><code>is num</code> / <code>as int</code></td><td>Pattern defensivo para dados Firestore (<code>dynamic</code>) — testa tipo antes de cast.</td></tr>
+<tr><td><code>Object?</code></td><td>Tipo raiz nullable para valores de formato variável até inspecionar com <code>is</code>.</td></tr>
+<tr><td><code>..sort</code> (cascade)</td><td><code>..</code> chama método no objeto e devolve o objeto (útil porque <code>sort</code> retorna void).</td></tr>
+<tr><td><code>StringBuffer</code></td><td>Monta strings eficientemente em loop (<code>formatBrl</code> com separador de milhares).</td></tr>
+<tr><td><code>.clamp(min, max)</code></td><td>Limita número a intervalo (largura de diálogo, índices, percentagens 0–1).</td></tr>
+<tr><td><code>padLeft</code></td><td>Zero-padding para datas/horas pt-BR (<code>05/03/2026 às 09:07</code>).</td></tr>
+<tr><td><code>~/</code></td><td>Divisão inteira — buckets de cache (2 min) e minutos em timer PIX.</td></tr>
+<tr><td><code>Set</code></td><td>Coleção sem duplicados — tabs lazy no dashboard (<code>_activatedMainTabs</code>).</td></tr>
+<tr><td><code>part</code> / <code>part of</code></td><td>Divide biblioteca em ficheiros mantendo escopo único (widgets privados <code>_MainInfoCard</code>).</td></tr>
+<tr><td>Construtor <code>._()</code></td><td>Privado — padrão singleton (<code>StartupCatalogListCache.instance</code>).</td></tr>
+<tr><td><code>assert</code> (Dart)</td><td>Checagem só em debug (<code>numeroMeses &gt;= 1</code>, <code>tabBodies.length == 5</code>).</td></tr>
+<tr><td><code>import 'dart:math' show min</code></td><td>Import selectivo — <code>min(take.length, 5)</code> limita foco OTP ao índice 5.</td></tr>
+<tr><td><code>RegExp(r'[0-9]')</code></td><td>Máscara de dígitos e validação de senha com número.</td></tr>
+<tr><td><code>super.key</code></td><td>Repassa <code>Key</code> opcional ao widget pai — identidade na árvore.</td></tr>
+<tr><td><code>void Function(T)?</code></td><td>Callback nullable — ex.: <code>onInvestir</code> liga catálogo/favoritos ao Balcão via dashboard.</td></tr>
+</tbody>
+</table>
+
+<h2>3. Flutter — UI, formulários e interação</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td><code>addPostFrameCallback</code></td><td>Executa após o 1.º frame — biometria, splash, foco OTP; evita <code>setState during build</code>.</td></tr>
+<tr><td><code>mounted</code></td><td><code>if (!mounted) return</code> após <code>await</code> — evita atualizar widget já removido.</td></tr>
+<tr><td><code>SystemUiOverlayStyle</code> + <code>AnnotatedRegion</code></td><td>Controla aparência das barras do SO (status bar, navigation bar).</td></tr>
+<tr><td><code>AppColors.shellOverlayStyle</code></td><td>Helper centralizado do Mescla para barras claro/escuro em todo o app.</td></tr>
+<tr><td><code>double.infinity</code></td><td>“Ocupa o máximo permitido pelo pai” — fundos com gradiente full-screen.</td></tr>
+<tr><td><code>SingleChildScrollView</code> + <code>CrossAxisAlignment.stretch</code></td><td>Scroll quando conteúdo/teclado não cabe; filhos em largura total.</td></tr>
+<tr><td><code>TextSelection.collapsed</code></td><td>Cursor num ponto após formatter BRL — mantém foco no fim do texto.</td></tr>
+<tr><td>OTP: <code>onMultiDigit</code>, <code>KeyEventResult</code></td><td>Colagem distribui dígitos pelas 6 caixas; backspace move foco para trás.</td></tr>
+<tr><td><code>onChanged</code></td><td>Callback em tempo real (<code>TextField</code>, dropdown) — limpa erros, atualiza estado.</td></tr>
+<tr><td><code>sheetContext</code></td><td><code>BuildContext</code> do bottom sheet — <code>pop</code> fecha modal; <code>context</code> do State navega no ecrã principal.</td></tr>
+<tr><td><code>addListener</code> / <code>ListenableBuilder</code></td><td>Reage a mudanças em <code>ValueNotifier</code>, <code>ChangeNotifier</code>, controllers.</td></tr>
+<tr><td><code>shrinkWrap</code></td><td><code>MaterialTapTargetSize.shrinkWrap</code> — hitbox compacto em links “Ver todas”.</td></tr>
+<tr><td><code>surfaceTintColor: transparent</code></td><td>Desliga tint Material 3 na AppBar — fundo plano sem lavagem roxa ao scroll.</td></tr>
+<tr><td><code>leading</code> (AppBar)</td><td>Slot esquerdo — botão voltar com <code>Navigator.pop</code>.</td></tr>
+<tr><td><code>InkWell</code></td><td>Área tocável com ripple Material — requer ancestral <code>Material</code>.</td></tr>
+<tr><td><code>SegmentedButton</code> / <code>segments</code></td><td>Escolha exclusiva Material 3 (filtro Q&A, MFA e-mail/SMS).</td></tr>
+<tr><td><code>fit: BoxFit.cover</code></td><td>Preenche caixa cortando bordas — avatares circulares.</td></tr>
+<tr><td><code>surfaceContainerHigh</code></td><td>Token M3 — superfície elevada no tema escuro (círculos de ícone no Perfil).</td></tr>
+<tr><td><code>SizedBox.shrink()</code></td><td>Widget 0×0 — placeholder invisível (stream à espera, tabs não activadas).</td></tr>
+<tr><td><code>withValues(alpha: ...)</code></td><td>Cor semitransparente — sombra roxa dos botões primários.</td></tr>
+<tr><td><code>EdgeInsets.symmetric</code></td><td>Padding igual à esquerda/direita e cima/baixo.</td></tr>
+<tr><td><code>MediaQuery</code> / DPR</td><td><code>devicePixelRatioOf</code> alinha preload e exibição de logos na <code>ImageCache</code>.</td></tr>
+<tr><td><code>FutureBuilder</code> / <code>future:</code></td><td>UI reactiva a um <code>Future</code> — cache do Future no State evita pedidos repetidos.</td></tr>
+<tr><td><code>fY(v)</code></td><td>Formata rótulos do eixo Y do gráfico (milhões ou BRL injectável).</td></tr>
+</tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>4. Navegação, animações e tema</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td><strong>Nav</strong> (3 camadas)</td><td><code>Navigator</code> (pilha de ecrãs), <code>MesclaBottomNavBar</code> (<code>selectedIndex</code>, <code>onItemTap</code>), <code>MesclaMainShell</code> (<code>tabBodies</code>).</td></tr>
+<tr><td><code>PageTransitionsBuilder</code></td><td>Classe custom (<code>MesclaFadeSlidePageTransitionsBuilder</code>) — fade + slide 3% no tema global.</td></tr>
+<tr><td><code>Curves</code>, <code>Tween&lt;Offset&gt;</code></td><td><code>easeOutCubic</code> na entrada, <code>easeInCubic</code> no pop; <code>Offset(0, 0.03)</code> → <code>zero</code>.</td></tr>
+<tr><td><code>MesclaMaterialRoute.fadeSlide</code></td><td>Rota explícita onde o tema nem sempre aplica transição.</td></tr>
+<tr><td><code>_modeFromStorage ?? ThemeMode.system</code></td><td>Lê tema em <code>SharedPreferences</code>; default segue brilho do SO.</td></tr>
+<tr><td><code>LaunchMode.externalApplication</code></td><td>Abre LinkedIn/YouTube no browser ou app nativo (<code>url_launcher</code>).</td></tr>
+</tbody>
+</table>
+
+<h2>5. Firestore no Flutter e dados em tempo real</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td><code>.doc(id)</code> / <code>.snapshots()</code></td><td>Referência a um documento; stream em tempo real vs <code>.get()</code> pontual.</td></tr>
+<tr><td><code>watchPositions</code></td><td>Stream de <code>sim_wallet/{uid}/positions</code> — UI da carteira actualiza sem refresh.</td></tr>
+<tr><td><code>Stream</code> / <code>QuerySnapshot</code></td><td>Eventos contínuos; snapshot = fotografia da coleção/query a cada mudança.</td></tr>
+<tr><td><code>StreamBuilder</code> / <code>future:</code></td><td><code>stream:</code> para Firestore ao vivo; <code>future:</code> para carga única (catálogo, stats).</td></tr>
+<tr><td><code>QuerySnapshot&lt;Map&lt;String, dynamic&gt;&gt;&gt;</code></td><td>Três <code>&gt;</code> fecham três níveis de generics — não é operador.</td></tr>
+<tr><td><strong>DTO</strong></td><td>Objeto leve para transferir dados entre camadas — ex.: <code>InvestedStartupRowUi</code> via <code>toInvestedRowUi()</code>.</td></tr>
+<tr><td><code>pushEnriched</code></td><td>Closure que enriquece mapas de sócios (<code>nome</code>, <code>porcentagem</code>) antes de <code>out.add</code>.</td></tr>
+</tbody>
+</table>
+
+<h2>6. Catálogo, performance e parsing</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td><code>_kickLogoPrefetchWhenListReady</code></td><td>Após lista carregar, dispara precache de logos em fundo — menos spinners.</td></tr>
+<tr><td><code>prewarmLogoUrlCache</code></td><td>Resolve Storage→URL cedo (<code>unawaited</code>); camada anterior ao bitmap na <code>ImageCache</code>.</td></tr>
+<tr><td><code>StartupCatalogListCache</code></td><td>Singleton — uma lista em memória partilhada (Explorar, Balcão, dashboard).</td></tr>
+<tr><td><code>watchStartups</code></td><td>Stream Firestore da coleção startups — preços ao vivo mergeados com callable.</td></tr>
+</tbody>
+</table>
+
+<h2>7. Segurança, biometria e arquitetura</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td>Biometria antes de MFA</td><td><code>BiometricAuthService.authenticate</code> com step-up local antes de alterar canal MFA; biometria nunca vai ao servidor.</td></tr>
+<tr><td><code>skipPluginAvailabilityPrecheck</code></td><td>Evita falso negativo em alguns Android; confia no diálogo nativo do SO.</td></tr>
+<tr><td>Tabs lazy (<code>Set</code>)</td><td>Só monta Carteira/Balcão/Catálogo após primeira visita — reduz custo de arranque.</td></tr>
+<tr><td><code>onInvestir</code></td><td>Callback injectado pelo dashboard — desacopla Perfil/Catálogo da navegação para o Balcão.</td></tr>
+</tbody>
+</table>
+
+<h2>8. Testes Flutter (<code>flutter_test</code>)</h2>
+
+<table>
+<thead><tr><th>Tópico</th><th>Resumo</th></tr></thead>
+<tbody>
+<tr><td><code>pumpWidget</code></td><td>Monta widget na árvore de teste (geralmente dentro de <code>MaterialApp</code>).</td></tr>
+<tr><td><code>pumpAndSettle</code></td><td>Espera animações/timers terminarem — essencial após <code>tap</code> com navegação.</td></tr>
+<tr><td><code>group</code> / <code>testWidgets</code></td><td>Agrupa testes; um cenário de UI por <code>testWidgets</code>.</td></tr>
+<tr><td><code>ensureVisible</code></td><td>Garante widget no viewport antes de <code>tap</code>.</td></tr>
+<tr><td><code>find.byType</code> / <code>find.descendant</code></td><td>Localiza widgets por tipo ou filho dentro de ancestral.</td></tr>
+</tbody>
+</table>
+
+<h2>9. <code>pubspec.yaml</code> — dependências do MesclaInvest</h2>
+
+<p>O manifesto define o pacote <code>mescla_invest</code> (Dart ^3.11). Principais grupos:</p>
+
+<table>
+<thead><tr><th>Área</th><th>Pacotes</th><th>Função no projeto</th></tr></thead>
+<tbody>
+<tr><td>Firebase</td><td><code>firebase_core</code>, <code>auth</code>, <code>firestore</code>, <code>functions</code>, <code>storage</code>, <code>app_check</code></td><td>Auth, carteira simulada, callables, logos, proteção de API</td></tr>
+<tr><td>Segurança local</td><td><code>local_auth</code>, <code>flutter_secure_storage</code></td><td>Biometria e enrollment por dispositivo</td></tr>
+<tr><td>UI / input</td><td><code>mask_text_input_formatter</code>, <code>qr_flutter</code></td><td>Máscaras CPF/telefone; QR PIX</td></tr>
+<tr><td>Media / links</td><td><code>url_launcher</code>, <code>youtube_player_flutter</code>, <code>video_player</code>, <code>image_picker</code></td><td>Links externos, demo YouTube, splash, foto perfil</td></tr>
+<tr><td>Persistência local</td><td><code>shared_preferences</code></td><td>Tema claro/escuro e flags</td></tr>
+<tr><td>Dev</td><td><code>flutter_test</code>, <code>flutter_lints</code>, <code>flutter_launcher_icons</code></td><td>Testes, análise estática, ícones de build</td></tr>
+<tr><td>Assets</td><td><code>assets/images/</code>, <code>assets/videos/intro.mp4</code></td><td>Logos, ícone app, vídeo intro</td></tr>
+</tbody>
+</table>
+
+<h2>10. Mapa conceptual — como as peças se ligam</h2>
+
+<p>O MesclaInvest combina <strong>Flutter</strong> (UI reactiva com <code>StreamBuilder</code>, <code>FutureBuilder</code>, tema Material 3 customizado) com <strong>Firebase</strong> (Auth, Firestore, Cloud Functions em TypeScript). O módulo <strong>Balcão</strong> usa transações Firestore, escrow e match engine para P2P simulado. Padrões recorrentes: validação defensiva (<code>assert*</code>, <code>is</code>/<code>as</code>), sanitização (<code>clip</code>), callbacks para desacoplamento (<code>onInvestir</code>), singletons de cache, e proteção async (<code>mounted</code>, <code>addPostFrameCallback</code>).</p>
+
+<table>
+<thead><tr><th>Camada</th><th>Responsabilidade</th><th>Exemplos no código</th></tr></thead>
+<tbody>
+<tr><td>UI (Flutter)</td><td>Ecrãs, formulários, navegação shell + pilha</td><td><code>MesclaMainShell</code>, <code>CarteiraScreen</code>, <code>BalcaoTabScreen</code></td></tr>
+<tr><td>Serviços (Dart)</td><td>Streams, cache, parsing Firestore/callables</td><td><code>SimulatedWalletService</code>, <code>StartupCatalogListCache</code></td></tr>
+<tr><td>Cloud Functions (TS)</td><td>Regras de negócio, transações, validação</td><td><code>simulateWallet</code>, <code>executeP2pMatch</code>, <code>passwordReset</code></td></tr>
+<tr><td>Firestore</td><td>Estado persistido (carteira, ordens, startups)</td><td><code>sim_wallet</code>, <code>positions</code>, book P2P</td></tr>
+</tbody>
+</table>
+
+</div>
+</body>
+</html>

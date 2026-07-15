@@ -1,6 +1,6 @@
 /*
   Trabalho Final - Sistema de Gerenciamento de Biblioteca
-  Aluno: Pedro Henrique Contardi Soler
+  Aluno: Pedro Henrique Contardi Soler - 25005592
 */
 
 #include <stdio.h>

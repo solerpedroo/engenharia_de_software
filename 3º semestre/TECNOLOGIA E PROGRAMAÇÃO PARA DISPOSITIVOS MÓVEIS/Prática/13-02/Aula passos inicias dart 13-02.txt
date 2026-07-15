@@ -1,0 +1,135 @@
+/*void main(){
+
+  // inferência de tipos
+  // ao declarar uma variável, sem usar um tipo explícito
+  // o dart, baseado na primeira atribuição ajusta o tipo dela
+  var nome = 'Pedro Soler';
+  print(nome);
+  
+}*/
+
+// exemplo simples de função
+
+/*int soma(int a, int b){
+  return a + b;
+}*/
+
+/*void main(){
+  // encadeamento de chamadas
+  print(soma(10,2));
+}*/
+
+/*String veredito(int nota){
+  
+  if (nota>=5){
+    return 'Aprovado';
+  }
+  else{
+    return 'Reprovado';
+  }
+}
+
+void main(){
+  
+  print(veredito(10));
+  
+}*/
+
+// Código mais eficiente
+/*String veredito(int nota){ 
+  if (nota >= 5){
+    return 'Aprovado';
+  }
+  return 'Reprovado';
+}
+
+void main(){
+  print(veredito(10));
+}*/
+
+/*void main(){
+  
+  // uma constante deve ser inicializada e atribuida valor ao ser criada
+  // permite inferência também
+  const pi = 3.1415;
+  print(pi*10);
+
+  // código não funciona. jeito errado
+  const gravidadeLua;
+  gravidadeLua = 1.62;
+  
+}*/
+
+/*void main(){
+  // usando modificador final
+  final teste;
+  teste = 'uma string';
+  // usando final não conseguimos reatribuir toda a string
+  teste = 'Bom dia';
+  print(teste);
+}*/
+
+/*void main(){
+  
+  // usando listas no dart
+  final frutas = ['banana', 'maçâ', 'uva'];
+  
+  for (final f in frutas){
+    print(f);
+  }
+  
+}*/
+
+/*void main(){
+  
+  // usando listas no dart
+  final frutas = ['banana', 'maçâ', 'uva'];
+  // não podemos reatribuir a lista, porque isso MUDARIA o endereço de alocação da lista
+  // frutas = ['melancia'] (não funciona)
+  
+  for (final f in frutas){
+    print(f);
+  }
+  
+}*/
+
+/*void main(){
+  
+  // usando listas no dart
+  final frutas = ['banana', 'maçã', 'uva'];
+  // não podemos reatribuir a lista, porque isso MUDARIA o endereço de alocação da lista
+  // frutas = ['melancia'] (não funciona)
+  
+  // a lista sendo final, desde que seja lista comum, permite adicionar ou remover elementos, 
+  // usando final é bom para garantir que a lista não seja inteiramente modificada
+  frutas.add('morango');
+  for (final f in frutas){
+    print(f);
+  }
+  
+}*/
+
+/*void main(){
+  
+  // Deslingado o Null Safety
+  String? nome;
+  nome = 'Mateus';
+  nome = null;
+  print(nome);
+  
+  // usando Null Safety
+  String cidade;
+  cidade = 'Campinas';
+  // você não consegue atribuir NADA (null)
+}*/
+
+String veredito (int nota){
+  if (nota >= 5) return 'Aprovado';
+  return 'Reprovado';
+}
+
+void main(){
+  int? nota = null;
+  if (nota == null) print ('Não tenho como te dar um veredito, pois não consegui obter sua nota');
+  else print(veredito(nota));
+}

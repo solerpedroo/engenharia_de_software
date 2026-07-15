@@ -1,0 +1,271 @@
+// Exercício 1
+
+/*void main() {
+  var nome = 'Pedro';
+  int idade = 19;
+  var turma = 102;
+  
+  print('$nome, $idade, $turma');
+}*/
+
+// Exercício 2
+
+/*void main(){
+
+  int a = 10;
+  int b = 5;
+  
+  print('Soma: ${a+b}');
+  
+  if (a > b) print('A é maior que B');
+  else print('B é maior que A');
+  
+}*/
+
+// Exercício 3
+
+/*void main(){
+  
+  int n = 5;
+  
+  if (n % 2 == 0) print('É par');
+  else print('É ímpar');
+  
+}*/
+
+// Exercício 4
+
+/*void main(){
+  
+  int a = 5;
+  int b = 4;
+  int c = 3;
+  
+  if ((a > b) && (a > c) ) print ('A é maior');
+  else if ((b > a) && (b > c)) print ('B é maior');
+  else print('C é maior');
+
+}*/
+
+// Exercício 5
+
+/*void main(){
+
+  int n1 = 8;
+  int n2 = 10;
+  
+  double media = (n1+n2)/2;
+  
+  if ((n1 & n2 <=10) & (n1 & n2 >= 0)){
+    if (media == 10) print('Parabéns');
+    else if (media >= 8) print('Ótimo');
+    else if (media >= 5) print('Aprovado');
+    else print('Reprovado');
+  }
+  else print('Valores inválidos');
+
+}*/
+
+// Exercício 6
+
+/*void main(){
+  
+  int n = 10;
+  
+  for (int i=1; i < n; i++){
+    print(i);
+  }
+  
+}*/
+
+// Exercício 7
+
+/*void main(){
+  
+  int num=2;
+  
+  for (int i=1; i <11; i++) print(num*i);
+  
+}*/
+
+// Exercício 8
+
+/*void main(){
+
+  final inteiros = [1, 2, 3, 4, 5];
+  
+  int soma = 0;
+  
+  for (final i in inteiros) soma += i;
+  
+  print (soma);
+    
+
+}*/
+
+// Exercício 9
+
+/*void main(){
+  
+  final inteiros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  final pares = [];
+  
+  for (final i in inteiros){
+    
+    if (i % 2 == 0) pares.add(i);
+  }
+  
+  print(pares);
+}*/
+
+// Exercício 10
+
+/*void main(){
+
+  List<String> palavras = ['Pedro', 'Ana', 'Letícia'];
+  
+  print(palavras.length);  
+  
+  String maior = "";
+  
+  for (String p in palavras){
+    if (p.length > maior.length){
+      maior = p;
+    }
+  }
+
+  print(maior);
+}*/
+
+// Exercício 11
+
+/*void main(){
+  
+  Map<String, dynamic> aluno = {
+    'nome': 'Pedro Soler',
+    'ra': '250055992',
+    'curso': 'Engenharia de Software',
+    'turma': '102'
+  };
+  
+  print('Aluno: ${aluno['nome']}, RA: ${aluno['ra']}, Curso: ${aluno['curso']}, Turma: ${aluno['turma']}');
+  
+}*/
+
+// Exercício 12
+
+/*void main(){
+  
+  String texto = 'banana';
+  
+  Map <String, int> frequencias = {};
+  
+  
+  for (int i=0; i < texto.length; i++){ 
+        String letra = texto[i];
+
+    if (letra == ' ') continue;
+
+    if (frequencias.containsKey(letra)) {
+      frequencias[letra] = frequencias[letra]! + 1;
+    } else {
+      frequencias[letra] = 1;
+    }
+  }
+
+  print(frequencias);
+  }*/
+
+// Exercício 13
+
+/*bool ehPrimo(int n) {
+
+  if (n <= 1) return false;
+  if (n == 2) return true;
+  if (n % 2 == 0) return false;
+
+  for (int i = 3; i * i <= n; i += 2) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+void main() {
+
+  print(ehPrimo(1));   
+  print(ehPrimo(2));   
+  print(ehPrimo(3));   
+  print(ehPrimo(4));   
+  print(ehPrimo(17));  
+  print(ehPrimo(20));  
+}*/
+
+// Exercício 14
+
+/*int maximo(List<int> nums) {
+
+  int maior = nums[0];
+
+  for (int i = 1; i < nums.length; i++) {
+    if (nums[i] > maior) {
+      maior = nums[i];
+    }
+  }
+
+  return maior;
+}
+
+void main() {
+  print(maximo([10, 5, 8, 20, 3]));
+}*/
+
+// Exercício 15
+
+/*List<int> aplicar(List<int> nums, int Function(int) f) {
+
+  List<int> resultado = [];
+
+  for (var numero in nums) {
+    resultado.add(f(numero));
+  }
+
+  return resultado;
+}
+
+void main() {
+
+  List<int> numeros = [1, 2, 3, 4];
+
+  int dobro(int x) {
+    return x * 2;
+  }
+
+  var listaDobro = aplicar(numeros, dobro);
+  print(listaDobro); // [2, 4, 6, 8]
+
+  int quadrado(int x) {
+    return x * x;
+  }
+
+  var listaQuadrado = aplicar(numeros, quadrado);
+  print(listaQuadrado); // [1, 4, 9, 16]
+}*/
+
+// Exercício 16
+
+int tamanhoOuZero(String? s) {
+
+  if (s == null) {
+    return 0;
+  }
+
+  return s.length;
+}
+
+void main() {
+  print(tamanhoOuZero(null));      
+  print(tamanhoOuZero("Pedro"));   
+}

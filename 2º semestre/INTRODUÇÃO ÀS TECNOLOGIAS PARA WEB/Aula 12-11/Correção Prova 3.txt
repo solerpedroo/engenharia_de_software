@@ -1,0 +1,29 @@
+--- Correção Prova ---
+
+3-) Resolução Júnior
+
+let S: number = 0;
+
+for(let n: number = 1; n <= 10; n++){
+	let d: number = (n*n);
+	if(n%2 == 0){
+		S -= (n/d);
+	}
+	else{
+		S += (n/d);
+	}
+}
+
+console.log(S);
+
+Resolução Sênior
+
+let S: number = 0;
+let sinal: number = 1;
+
+for(let n: number = 1; n <= 10; n++){
+	let d: number = (n*n);
+	S = S + sinal * (n/d);
+	sinal *= -1;
+	
+}

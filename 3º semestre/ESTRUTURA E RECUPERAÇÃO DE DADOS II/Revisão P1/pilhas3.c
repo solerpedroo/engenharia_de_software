@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+typedef struct No{
+    int valor;
+    struct No* proximo;
+} No;
+
+typedef struct Pilha{
+    int tamanho;
+    struct No* topo;
+} Pilha;
+
+Pilha* criarPilha(){
+    Pilha* pilha = (Pilha*)malloc(sizeof(Pilha));
+    pilha->tamanho = 0;
+    pilha->topo = NULL;
+    return pilha;
+}
+
+No* criarNo(int valor){
+    No* novoNo = (No*)malloc(sizeof(No));
+    novoNo->valor = valor;
+    novoNo->proximo = NULL;
+    return novoNo;
+}
+
+void push(Pilha* p, int valor){
+    No* novoNo = criarNo(valor);
+    novoNo->proximo = p->topo;
+    p->topo = novoNo;
+    p->tamanho++;
+}
+
+Pilha* pop(Pilha* p){
+    if(p->topo == NULL) return p;
+    No* temp = p->topo;
+    p->topo = p->topo->proximo;
+    free(temp);
+    return p;
+}

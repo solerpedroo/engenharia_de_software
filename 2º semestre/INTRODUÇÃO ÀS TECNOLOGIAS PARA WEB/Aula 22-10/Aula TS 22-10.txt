@@ -1,0 +1,112 @@
+function verificarSeTrianguloV1(
+    a: number,
+    b: number, 
+    c: number
+):number {
+
+    let resultado;
+
+    // 1 - precisamos saber se a, b, c são maiores que 0
+    // 2 - cada lado precisa ser menor que a soma dos outros dois 
+
+    if (a > 0){
+        if (b > 0){
+            if (c > 0){
+                if (a < (b+c)){
+                    if (b < (a+c)){
+                        if (c < (a+b)){
+                            resultado = 0;
+                        }
+                        else{
+                            resultado = -1;
+                        }
+                    }else{
+                        resultado = -2;
+                    }
+                }else{
+                    resultado = -3;
+                }
+            } else{
+                resultado = -4;
+            }
+        } else{
+            resultado = -5;
+        }
+    } else{
+        resultado = -6;
+    }
+
+    return resultado;
+
+}
+
+function imprimirResultado(r: number){
+    switch(r){
+        case 0:
+            console.log("É possível formar triângulo");
+            break;
+        
+        case -1:
+            console.log("C não é menor que a soma de A + B");
+            break;
+
+        case -2:
+            console.log("B não é menor que a soma de A + C");
+            break;
+
+        case -3:
+            console.log("A não é menor que a soma de B + C");
+            break;
+
+        case -4:
+            console.log("O valor de C é menor ou igual 0");
+            break;
+        
+        case -5:
+            console.log("O valor de B é menor ou igual 0");
+            break;
+
+        case -6:
+            console.log("O valor de A é menor ou igual 0");
+            break;
+
+        default:
+            console.log("Valor de r é inválido");
+            break;
+    }
+}
+
+// const resultado = verificarSeTrianguloV1(0,0,0);
+
+// imprimirResultado(resultado);
+
+function verificarSeTrianguloV2(
+    a: number,
+    b: number,
+    c: number
+) : [boolean, string] {
+
+    // particionamento de grupos de erros
+    // Grupo 1 de erro: um dos lado ser menor ou igual a zero
+    // Grupo 2 de erro: um dos lados não é menor que a soma dos outros dois 
+    if ((a > 0) && (b > 0) && (c > 0)){
+        if ((a < (b+c)) && (b < (a+c)) && (c < (a+b))){
+            return [true, "Formam triângulo"];
+        }else{
+            return [ false, "Um ou mais lados não é / são menor(es) que a soma dos outros"];
+        }
+    }else{
+        return [false, "Um ou mais lados são menores ou iguais a zero"];
+    }
+}
+
+// forma 1 acessando o array direto
+let [b,s] = verificarSeTrianguloV2(10, 10, 10);
+console.log(b);
+console.log(s);
+
+// ou forma 2
+
+let vetor = verificarSeTrianguloV2(10, 10, 10);
+console.log(vetor[0]);
+console.log(vetor[1]);

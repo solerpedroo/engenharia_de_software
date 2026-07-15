@@ -1,0 +1,82 @@
+--- Locadora de veículos: ---
+
+Veículo:
+	Placa, modelo, marca, ano, valor diária
+
+Cliente:
+	Nome, CPF, telefone e CNH
+
+Aluguel:
+	Data da retirada, data da devolução, valor total, id_aluguel
+
+Cliente(1,1) - (1,n)Aluguel 
+
+Vistorias:
+	data, quilometragem, observações, id_vistoria
+
+--- Sistema de biblioteca Universitária ---
+
+Livros:
+	Título, ISBN, Autor, Editora, ID_Livro
+
+Usuário:
+	Nome, Matrícula, Tipo
+
+Empréstimo:
+	Data da retirada, data da devolução, status, ID_Empréstimo
+
+Usuário(1,n) - (1,n)Livro
+
+--- Sistema de Eventos e Participantes ---
+
+Evento:
+	nome, data, local, tema, id_evento
+
+Participante:
+	nome, e-mail, CPF
+
+Participante(1,n) - (1,n)Eventos
+
+Inscrição:
+	data da inscrição, tipo do ingresso, id_inscrição
+
+Palestrantes:
+	nome, profissão, mini-currículo
+
+Eventos(1,1) - (1,n)Palestrantes
+
+--- Sistema de Loja Virtual ---
+
+Produto:
+	Nome, preço, categoria, id_produto
+
+Cliente:
+	cpf, nome, telefone, endereço
+
+Cliente(1,n) - (1,1)Pedido
+
+Pedido:
+	itens do pedido, quantidade, valor total, id_pedido, data
+
+Produto(1,n) - (1,n)Pedido
+
+Itens_Pedido:
+	ID_Item, quantidade, valor unitário 
+
+--- Sistema de Cursos Online ---
+
+Curso:
+	Título, carga horário, área, id_curso
+
+Instrutor:
+	Nome, e-mail, especialidade, id_instrutor
+
+Aluno:
+	Nome, e-mail, CPF, id_aluno
+
+Instrutor(1,n) - (1,n)Curso
+
+Matrícula:
+	Data de inicio, status, nota final
+
+Aluno(1,n) - (1,n)Curso

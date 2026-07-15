@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             targetNamespace="http://www.chinanow.com/bpmn"
+             id="ChinaNow_Melhorado">
+
+  <!-- ==================== COLLABORATION ==================== -->
+  <collaboration id="collab-chinanow">
+
+    <participant id="pool-cliente" name="Cliente" processRef="proc-cliente"/>
+    <participant id="pool-chinanow" name="China Now" processRef="proc-chinanow"/>
+
+    <!-- Message Flows -->
+    <messageFlow id="mf-pedido"          name="Pedido"                  sourceRef="task-fazer-pedido"        targetRef="start-pedido-recebido"/>
+    <messageFlow id="mf-confirmacao"     name="Confirmação do Pedido"   sourceRef="task-confirmar-pedido"    targetRef="evt-confirmacao-recebida"/>
+    <messageFlow id="mf-reclamacao"      name="Reclamação"              sourceRef="task-reclamar"            targetRef="evt-reclamacao-recebida"/>
+    <messageFlow id="mf-resposta"        name="Resposta"                sourceRef="task-atender-reclamacao"  targetRef="task-reclamar"/>
+    <messageFlow id="mf-entrega"         name="Entregar Pedido"         sourceRef="task-entregar-pedido"     targetRef="evt-comida-chegou"/>
+    <messageFlow id="mf-pagamento"       name="Pagamento"               sourceRef="task-pagar-pedido"        targetRef="task-receber-pagamento"/>
+    <messageFlow id="mf-recibo"          name="Recibo"                  sourceRef="task-receber-pagamento"   targetRef="task-pagar-pedido"/>
+    <messageFlow id="mf-aval-request"   name="Solicitação de Avaliação" sourceRef="task-solicitar-avaliacao" targetRef="evt-avaliacao-recebida"/>
+    <messageFlow id="mf-nota-aval"      name="Nota de Avaliação"        sourceRef="task-avaliar-pedido"      targetRef="task-solicitar-avaliacao"/>
+  </collaboration>
+
+  <!-- ==================== PROCESSO: CLIENTE ==================== -->
+  <process id="proc-cliente" name="Cliente" isExecutable="false">
+
+    <startEvent id="start-fome" name="Fome Sentida">
+      <outgoing>sf-fome-to-menu</outgoing>
+    </startEvent>
+
+    <task id="task-escolher-menu" name="Escolher no Menu">
+      <incoming>sf-fome-to-menu</incoming>
+      <outgoing>sf-menu-to-pedido</outgoing>
+    </task>
+
+    <task id="task-fazer-pedido" name="Fazer Pedido">
+      <incoming>sf-menu-to-pedido</incoming>
+      <outgoing>sf-pedido-to-conf</outgoing>
+    </task>
+
+    <intermediateCatchEvent id="evt-confirmacao-recebida" name="Confirmação Recebida">
+      <incoming>sf-pedido-to-conf</incoming>
+      <outgoing>sf-conf-to-gw</outgoing>
+      <messageEventDefinition id="med-conf"/>
+    </intermediateCatchEvent>
+
+    <exclusiveGateway id="gw-pedido-chegou" name="Pedido Chegou?">
+      <incoming>sf-conf-to-gw</incoming>
+      <outgoing>sf-sim-chegou</outgoing>
+      <outgoing>sf-nao-chegou</outgoing>
+    </exclusiveGateway>
+
+    <intermediateCatchEvent id="evt-30min" name="30 Minutos">
+      <incoming>sf-nao-chegou</incoming>
+      <outgoing>sf-30min-to-reclamar</outgoing>
+      <timerEventDefinition id="ted-30min">
+        <timeDuration>PT30M</timeDuration>
+      </timerEventDefinition>
+    </intermediateCatchEvent>
+
+    <task id="task-reclamar" name="Reclamar">
+      <incoming>sf-30min-to-reclamar</incoming>
+      <outgoing>sf-reclamar-to-gw</outgoing>
+    </task>
+
+    <intermediateCatchEvent id="evt-comida-chegou" name="Comida Chegou">
+      <incoming>sf-sim-chegou</incoming>
+      <outgoing>sf-chegou-to-pagar</outgoing>
+      <messageEventDefinition id="med-entrega"/>
+    </intermediateCatchEvent>
+
+    <task id="task-pagar-pedido" name="Pagar Pedido">
+      <incoming>sf-chegou-to-pagar</incoming>
+      <outgoing>sf-pagar-to-avaliacao</outgoing>
+    </task>
+
+    <intermediateCatchEvent id="evt-avaliacao-recebida" name="Solicitação de Avaliação">
+      <incoming>sf-pagar-to-avaliacao</incoming>
+      <outgoing>sf-avaliacao-to-task</outgoing>
+      <messageEventDefinition id="med-aval"/>
+    </intermediateCatchEvent>
+
+    <task id="task-avaliar-pedido" name="Avaliar Pedido">
+      <incoming>sf-avaliacao-to-task</incoming>
+      <outgoing>sf-avaliar-to-end</outgoing>
+    </task>
+
+    <endEvent id="end-cliente" name="Pedido Atendido">
+      <incoming>sf-avaliar-to-end</incoming>
+    </endEvent>
+
+    <!-- Sequence Flows - Cliente -->
+    <sequenceFlow id="sf-fome-to-menu"       sourceRef="start-fome"              targetRef="task-escolher-menu"/>
+    <sequenceFlow id="sf-menu-to-pedido"     sourceRef="task-escolher-menu"      targetRef="task-fazer-pedido"/>
+    <sequenceFlow id="sf-pedido-to-conf"     sourceRef="task-fazer-pedido"       targetRef="evt-confirmacao-recebida"/>
+    <sequenceFlow id="sf-conf-to-gw"         sourceRef="evt-confirmacao-recebida" targetRef="gw-pedido-chegou"/>
+    <sequenceFlow id="sf-sim-chegou"         name="Sim"  sourceRef="gw-pedido-chegou"  targetRef="evt-comida-chegou"/>
+    <sequenceFlow id="sf-nao-chegou"         name="Não"  sourceRef="gw-pedido-chegou"  targetRef="evt-30min"/>
+    <sequenceFlow id="sf-30min-to-reclamar"  sourceRef="evt-30min"               targetRef="task-reclamar"/>
+    <sequenceFlow id="sf-reclamar-to-gw"     name="Aguardar" sourceRef="task-reclamar" targetRef="gw-pedido-chegou"/>
+    <sequenceFlow id="sf-chegou-to-pagar"    sourceRef="evt-comida-chegou"       targetRef="task-pagar-pedido"/>
+    <sequenceFlow id="sf-pagar-to-avaliacao" sourceRef="task-pagar-pedido"       targetRef="evt-avaliacao-recebida"/>
+    <sequenceFlow id="sf-avaliacao-to-task"  sourceRef="evt-avaliacao-recebida"  targetRef="task-avaliar-pedido"/>
+    <sequenceFlow id="sf-avaliar-to-end"     sourceRef="task-avaliar-pedido"     targetRef="end-cliente"/>
+  </process>
+
+  <!-- ==================== PROCESSO: CHINA NOW ==================== -->
+  <process id="proc-chinanow" name="China Now" isExecutable="false">
+
+    <!-- Lane Set -->
+    <laneSet id="ls-chinanow">
+      <lane id="lane-atendente" name="Atendente">
+        <flowNodeRef>start-pedido-recebido</flowNodeRef>
+        <flowNodeRef>task-registrar-pedido</flowNodeRef>
+        <flowNodeRef>task-confirmar-pedido</flowNodeRef>
+        <flowNodeRef>gw-parallel-split</flowNodeRef>
+        <flowNodeRef>evt-reclamacao-recebida</flowNodeRef>
+        <flowNodeRef>task-atender-reclamacao</flowNodeRef>
+        <flowNodeRef>gw-parallel-join</flowNodeRef>
+        <flowNodeRef>gw-pagamento</flowNodeRef>
+        <flowNodeRef>task-receber-pagamento</flowNodeRef>
+        <flowNodeRef>task-solicitar-avaliacao</flowNodeRef>
+        <flowNodeRef>end-chinanow</flowNodeRef>
+      </lane>
+      <lane id="lane-cozinha" name="Cozinha">
+        <flowNodeRef>task-verificar-estoque</flowNodeRef>
+        <flowNodeRef>gw-estoque</flowNodeRef>
+        <flowNodeRef>task-preparar-pedido</flowNodeRef>
+        <flowNodeRef>task-informar-indisponibilidade</flowNodeRef>
+        <flowNodeRef>end-cancelado</flowNodeRef>
+      </lane>
+      <lane id="lane-entregador" name="Entregador">
+        <flowNodeRef>task-entregar-pedido</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- Atendente -->
+    <startEvent id="start-pedido-recebido" name="Pedido Recebido">
+      <outgoing>sf-start-to-registrar</outgoing>
+      <messageEventDefinition id="med-pedido-start"/>
+    </startEvent>
+
+    <task id="task-registrar-pedido" name="Registrar Pedido">
+      <incoming>sf-start-to-registrar</incoming>
+      <outgoing>sf-registrar-to-estoque</outgoing>
+    </task>
+
+    <!-- Cozinha -->
+    <task id="task-verificar-estoque" name="Verificar Estoque">
+      <incoming>sf-registrar-to-estoque</incoming>
+      <outgoing>sf-estoque-to-gw</outgoing>
+    </task>
+
+    <exclusiveGateway id="gw-estoque" name="Item Disponível?">
+      <incoming>sf-estoque-to-gw</incoming>
+      <outgoing>sf-est-sim</outgoing>
+      <outgoing>sf-est-nao</outgoing>
+    </exclusiveGateway>
+
+    <task id="task-informar-indisponibilidade" name="Informar Indisponibilidade">
+      <incoming>sf-est-nao</incoming>
+      <outgoing>sf-indisp-to-end</outgoing>
+    </task>
+
+    <endEvent id="end-cancelado" name="Pedido Cancelado">
+      <incoming>sf-indisp-to-end</incoming>
+      <terminateEventDefinition id="ted-cancel"/>
+    </endEvent>
+
+    <!-- Atendente (continuação) -->
+    <task id="task-confirmar-pedido" name="Confirmar Pedido">
+      <incoming>sf-est-sim</incoming>
+      <outgoing>sf-confirmar-to-parallel</outgoing>
+    </task>
+
+    <parallelGateway id="gw-parallel-split" name="">
+      <incoming>sf-confirmar-to-parallel</incoming>
+      <outgoing>sf-parallel-to-preparar</outgoing>
+      <outgoing>sf-parallel-to-reclamacao</outgoing>
+    </parallelGateway>
+
+    <!-- Cozinha -->
+    <task id="task-preparar-pedido" name="Preparar Pedido">
+      <incoming>sf-parallel-to-preparar</incoming>
+      <outgoing>sf-preparar-to-join</outgoing>
+    </task>
+
+    <!-- Atendente -->
+    <intermediateCatchEvent id="evt-reclamacao-recebida" name="Reclamação Recebida">
+      <incoming>sf-parallel-to-reclamacao</incoming>
+      <outgoing>sf-reclamacao-to-atender</outgoing>
+      <messageEventDefinition id="med-reclamacao"/>
+    </intermediateCatchEvent>
+
+    <task id="task-atender-reclamacao" name="Atender Reclamação">
+      <incoming>sf-reclamacao-to-atender</incoming>
+      <outgoing>sf-atender-to-join</outgoing>
+    </task>
+
+    <parallelGateway id="gw-parallel-join" name="">
+      <incoming>sf-preparar-to-join</incoming>
+      <incoming>sf-atender-to-join</incoming>
+      <outgoing>sf-join-to-entregar</outgoing>
+    </parallelGateway>
+
+    <!-- Entregador -->
+    <task id="task-entregar-pedido" name="Entregar Pedido">
+      <incoming>sf-join-to-entregar</incoming>
+      <outgoing>sf-entregar-to-pag-gw</outgoing>
+    </task>
+
+    <!-- Atendente -->
+    <exclusiveGateway id="gw-pagamento" name="Forma de Pagamento?">
+      <incoming>sf-entregar-to-pag-gw</incoming>
+      <outgoing>sf-pag-to-receber</outgoing>
+    </exclusiveGateway>
+
+    <task id="task-receber-pagamento" name="Receber Pagamento">
+      <incoming>sf-pag-to-receber</incoming>
+      <outgoing>sf-receber-to-aval</outgoing>
+    </task>
+
+    <task id="task-solicitar-avaliacao" name="Solicitar Avaliação">
+      <incoming>sf-receber-to-aval</incoming>
+      <outgoing>sf-aval-to-end</outgoing>
+    </task>
+
+    <endEvent id="end-chinanow" name="Pedido Fechado">
+      <incoming>sf-aval-to-end</incoming>
+      <terminateEventDefinition id="ted-fechado"/>
+    </endEvent>
+
+    <!-- Sequence Flows - China Now -->
+    <sequenceFlow id="sf-start-to-registrar"    sourceRef="start-pedido-recebido"     targetRef="task-registrar-pedido"/>
+    <sequenceFlow id="sf-registrar-to-estoque"  sourceRef="task-registrar-pedido"     targetRef="task-verificar-estoque"/>
+    <sequenceFlow id="sf-estoque-to-gw"         sourceRef="task-verificar-estoque"    targetRef="gw-estoque"/>
+    <sequenceFlow id="sf-est-sim"               name="Sim"  sourceRef="gw-estoque"    targetRef="task-confirmar-pedido"/>
+    <sequenceFlow id="sf-est-nao"               name="Não"  sourceRef="gw-estoque"    targetRef="task-informar-indisponibilidade"/>
+    <sequenceFlow id="sf-indisp-to-end"         sourceRef="task-informar-indisponibilidade" targetRef="end-cancelado"/>
+    <sequenceFlow id="sf-confirmar-to-parallel" sourceRef="task-confirmar-pedido"     targetRef="gw-parallel-split"/>
+    <sequenceFlow id="sf-parallel-to-preparar"  sourceRef="gw-parallel-split"         targetRef="task-preparar-pedido"/>
+    <sequenceFlow id="sf-parallel-to-reclamacao" sourceRef="gw-parallel-split"        targetRef="evt-reclamacao-recebida"/>
+    <sequenceFlow id="sf-reclamacao-to-atender" sourceRef="evt-reclamacao-recebida"   targetRef="task-atender-reclamacao"/>
+    <sequenceFlow id="sf-atender-to-join"       name="Reclamação Resolvida" sourceRef="task-atender-reclamacao" targetRef="gw-parallel-join"/>
+    <sequenceFlow id="sf-preparar-to-join"      sourceRef="task-preparar-pedido"      targetRef="gw-parallel-join"/>
+    <sequenceFlow id="sf-join-to-entregar"      sourceRef="gw-parallel-join"          targetRef="task-entregar-pedido"/>
+    <sequenceFlow id="sf-entregar-to-pag-gw"   sourceRef="task-entregar-pedido"      targetRef="gw-pagamento"/>
+    <sequenceFlow id="sf-pag-to-receber"        sourceRef="gw-pagamento"              targetRef="task-receber-pagamento"/>
+    <sequenceFlow id="sf-receber-to-aval"       sourceRef="task-receber-pagamento"    targetRef="task-solicitar-avaliacao"/>
+    <sequenceFlow id="sf-aval-to-end"           sourceRef="task-solicitar-avaliacao"  targetRef="end-chinanow"/>
+  </process>
+
+  <!-- ==================== BPMN DIAGRAM (DI) ==================== -->
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="collab-chinanow">
+
+      <!-- POOL: Cliente -->
+      <bpmndi:BPMNShape id="shape-pool-cliente" bpmnElement="pool-cliente" isHorizontal="true">
+        <dc:Bounds x="60" y="20" width="1900" height="240"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Cliente shapes -->
+      <bpmndi:BPMNShape id="shape-start-fome" bpmnElement="start-fome">
+        <dc:Bounds x="130" y="105" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="100" y="143" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-escolher-menu" bpmnElement="task-escolher-menu">
+        <dc:Bounds x="210" y="90" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-fazer-pedido" bpmnElement="task-fazer-pedido">
+        <dc:Bounds x="360" y="90" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-evt-confirmacao-recebida" bpmnElement="evt-confirmacao-recebida">
+        <dc:Bounds x="505" y="105" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="490" y="143" width="100" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-gw-pedido-chegou" bpmnElement="gw-pedido-chegou" isMarkerVisible="true">
+        <dc:Bounds x="660" y="100" width="40" height="40"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="660" y="78" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-evt-30min" bpmnElement="evt-30min">
+        <dc:Bounds x="665" y="185" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="610" y="220" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-reclamar" bpmnElement="task-reclamar">
+        <dc:Bounds x="760" y="160" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-evt-comida-chegou" bpmnElement="evt-comida-chegou">
+        <dc:Bounds x="1020" y="105" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="990" y="143" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-pagar-pedido" bpmnElement="task-pagar-pedido">
+        <dc:Bounds x="1200" y="90" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-evt-avaliacao-recebida" bpmnElement="evt-avaliacao-recebida">
+        <dc:Bounds x="1705" y="105" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1690" y="143" width="110" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-avaliar-pedido" bpmnElement="task-avaliar-pedido">
+        <dc:Bounds x="1750" y="90" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-end-cliente" bpmnElement="end-cliente">
+        <dc:Bounds x="1880" y="105" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1870" y="143" width="96" height="53"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- Cliente edges -->
+      <bpmndi:BPMNEdge id="edge-sf-fome-to-menu"       bpmnElement="sf-fome-to-menu">
+        <di:waypoint x="160" y="120"/><di:waypoint x="210" y="120"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-menu-to-pedido"     bpmnElement="sf-menu-to-pedido">
+        <di:waypoint x="300" y="120"/><di:waypoint x="360" y="120"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-pedido-to-conf"     bpmnElement="sf-pedido-to-conf">
+        <di:waypoint x="450" y="120"/><di:waypoint x="505" y="120"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-conf-to-gw"         bpmnElement="sf-conf-to-gw">
+        <di:waypoint x="535" y="120"/><di:waypoint x="660" y="120"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-sim-chegou"         bpmnElement="sf-sim-chegou">
+        <di:waypoint x="700" y="120"/><di:waypoint x="1020" y="120"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="831" y="93" width="30" height="23"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-nao-chegou"         bpmnElement="sf-nao-chegou">
+        <di:waypoint x="680" y="140"/><di:waypoint x="680" y="185"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="613" y="160" width="58" height="23"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-30min-to-reclamar"  bpmnElement="sf-30min-to-reclamar">
+        <di:waypoint x="695" y="200"/><di:waypoint x="695" y="215"/><di:waypoint x="760" y="215"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-reclamar-to-gw"     bpmnElement="sf-reclamar-to-gw">
+        <di:waypoint x="805" y="160"/><di:waypoint x="805" y="148"/><di:waypoint x="680" y="148"/><di:waypoint x="680" y="140"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="680" y="158" width="60" height="23"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-chegou-to-pagar"    bpmnElement="sf-chegou-to-pagar">
+        <di:waypoint x="1050" y="120"/><di:waypoint x="1200" y="120"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-pagar-to-avaliacao" bpmnElement="sf-pagar-to-avaliacao">
+        <di:waypoint x="1290" y="120"/><di:waypoint x="1705" y="120"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-avaliacao-to-task"  bpmnElement="sf-avaliacao-to-task">
+        <di:waypoint x="1735" y="120"/><di:waypoint x="1750" y="120"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-avaliar-to-end"     bpmnElement="sf-avaliar-to-end">
+        <di:waypoint x="1840" y="120"/><di:waypoint x="1880" y="120"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- POOL: China Now -->
+      <bpmndi:BPMNShape id="shape-pool-chinanow" bpmnElement="pool-chinanow" isHorizontal="true">
+        <dc:Bounds x="60" y="280" width="1900" height="750"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Atendente -->
+      <bpmndi:BPMNShape id="shape-lane-atendente" bpmnElement="lane-atendente" isHorizontal="true">
+        <dc:Bounds x="90" y="280" width="1870" height="350"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Cozinha -->
+      <bpmndi:BPMNShape id="shape-lane-cozinha" bpmnElement="lane-cozinha" isHorizontal="true">
+        <dc:Bounds x="90" y="630" width="1870" height="200"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane: Entregador -->
+      <bpmndi:BPMNShape id="shape-lane-entregador" bpmnElement="lane-entregador" isHorizontal="true">
+        <dc:Bounds x="90" y="830" width="1870" height="200"/>
+      </bpmndi:BPMNShape>
+
+      <!-- China Now shapes - Atendente -->
+      <bpmndi:BPMNShape id="shape-start-pedido-recebido" bpmnElement="start-pedido-recebido">
+        <dc:Bounds x="130" y="385" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="119" y="422" width="90" height="36"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-registrar-pedido" bpmnElement="task-registrar-pedido">
+        <dc:Bounds x="215" y="370" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-confirmar-pedido" bpmnElement="task-confirmar-pedido">
+        <dc:Bounds x="265" y="370" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-gw-parallel-split" bpmnElement="gw-parallel-split">
+        <dc:Bounds x="510" y="380" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-evt-reclamacao-recebida" bpmnElement="evt-reclamacao-recebida">
+        <dc:Bounds x="630" y="385" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="600" y="418" width="110" height="36"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-atender-reclamacao" bpmnElement="task-atender-reclamacao">
+        <dc:Bounds x="790" y="370" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-gw-parallel-join" bpmnElement="gw-parallel-join">
+        <dc:Bounds x="910" y="655" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-gw-pagamento" bpmnElement="gw-pagamento" isMarkerVisible="true">
+        <dc:Bounds x="1100" y="390" width="40" height="40"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1100" y="383" width="110" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-receber-pagamento" bpmnElement="task-receber-pagamento">
+        <dc:Bounds x="1250" y="370" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-solicitar-avaliacao" bpmnElement="task-solicitar-avaliacao">
+        <dc:Bounds x="1600" y="370" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-end-chinanow" bpmnElement="end-chinanow">
+        <dc:Bounds x="1850" y="385" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1820" y="418" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- China Now shapes - Cozinha -->
+      <bpmndi:BPMNShape id="shape-task-verificar-estoque" bpmnElement="task-verificar-estoque">
+        <dc:Bounds x="215" y="640" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-gw-estoque" bpmnElement="gw-estoque" isMarkerVisible="true">
+        <dc:Bounds x="345" y="650" width="40" height="40"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="345" y="643" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-preparar-pedido" bpmnElement="task-preparar-pedido">
+        <dc:Bounds x="485" y="660" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-task-informar-indisponibilidade" bpmnElement="task-informar-indisponibilidade">
+        <dc:Bounds x="485" y="760" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="shape-end-cancelado" bpmnElement="end-cancelado">
+        <dc:Bounds x="620" y="775" width="30" height="30"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="610" y="793" width="100" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- China Now shapes - Entregador -->
+      <bpmndi:BPMNShape id="shape-task-entregar-pedido" bpmnElement="task-entregar-pedido">
+        <dc:Bounds x="240" y="890" width="90" height="60"/>
+      </bpmndi:BPMNShape>
+
+      <!-- China Now edges -->
+      <bpmndi:BPMNEdge id="edge-sf-start-to-registrar"    bpmnElement="sf-start-to-registrar">
+        <di:waypoint x="160" y="400"/><di:waypoint x="215" y="400"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-registrar-to-estoque"  bpmnElement="sf-registrar-to-estoque">
+        <di:waypoint x="260" y="430"/><di:waypoint x="260" y="670"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-estoque-to-gw"         bpmnElement="sf-estoque-to-gw">
+        <di:waypoint x="305" y="670"/><di:waypoint x="345" y="670"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-est-sim"               bpmnElement="sf-est-sim">
+        <di:waypoint x="365" y="650"/><di:waypoint x="310" y="650"/><di:waypoint x="310" y="400"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="375" y="540" width="30" height="23"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-est-nao"               bpmnElement="sf-est-nao">
+        <di:waypoint x="385" y="690"/><di:waypoint x="385" y="790"/><di:waypoint x="485" y="790"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="415" y="728" width="30" height="23"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-indisp-to-end"         bpmnElement="sf-indisp-to-end">
+        <di:waypoint x="575" y="790"/><di:waypoint x="620" y="790"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-confirmar-to-parallel" bpmnElement="sf-confirmar-to-parallel">
+        <di:waypoint x="355" y="400"/><di:waypoint x="510" y="400"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-parallel-to-preparar"  bpmnElement="sf-parallel-to-preparar">
+        <di:waypoint x="530" y="420"/><di:waypoint x="530" y="660"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-parallel-to-reclamacao" bpmnElement="sf-parallel-to-reclamacao">
+        <di:waypoint x="550" y="400"/><di:waypoint x="630" y="400"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-reclamacao-to-atender" bpmnElement="sf-reclamacao-to-atender">
+        <di:waypoint x="660" y="400"/><di:waypoint x="790" y="400"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-atender-to-join"       bpmnElement="sf-atender-to-join">
+        <di:waypoint x="835" y="430"/><di:waypoint x="835" y="675"/><di:waypoint x="910" y="675"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="850" y="550" width="120" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-preparar-to-join"      bpmnElement="sf-preparar-to-join">
+        <di:waypoint x="575" y="690"/><di:waypoint x="910" y="690"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-join-to-entregar"      bpmnElement="sf-join-to-entregar">
+        <di:waypoint x="930" y="695"/><di:waypoint x="285" y="695"/><di:waypoint x="285" y="890"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-entregar-to-pag-gw"   bpmnElement="sf-entregar-to-pag-gw">
+        <di:waypoint x="330" y="920"/><di:waypoint x="1120" y="920"/><di:waypoint x="1120" y="430"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-pag-to-receber"        bpmnElement="sf-pag-to-receber">
+        <di:waypoint x="1140" y="410"/><di:waypoint x="1250" y="410"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-receber-to-aval"       bpmnElement="sf-receber-to-aval">
+        <di:waypoint x="1340" y="400"/><di:waypoint x="1600" y="400"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-sf-aval-to-end"           bpmnElement="sf-aval-to-end">
+        <di:waypoint x="1690" y="400"/><di:waypoint x="1850" y="400"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- Message Flow Edges -->
+      <bpmndi:BPMNEdge id="edge-mf-pedido" bpmnElement="mf-pedido">
+        <di:waypoint x="430" y="150"/><di:waypoint x="430" y="268"/><di:waypoint x="145" y="268"/><di:waypoint x="145" y="385"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="310" y="263" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-confirmacao" bpmnElement="mf-confirmacao">
+        <di:waypoint x="310" y="385"/><di:waypoint x="310" y="268"/><di:waypoint x="520" y="268"/><di:waypoint x="520" y="165"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="370" y="263" width="110" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-reclamacao" bpmnElement="mf-reclamacao">
+        <di:waypoint x="684" y="215"/><di:waypoint x="684" y="315"/><di:waypoint x="420" y="315"/><di:waypoint x="420" y="385"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="580" y="320" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-resposta" bpmnElement="mf-resposta">
+        <di:waypoint x="650" y="400"/><di:waypoint x="723" y="400"/><di:waypoint x="723" y="215"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="680" y="360" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-entrega" bpmnElement="mf-entrega">
+        <di:waypoint x="315" y="890"/><di:waypoint x="315" y="861"/><di:waypoint x="900" y="861"/><di:waypoint x="900" y="135"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="558" y="846" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-pagamento" bpmnElement="mf-pagamento">
+        <di:waypoint x="1420" y="150"/><di:waypoint x="1420" y="907"/><di:waypoint x="1200" y="907"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1300" y="500" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-recibo" bpmnElement="mf-recibo">
+        <di:waypoint x="1182" y="950"/><di:waypoint x="1182" y="963"/><di:waypoint x="1458" y="963"/><di:waypoint x="1458" y="150"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1319" y="956" width="90" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-aval-request" bpmnElement="mf-aval-request">
+        <di:waypoint x="1645" y="385"/><di:waypoint x="1645" y="268"/><di:waypoint x="1720" y="268"/><di:waypoint x="1720" y="165"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1680" y="310" width="110" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-mf-nota-aval" bpmnElement="mf-nota-aval">
+        <di:waypoint x="1800" y="150"/><di:waypoint x="1800" y="270"/><di:waypoint x="1680" y="270"/><di:waypoint x="1680" y="400"/>
+        <bpmndi:BPMNLabel><dc:Bounds x="1730" y="260" width="110" height="30"/></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

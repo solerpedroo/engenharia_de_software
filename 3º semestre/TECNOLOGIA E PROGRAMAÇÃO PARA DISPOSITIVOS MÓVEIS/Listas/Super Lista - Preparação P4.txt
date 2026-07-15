@@ -1,0 +1,1605 @@
+// Super Lista
+// Parte 1 - exercícios de lógica
+
+// Exercício 1: Crie um programa em Dart que declare três variáveis: o nome de um aluno, sua idade e sua nota final. Em seguida, exiba uma mensagem formatada apresentando esses dados.
+
+class infosAluno{
+  String nome;
+  int idade;
+  double notaFinal;
+  
+  infosAluno(this.nome, this.idade, this.notaFinal);
+}
+
+void main(){
+  infosAluno a = infosAluno('Pedro Soler', 19, 10);
+  
+  print('\n=== Informações do Aluno ===\n');
+  print('Nome ${a.nome}');
+  print('Idade: ${a.idade}');
+  print('Nota Final: ${a.notaFinal}');
+}
+
+// Exercício 2: Escreva um programa que receba duas notas de um aluno, calcule a média aritmética e exiba se o aluno foi aprovado, em recuperação ou reprovado. Considere aprovado quem tiver média maior ou igual a 6, recuperação entre 4 e 5.9, e reprovado abaixo de 4.
+
+class infosAluno{
+  String nome;
+  int idade;
+  double nota1;
+  double nota2;
+  
+  infosAluno(this.nome, this.idade, this.nota1, this.nota2);
+}
+
+void media(infosAluno a){
+  if ((a.nota1 + a.nota2) / 2 >= 6) print('APROVADO');
+  else if ((a.nota1 + a.nota1) / 2 >= 4 && (a.nota1 + a.nota1) / 2 <= 5.9) print('RECUPERAÇÃO');
+  else print('REPROVADO');
+}
+
+void main(){
+  infosAluno a = infosAluno ('Pedro Soler', 19, 5, 5);
+  
+  media(a);
+}
+
+// Exercício 3: Crie uma função chamada ehPar que receba um número inteiro e retorne true caso ele seja par ou false caso seja ímpar. Teste a função com pelo menos cinco valores diferentes.
+
+bool ehPar (int num){
+  if (num % 2 == 0) return true;
+  else return false;
+}
+
+void main(){
+  int n1 = 1;
+  int n2 = 2;
+  int n3 = 3;
+  int n4 = 4;
+  int n5 = 5;
+  
+  print(ehPar(n1));
+  print(ehPar(n2));
+  print(ehPar(n3));
+  print(ehPar(n4));
+  print(ehPar(n5));
+}
+
+// Exercício 4: Escreva uma função chamada maiorNumero que receba três números inteiros e retorne o maior deles.
+
+int maiorNumero(int n1, int n2, int n3){
+  if (n1 > n2 && n1 > n3) return n1;
+  else if (n2 > n1 && n2 > n3) return n2;
+  else return n3;
+}
+
+void main(){
+  int n1 = 5;
+  int n2 = 4;
+  int n3 = 3;
+  
+  print(maiorNumero(n1, n2, n3));
+}
+
+// Exercício 5: Crie um programa que percorra uma lista de números inteiros e exiba apenas os números positivos.
+
+/*void main(){
+  List<int> numeros = [-10, 5, 0, 23, -7, 8, -15, 42, -3, 17];
+  
+  for (var i = 0; i < numeros.length; i++){
+    if (numeros[i] > 0) print(numeros[i]);
+  }
+}*/
+
+// Exercício 7: Crie uma função chamada calcularMedia que receba uma lista de números decimais e retorne a média dos valores. Caso a lista esteja vazia, a função deve retornar 0.
+
+double calcularMedia (List<double> numeros){
+  double soma = 0;
+  
+  for (var i = 0; i < numeros.length; i++){
+    soma += numeros[i];
+  }
+  
+  double media = 0;
+  return media = soma / numeros.length;
+}
+
+void main (){
+  List<double> numerosDecimais = [3.5, 7.2, 12.8, 25.0, 1.1, 9.9, 18.4, 30.6, 4.3, 16.7];
+  
+  print(calcularMedia(numerosDecimais));
+}
+
+// Exercício 8: Escreva um programa que receba uma lista de nomes e exiba somente os nomes que tenham mais de cinco letras.
+
+void imprimirNomes (List<String> nomes){
+  for (var i = 0; i < nomes.length; i++){
+    if (nomes[i].length > 5) print(nomes[i]);
+  }
+}
+
+void main(){
+  List<String> nomes = [
+  'Pedro',
+  'Ana',
+  'Lucas',
+  'Mariana',
+  'João',
+  'Beatriz',
+  'Carlos',
+  'Juliana',
+  'Rafael',
+  'Fernanda'
+];
+  
+  imprimirNomes(nomes);
+}
+
+// Exercício 9: Crie um mapa (Map) que represente um aluno, contendo nome, matrícula, curso e nota final. Depois, exiba cada informação em uma linha.
+
+void main(){
+  Map <String, dynamic> aluno = {
+    'nome': 'Pedro',
+    'matricula': 25005592,
+    'curso': 'Engenharia de Software',
+    'notaFinal': 10
+  };
+  
+  print('Nome: ${aluno['nome']}');
+  print('Matricula: ${aluno['matricula']}');
+  print('Curso: ${aluno['curso']}');
+  print('Nota Final: ${aluno['notaFinal']}');
+}
+
+// Exercício 10: Crie uma função chamada contarAprovados que receba uma lista de mapas representando alunos. Cada aluno deve ter nome e nota. A função deve retornar quantos alunos possuem nota maior ou igual a 6.
+
+int contarAprovados(Map<String, double> alunos){
+  int cont = 0;
+  for (var aluno in alunos.values){
+    if(aluno >= 6) cont ++;
+  }
+  return cont;
+}
+
+void main(){
+  Map<String, double> alunos = {
+    'Pedro': 8.5,
+    'Ana': 6.0,
+    'Lucas': 5.2,
+    'Mariana': 9.0
+  };
+  
+  print(contarAprovados(alunos));
+}
+
+// Exercício 11: Escreva um programa que receba uma lista de preços e aplique 10% de desconto em todos os valores. Ao final, exiba a nova lista de preços.
+
+void main() {
+  List<double> numeros = [12, 5, 23, 8, 19, 2, 30, 17, 14, 9];
+
+  for (var i = 0; i<numeros.length; i++){
+    numeros[i] = numeros[i] - (numeros[i] * 0.10);
+  }
+  
+  for (var i =0; i<numeros.length; i++){
+    print(numeros[i]);
+  }
+}
+
+// Exercício 12: Crie uma função chamada buscarNome que receba uma lista de nomes e um nome buscado. A função deve retornar true caso o nome exista na lista e false caso contrário.
+
+bool buscarNome(List<String> nomes, String nome){
+  
+  for (var i =0; i< nomes.length; i++){
+    if (nomes[i] == nome) return true;
+  }
+  
+  return false;
+}
+
+void main(){
+  
+  List<String> nomes = [
+  'Pedro',
+  'Ana',
+  'Lucas',
+  'Mariana',
+  'João',
+  'Beatriz',
+  'Carlos',
+  'Juliana',
+  'Rafael',
+  'Fernanda'
+  ];
+  
+  String nomeBuscar = 'Pedro';
+  
+  print(buscarNome(nomes, nomeBuscar));
+}
+
+// Exercício 13: Crie uma classe chamada Aluno com os atributos nome, matricula e notaFinal. Depois, crie dois objetos dessa classe e exiba seus dados.
+
+class aluno{
+  String? nome;
+  String? matricula;
+  double? notaFinal;
+  
+  aluno(this.nome, this.matricula, this.notaFinal);
+}
+
+void main(){
+  aluno a1 = aluno('Pedro', '25005592', 10);
+  aluno a2 = aluno('João', '25005593', 5);
+}
+
+// Exercício 14: Na classe Aluno, crie um método chamado estaAprovado que retorne true caso a notaFinal seja maior ou igual a 6, e false caso contrário.
+
+class aluno{
+  String? nome;
+  String? matricula;
+  double? notaFinal;
+  
+  bool estaAprovado(){
+    if (notaFinal >= 6) return true;
+    else return false;
+  }
+  
+  aluno(this.nome, this.matricula, this.notaFinal);
+}
+
+void main(){
+  aluno a1 = aluno('Pedro', '25005592', 10);
+  aluno a2 = aluno('João', '25005593', 5);
+}
+
+// Exercício 15: Crie uma classe chamada Produto com os atributos nome, preco e quantidadeEmEstoque. Adicione um método chamado valorTotalEmEstoque, que retorne o valor total daquele produto no estoque.
+
+class Produto {
+  String nome;
+  double preco;
+  int quantidadeEmEstoque;
+
+  Produto(this.nome, this.preco, this.quantidadeEmEstoque);
+
+  double valorTotalEmEstoque() {
+    return preco * quantidadeEmEstoque;
+  }
+}
+
+// Exercício 16: Crie uma classe chamada ContaBancaria com os atributos titular e saldo. Adicione os métodos depositar, sacar e exibirSaldo. O método sacar não deve permitir saque maior que o saldo disponível.
+
+class ContaBancaria{
+  
+  String? titular;
+  double saldo;
+  
+  ContaBancaria(this.titular, this.saldo);
+  
+  double depositar(double valor){
+    saldo += valor;
+    return saldo + valor;
+  }
+  
+  double sacar(double valor){
+    if (valor > saldo) print('valor não pode ser maior que saldo');
+    else saldo -= valor;
+    return saldo;
+  }  
+  
+  double mostrarSaldo(){
+    return saldo;
+  }
+}
+
+// Exercício 17: Crie uma classe chamada Tarefa com os atributos titulo, descricao e concluida. Adicione um método chamado marcarComoConcluida, que altere o valor de concluida para true.
+
+class Tarefa{
+  String? titulo;
+  String? descricao;
+  bool concluida = false;
+  
+  Tarefa(this.titulo, this.descricao, this.concluida);
+  
+  bool marcarComoConcluida(){
+    return concluida = false;
+  }
+}
+
+// Exercício 18: Crie uma lista de objetos da classe Tarefa e escreva uma função que exiba apenas as tarefas ainda não concluídas.
+
+class Tarefa {
+  String? titulo;
+  String? descricao;
+  bool concluida = false;
+
+  Tarefa(this.titulo, this.descricao, this.concluida);
+
+  bool marcarComoConcluida() {
+    return concluida = false;
+  }
+}
+
+void exibirPendentes(List<Tarefa> tarefas) {
+  for (var tarefa in tarefas) {
+    if (!tarefa.concluida) {
+      print('Título: ${tarefa.titulo}');
+      print('Descrição: ${tarefa.descricao}');
+      print('---');
+    }
+  }
+}
+
+void main() {
+  List<Tarefa> tarefas = [
+    Tarefa('Estudar Dart', 'Revisar listas e mapas', false),
+    Tarefa('Treinar lógica', 'Fazer exercícios', false),
+    Tarefa('Projeto Flutter', 'Criar tela inicial', true),
+    Tarefa('Academia', 'Treino de perna', false),
+  ];
+
+  exibirPendentes(tarefas);
+}
+
+// Exercício 19: Crie uma classe chamada Pedido com os atributos numero, cliente e valorTotal. Depois, crie uma função que receba uma lista de pedidos e retorne o pedido de maior valor.
+
+class Pedido {
+  int numero;
+  String cliente;
+  double valorTotal;
+
+  Pedido(this.numero, this.cliente, this.valorTotal);
+}
+
+Pedido maiorPedido(List<Pedido> pedidos) {
+  Pedido maior = pedidos[0];
+
+  for (var pedido in pedidos) {
+    if (pedido.valorTotal > maior.valorTotal) {
+      maior = pedido;
+    }
+  }
+
+  return maior;
+}
+
+void main() {
+  List<Pedido> pedidos = [
+    Pedido(1, 'Pedro', 150.0),
+    Pedido(2, 'Ana', 300.0),
+    Pedido(3, 'Lucas', 200.0),
+    Pedido(4, 'Mariana', 450.0),
+  ];
+
+  Pedido resultado = maiorPedido(pedidos);
+
+  print('Maior pedido:');
+  print('Número: ${resultado.numero}');
+  print('Cliente: ${resultado.cliente}');
+  print('Valor: ${resultado.valorTotal}');
+}
+
+// Exercício 20: Crie um pequeno sistema em Dart para gerenciar uma lista de alunos. O sistema deve permitir cadastrar alunos, listar todos os alunos e listar apenas os alunos aprovados. Use classe, lista, função e método no mesmo exercício.
+
+class Aluno {
+  String nome;
+  double nota;
+
+  Aluno(this.nome, this.nota);
+
+  bool estaAprovado() {
+    return nota >= 6;
+  }
+
+  void exibir() {
+    print('Nome: $nome | Nota: $nota');
+  }
+}
+
+void cadastrarAluno(List<Aluno> alunos, String nome, double nota) {
+  alunos.add(Aluno(nome, nota));
+}
+
+void listarAlunos(List<Aluno> alunos) {
+  print('\n=== Lista de Alunos ===');
+  for (var aluno in alunos) {
+    aluno.exibir();
+  }
+}
+
+void listarAprovados(List<Aluno> alunos) {
+  print('\n=== Alunos Aprovados ===');
+  for (var aluno in alunos) {
+    if (aluno.estaAprovado()) {
+      aluno.exibir();
+    }
+  }
+}
+
+void main() {
+  List<Aluno> alunos = [];
+
+  cadastrarAluno(alunos, 'Pedro', 8.5);
+  cadastrarAluno(alunos, 'Ana', 5.0);
+  cadastrarAluno(alunos, 'Lucas', 7.2);
+  cadastrarAluno(alunos, 'Mariana', 9.0);
+
+  listarAlunos(alunos);
+  listarAprovados(alunos);
+}
+
+// === PARTE 2 = PEQUENOS DESAFIOS EM DART === 
+
+// Exercício 1: Crie um programa que receba uma palavra e informe se ela é um palíndromo. Uma palavra é palíndromo quando pode ser lida da mesma forma da esquerda para a direita e da direita para a esquerda.
+
+bool ehPalindromo(String palavra) {
+  int inicio = 0;
+  int fim = palavra.length - 1;
+
+  while (inicio < fim) {
+    if (palavra[inicio] != palavra[fim]) {
+      return false;
+    }
+    inicio++;
+    fim--;
+  }
+
+  return true;
+}
+
+void main() {
+  String palavra = 'arara';
+
+  if (ehPalindromo(palavra)) {
+    print('É um palíndromo');
+  } else {
+    print('Não é um palíndromo');
+  }
+}
+
+// Exercício 2: Escreva uma função que receba uma frase e retorne a quantidade de vogais existentes nela.
+
+int contarVogais (String frase){
+  int cont = 0;
+  frase = frase.toLowerCase();
+  for (var i = 0; i<frase.length; i++){
+   if (frase[i] == 'a' || frase[i] == 'e' || frase[i] == 'i' || frase[i] == 'o' || frase[i] == 'u') cont ++;
+  }
+  return cont;
+}
+
+void main(){
+  String frase = 'Pedro gosta de jogar';
+  print(contarVogais(frase));
+}
+
+// Exercício 3: Crie uma função que receba uma lista de números inteiros e retorne uma nova lista contendo apenas os números pares.
+
+List<int> listaPares(List<int> numeros){
+  List<int> pares = [];
+  for (var i = 0; i<numeros.length; i++){
+    if(numeros[i] % 2 == 0){
+      pares.add(numeros[i]);
+    }
+  }
+  return pares;
+}
+
+void main(){
+  List<int> numeros = [2, 8, 13, 21, 34, 55, 89, 144, 233, 377];
+  
+  print(listaPares(numeros));
+}
+
+// Exercício 4: Crie uma função que receba uma lista de números inteiros e retorne o segundo maior número da lista.
+
+int segundoMaior(List<int> numeros) {
+  int maior = numeros[0];
+  int segmaior = numeros[0];
+
+  for (var i = 1; i < numeros.length; i++) {
+    if (numeros[i] > maior) {
+      segmaior = maior;
+      maior = numeros[i];
+    } else if (numeros[i] > segmaior && numeros[i] != maior) {
+      segmaior = numeros[i];
+    }
+  }
+
+  return segmaior;
+}
+
+void main(){
+  List<int> numeros = [2, 8, 13, 21, 34, 55, 89, 144, 233, 377];
+  print(segundoMaior(numeros));
+}
+
+// Exercício 5: Escreva um programa que receba uma lista de nomes e retorne uma nova lista ordenada em ordem alfabética.
+
+List<String> ordenarNomes(List<String> nomes) {
+  List<String> copia = [];
+
+  for (var nome in nomes) {
+    copia.add(nome);
+  }
+
+  for (int i = 0; i < copia.length - 1; i++) {
+    for (int j = 0; j < copia.length - 1 - i; j++) {
+      if (maiorQue(copia[j], copia[j + 1])) {
+        String temp = copia[j];
+        copia[j] = copia[j + 1];
+        copia[j + 1] = temp;
+      }
+    }
+  }
+
+  return copia;
+}
+
+bool maiorQue(String a, String b) {
+  int tamanho = a.length < b.length ? a.length : b.length;
+
+  for (int i = 0; i < tamanho; i++) {
+    int ca = a.codeUnitAt(i);
+    int cb = b.codeUnitAt(i);
+
+    if (ca > cb) return true;
+    if (ca < cb) return false;
+  }
+
+  return a.length > b.length;
+}
+
+void main() {
+  List<String> nomes = ['Pedro', 'Ana', 'Lucas', 'Mariana', 'João'];
+
+  print(ordenarNomes(nomes));
+}
+
+// Exercício 6: Crie uma função que receba uma lista de palavras e retorne a maior palavra encontrada.
+
+String maiorPalavra(List<String> palavras){
+  String maior = palavras[0];
+  for (var i = 0; i<palavras.length; i++){
+    if(palavras[i].length > maior.length){
+      maior = palavras[i];
+    }
+  }
+  return maior;
+}
+
+void main(){
+  List<String> palavras = [
+  'banana',
+  'abacaxi',
+  'laranja',
+  'uva',
+  'morango',
+  'kiwi',
+  'manga',
+  'pera',
+  'melancia',
+  'cereja'
+  ];
+  
+  print(maiorPalavra(palavras));
+}
+
+// Exercício 7: Escreva um programa que conte quantas vezes cada palavra aparece em uma lista de palavras. Use um Map<String, int> para armazenar o resultado.
+
+Map<String, int> contarPalavras(List<String> palavras) {
+  Map<String, int> contagem = {};
+
+  for (var palavra in palavras) {
+    if (contagem.containsKey(palavra)) {
+      contagem[palavra] = contagem[palavra]! + 1;
+    } else {
+      contagem[palavra] = 1;
+    }
+  }
+
+  return contagem;
+}
+
+void main() {
+  List<String> palavras = [
+    'banana',
+    'maçã',
+    'banana',
+    'laranja',
+    'maçã',
+    'banana'
+  ];
+
+  Map<String, int> resultado = contarPalavras(palavras);
+
+  print(resultado);
+}
+
+// Exercício 8: Crie uma função que receba uma lista de números e retorne true caso todos os números sejam positivos.
+
+bool todosPositivos(List<int> numeros){
+  int cont = 0;
+  for (var i =0; i<numeros.length; i++){
+    if(numeros[i] < 0) cont ++;
+  }
+  if (cont >= 1 ) return false;
+  else return true;
+}
+
+void main(){
+  List<int> numeros = [-10, 5, 0, 23, -7, 8, -15, 42, -3, 17];
+  print(todosPositivos(numeros));
+}
+
+// Exercício 9: Crie uma função que receba duas listas de números (mesma quantidade) e retorne uma lista que represente a diferença entre os números. Se as listas passadas não tiverem a mesma quantidade de números, lançar uma exceção ArgumentException.
+
+List<int> diferencaListas(List<int> a, List<int> b) {
+  if (a.length != b.length) {
+    throw ArgumentException('As listas devem ter o mesmo tamanho');
+  }
+
+  List<int> resultado = [];
+
+  for (int i = 0; i < a.length; i++) {
+    resultado.add(a[i] - b[i]);
+  }
+
+  return resultado;
+}
+
+void main() {
+  List<int> lista1 = [10, 20, 30];
+  List<int> lista2 = [1, 2, 3];
+
+  try {
+    List<int> resultado = diferencaListas(lista1, lista2);
+    print(resultado);
+  } catch (e) {
+    print(e);
+  }
+}
+
+// Exercício 10: Escreva um programa que simule um carrinho de compras. Cada produto deve ter nome e preço. Ao final, exiba o valor total da compra.
+
+class Produto{
+  String nome;
+  double preco;
+  
+  Produto(this.nome, this.preco);
+}
+
+double total(List<Produto> carrinho){
+  double total_carrinho = 0;
+  
+  for (var produtos in carrinho){
+    total_carrinho += produtos.preco;
+  }
+  
+  return total_carrinho;
+}
+
+void main(){
+  List<Produto> carrinho = [
+  Produto('Mouse', 50.0),
+  Produto('Teclado', 120.0),
+  Produto('Monitor', 900.0),
+  Produto('Headset', 200.0)
+  ];
+
+  double total_preco = total(carrinho);
+
+  print('Total da compra: R\$ $total_preco');
+}
+
+// Exercício 11: Crie uma função que receba uma lista de produtos representados por mapas e retorne apenas os produtos com preço maior que R$ 100,00.
+
+List<Map<String, dynamic>> filtrarProdutos(List<Map<String, dynamic>> produtos) {
+  List<Map<String, dynamic>> resultado = [];
+
+  for (var produto in produtos) {
+    if (produto['preco'] > 100) {
+      resultado.add(produto);
+    }
+  }
+
+  return resultado;
+}
+
+void main() {
+  List<Map<String, dynamic>> produtos = [
+    {'nome': 'Mouse', 'preco': 50.0},
+    {'nome': 'Teclado', 'preco': 120.0},
+    {'nome': 'Monitor', 'preco': 900.0},
+    {'nome': 'Cabo', 'preco': 20.0}
+  ];
+
+  var filtrados = filtrarProdutos(produtos);
+
+  print(filtrados);
+}
+
+// Exercício 12: Escreva um programa que receba uma lista de notas e remova todas as notas inválidas. Considere inválidas as notas menores que 0 ou maiores que 10.
+
+List<int> notasInvalidas(List<int> lista){
+  List<int> corrigida = [];
+  for (var i = 0; i<lista.length; i++){
+    if (lista[i] >= 0 && lista[i] <= 10) corrigida.add(lista[i]);
+  }
+  return corrigida;
+}
+
+void main(){
+  List<int> numeros = [-25, 10, -3, 0, 18, -7, 42, -11, 5, -1];
+  
+  print(notasInvalidas(numeros));
+}
+
+// Exercício 13: Crie uma função que receba uma lista de números inteiros e retorne uma nova lista sem valores repetidos.
+
+List<int> semRepetido(List<int> numeros) {
+  List<int> sem = [];
+
+  for (var num in numeros) {
+    if (!sem.contains(num)) {
+      sem.add(num);
+    }
+  }
+
+  return sem;
+}
+
+void main(){
+  List<int> numeros = [5, 3, 8, 5, 10, 3, 1, 8, 12, 7, 1, 20];
+  print(semRepetido(numeros));
+}
+
+// Exercício 14: Escreva um programa que receba uma data no formato dd/mm/aaaa e exiba separadamente o dia, o mês e o ano.
+
+void imprimirData(String data) {
+  List<String> partes = data.split('/');
+
+  print('Dia: ${partes[0]}');
+  print('Mês: ${partes[1]}');
+  print('Ano: ${partes[2]}');
+}
+
+void main(){
+  String data = '31/10/2006';
+  imprimirData(data);
+}
+
+// Exercício 15: Crie uma função que receba um número inteiro e retorne o seu fatorial.
+
+int fatorial(int num){
+  int fat = 1;
+  if (num == 0 || num == 1) return fat;
+  else{
+    for (var i = 1; i <= num; i++){
+      fat *= i;
+    }
+  }
+  return fat;
+}
+
+void main(){
+  int num = 5;
+  print(fatorial(num));
+}
+
+// Exercício 16: Crie uma função que receba um número inteiro n e retorne uma lista com os n primeiros números da sequência de Fibonacci.
+
+List<int> fibonacci(int n) {
+  List<int> lista = [];
+
+  if (n >= 1) lista.add(0);
+  if (n >= 2) lista.add(1);
+
+  for (int i = 2; i < n; i++) {
+    int proximo = lista[i - 1] + lista[i - 2];
+    lista.add(proximo);
+  }
+
+  return lista;
+}
+
+void main(){
+  int n = 5;
+  print(fibonacci(n));
+}
+
+// Exercício 17: Escreva um programa que simule uma fila de atendimento. O programa deve permitir adicionar pessoas à fila, atender a primeira pessoa e exibir a fila atual.
+
+class FilaAtendimento {
+  List<String> fila = [];
+
+  void adicionarPessoa(String nome) {
+    fila.add(nome);
+    print('$nome entrou na fila');
+  }
+
+  void atenderPessoa() {
+    if (fila.isEmpty) {
+      print('Fila vazia');
+    } else {
+      String atendido = fila.removeAt(0);
+      print('$atendido foi atendido');
+    }
+  }
+
+  void exibirFila() {
+    print('Fila atual: $fila');
+  }
+}
+
+void main() {
+  FilaAtendimento fila = FilaAtendimento();
+
+  fila.adicionarPessoa('Pedro');
+  fila.adicionarPessoa('Ana');
+  fila.adicionarPessoa('Lucas');
+
+  fila.exibirFila();
+
+  fila.atenderPessoa();
+  fila.exibirFila();
+
+  fila.atenderPessoa();
+  fila.exibirFila();
+}
+
+// Exercício 18: Crie uma classe chamada Contato com nome, telefone e email. Depois, crie uma função que busque um contato pelo nome em uma lista de contatos.
+
+class Contato{
+  String nome; 
+  String telefone;
+  String email;
+  
+  Contato(this.nome, this.telefone, this.email);
+}
+
+Contato? buscarContato(List<Contato> contatos, String nome) {
+  for (var contato in contatos) {
+    if (contato.nome == nome) {
+      return contato;
+    }
+  }
+
+  return null;
+}
+
+void main() {
+  List<Contato> contatos = [
+    Contato('Pedro', '11999999999', 'pedro@email.com'),
+    Contato('Ana', '11888888888', 'ana@email.com'),
+    Contato('Lucas', '11777777777', 'lucas@email.com')
+  ];
+
+  String nomeBuscado = 'Ana';
+
+  Contato? resultado = buscarContato(contatos, nomeBuscado);
+
+  if (resultado != null) {
+    print('Contato encontrado:');
+    print('Nome: ${resultado.nome}');
+    print('Telefone: ${resultado.telefone}');
+    print('Email: ${resultado.email}');
+  } else {
+    print('Contato não encontrado');
+  }
+}
+
+// Exercício 19: Crie uma classe chamada Livro com título, autor e ano de publicação. Depois, escreva uma função que receba uma lista de livros e retorne apenas os livros publicados depois de 2020.
+
+class Livro{
+  String titulo;
+  String autor;
+  int anoPublicacao;
+  
+  Livro(this.titulo, this.autor, this.anoPublicacao);
+}
+
+List<Livro> livrosNovos(List<Livro> livros) {
+  List<Livro> resultado = [];
+
+  for (var book in livros) {
+    if (book.anoPublicacao > 2020) {
+      resultado.add(book);
+    }
+  }
+
+  return resultado;
+}
+
+void main(){
+  List<Livro> livros = [
+    Livro('Titulo A', 'Pedro', 2021),
+    Livro('Titlo B', 'Ana', 2020),
+    Livro('Titulo C', 'Paula', 2022)
+  ];
+  
+  List<Livro> resultado = livrosNovos(livros);
+  
+  for (var livro in resultado) {
+    print('Título: ${livro.titulo}');
+    print('Autor: ${livro.autor}');
+    print('Ano: ${livro.anoPublicacao}');
+    print('---');
+  }
+}
+
+// Exercício 20: Crie um desafio integrador: implemente uma agenda simples em Dart usando classes, listas e funções. A agenda deve permitir cadastrar contatos, listar contatos, buscar por nome e remover um contato. Sem banco de dados, tudo em memória.
+
+class Contato {
+  String nome;
+  String telefone;
+  String email;
+
+  Contato(this.nome, this.telefone, this.email);
+
+  void exibir() {
+    print('Nome: $nome | Tel: $telefone | Email: $email');
+  }
+}
+
+void cadastrarContato(List<Contato> agenda, String nome, String telefone, String email) {
+  agenda.add(Contato(nome, telefone, email));
+}
+
+void listarContatos(List<Contato> agenda) {
+  print('\n=== Lista de Contatos ===');
+  for (var contato in agenda) {
+    contato.exibir();
+  }
+}
+
+Contato? buscarContato(List<Contato> agenda, String nome) {
+  for (var contato in agenda) {
+    if (contato.nome == nome) {
+      return contato;
+    }
+  }
+  return null;
+}
+
+bool removerContato(List<Contato> agenda, String nome) {
+  for (int i = 0; i < agenda.length; i++) {
+    if (agenda[i].nome == nome) {
+      agenda.removeAt(i);
+      return true;
+    }
+  }
+  return false;
+}
+
+void main() {
+  List<Contato> agenda = [];
+
+  cadastrarContato(agenda, 'Pedro', '11999999999', 'pedro@email.com');
+  cadastrarContato(agenda, 'Ana', '11888888888', 'ana@email.com');
+  cadastrarContato(agenda, 'Lucas', '11777777777', 'lucas@email.com');
+
+  listarContatos(agenda);
+
+  print('\n=== Buscar Contato ===');
+  var contato = buscarContato(agenda, 'Ana');
+  if (contato != null) {
+    contato.exibir();
+  } else {
+    print('Contato não encontrado');
+  }
+
+  print('\n=== Remover Contato ===');
+  bool removido = removerContato(agenda, 'Pedro');
+  print(removido ? 'Contato removido' : 'Contato não encontrado');
+
+  listarContatos(agenda);
+}
+
+// == PARTE 3: DESAFIOS ESPECIAIS COM DART ==
+
+/* Exercício 1: Crie uma função chamada calcularMMC que receba dois números inteiros representando denominadores de frações e retorne o menor múltiplo comum entre eles. Essa função será útil em situações nas quais precisamos somar ou comparar frações com denominadores diferentes.
+
+A função deve:
+
+-receber dois parâmetros inteiros;
+-não aceitar denominadores iguais a zero;
+-funcionar corretamente mesmo quando os valores -recebidos forem negativos;
+-retornar sempre um número inteiro positivo;
+-usar uma estratégia baseada no cálculo do MDC ou outra abordagem matematicamente correta.*/
+
+int calcularMDC(int a, int b) {
+  if (a < 0) a = -a;
+  if (b < 0) b = -b;
+
+  while (b != 0) {
+    int resto = a % b;
+    a = b;
+    b = resto;
+  }
+
+  return a;
+}
+
+int calcularMMC(int a, int b) {
+  if (a == 0 || b == 0) {
+    throw ArgumentError('Denominadores não podem ser zero');
+  }
+
+  int mdc = calcularMDC(a, b);
+  int mmc = (a * b) ~/ mdc;
+
+  // garante que o resultado seja positivo
+  if (mmc < 0) mmc = -mmc;
+
+  return mmc;
+}
+
+void main() {
+  print(calcularMMC(2, 3));   // retorna 6
+  print(calcularMMC(4, 6));   // retorna 12
+  print(calcularMMC(8, 12));  // retorna 24
+  print(calcularMMC(-5, 10)); // retorna 10
+}
+
+/*Exercício 2: Crie uma classe chamada Fracao com os atributos numerador e denominador. A classe deve representar uma fração matemática e permitir a soma entre duas frações usando o MMC dos denominadores.
+
+Atenção às regras de soma de frações: quando os denominadores são iguais, conserva-se o denominador e somam-se apenas os numeradores. Quando os denominadores são diferentes, é necessário encontrar um denominador comum, normalmente usando o MMC, antes de somar as frações.
+
+A classe deve:
+
+possuir um construtor que receba numerador e denominador;
+não permitir que o denominador seja zero;
+ter um método chamado somar que receba outra Fracao como parâmetro;
+usar o MMC dos denominadores para calcular a soma corretamente;
+retornar uma nova Fracao como resultado da soma;
+ter um método para exibir a fração no formato numerador/denominador.*/
+
+class Fracao {
+  int numerador;
+  int denominador;
+
+  Fracao(this.numerador, this.denominador) {
+    if (denominador == 0) {
+      throw ArgumentError('Denominador não pode ser zero');
+    }
+  }
+
+  int calcularMDC(int a, int b) {
+    if (a < 0) a = -a;
+    if (b < 0) b = -b;
+
+    while (b != 0) {
+      int resto = a % b;
+      a = b;
+      b = resto;
+    }
+
+    return a;
+  }
+
+  int calcularMMC(int a, int b) {
+    int mdc = calcularMDC(a, b);
+    int mmc = (a * b) ~/ mdc;
+
+    if (mmc < 0) mmc = -mmc;
+
+    return mmc;
+  }
+
+  Fracao somar(Fracao outra) {
+    int mmc = calcularMMC(this.denominador, outra.denominador);
+
+    int novoNumerador =
+        (this.numerador * (mmc ~/ this.denominador)) +
+        (outra.numerador * (mmc ~/ outra.denominador));
+
+    return Fracao(novoNumerador, mmc);
+  }
+
+  void exibir() {
+    print('$numerador/$denominador');
+  }
+}
+
+void main() {
+  Fracao f1 = Fracao(1, 2);
+  Fracao f2 = Fracao(1, 3);
+
+  Fracao resultado = f1.somar(f2);
+
+  resultado.exibir(); // 5/6
+}
+
+/* Exercício 3: Crie uma função chamada calcularSimilaridadeCosseno que receba dois vetores numéricos representados por listas de double e retorne a similaridade entre eles usando a fórmula da similaridade do cosseno.
+
+Esse tipo de cálculo é muito usado em aplicações modernas de Inteligência Artificial, especialmente em sistemas de recomendação, busca semântica, comparação de textos por embeddings e recuperação de informações. A ideia é comparar a direção de dois vetores, e não apenas a distância direta entre eles.
+
+A fórmula da similaridade do cosseno é:
+
+similaridade = produtoEscalar(vetorA, vetorB) / (modulo(vetorA) * modulo(vetorB))
+A função deve:
+
+receber duas listas de double;
+verificar se as duas listas possuem o mesmo tamanho;
+lançar uma exceção caso os vetores tenham tamanhos diferentes;
+calcular o produto escalar entre os dois vetores;
+calcular o módulo de cada vetor;
+retornar um valor double representando a similaridade;
+tratar o caso em que algum vetor tenha módulo igual a zero.*/
+
+double raiz(double x) {
+  double r = x;
+
+  for (int i = 0; i < 10; i++) {
+    r = (r + x / r) / 2;
+  }
+
+  return r;
+}
+
+double calcularSimilaridadeCosseno(List<double> a, List<double> b) {
+  if (a.length != b.length) {
+    throw ArgumentError('Vetores devem ter o mesmo tamanho');
+  }
+
+  double produto = 0;
+  double somaA = 0;
+  double somaB = 0;
+
+  for (int i = 0; i < a.length; i++) {
+    produto += a[i] * b[i];
+    somaA += a[i] * a[i];
+    somaB += b[i] * b[i];
+  }
+
+  double moduloA = raiz(somaA);
+  double moduloB = raiz(somaB);
+
+  if (moduloA == 0 || moduloB == 0) {
+    throw ArgumentError('Vetor com módulo zero');
+  }
+
+  return produto / (moduloA * moduloB);
+}
+
+void main() {
+  List<double> v1 = [1, 2, 3];
+  List<double> v2 = [4, 5, 6];
+
+  print(calcularSimilaridadeCosseno(v1, v2));
+}
+
+/* Exercício 4: Crie uma função chamada calcularErroMedioQuadratico que receba duas listas de double: uma lista com valores reais e outra lista com valores previstos por um modelo. A função deve calcular o Erro Médio Quadrático, também conhecido como MSE (Mean Squared Error).
+
+Esse cálculo é muito usado em Inteligência Artificial e Aprendizado de Máquina para medir o quanto as previsões de um modelo estão distantes dos valores corretos. Quanto menor o erro médio quadrático, melhor tende a ser o desempenho do modelo naquele conjunto de dados.
+
+A fórmula do erro médio quadrático é:
+
+MSE = soma((valorReal - valorPrevisto)^2) / quantidadeDeValores
+A função deve:
+
+receber duas listas de double;
+verificar se as duas listas possuem o mesmo tamanho;
+lançar uma exceção caso as listas tenham tamanhos diferentes;
+lançar uma exceção caso as listas estejam vazias;
+calcular a diferença entre cada valor real e seu respectivo valor previsto;
+elevar cada diferença ao quadrado;
+retornar a média desses erros quadráticos.
+Exemplo esperado:
+
+final valoresReais = [10.0, 20.0, 30.0];
+final valoresPrevistos = [12.0, 18.0, 33.0];
+
+final mse = calcularErroMedioQuadratico(valoresReais, valoresPrevistos);
+
+print(mse); // 5.666...
+Depois, explique em um comentário no código por que elevar o erro ao quadrado evita que erros positivos e negativos se anulem.*/
+
+double calcularErroMedioQuadratico(List<double> reais, List<double> previstos) {
+  if (reais.length != previstos.length) {
+    throw ArgumentError('As listas devem ter o mesmo tamanho');
+  }
+
+  if (reais.isEmpty) {
+    throw ArgumentError('As listas não podem estar vazias');
+  }
+
+  double somaErros = 0;
+
+  for (int i = 0; i < reais.length; i++) {
+    double erro = reais[i] - previstos[i];
+    somaErros += erro * erro;
+  }
+
+  return somaErros / reais.length;
+}
+
+void main() {
+  final valoresReais = [10.0, 20.0, 30.0];
+  final valoresPrevistos = [12.0, 18.0, 33.0];
+
+  final mse = calcularErroMedioQuadratico(valoresReais, valoresPrevistos);
+
+  print(mse); // 5.666...
+}
+
+/*
+Explicação:
+
+Ao elevar o erro ao quadrado (erro * erro), garantimos que todos os valores
+se tornem positivos. Isso é importante porque, sem isso, erros positivos e
+negativos poderiam se anular.
+
+Exemplo:
+Erro = +5 e Erro = -5
+
+Se somarmos direto:
++5 + (-5) = 0  → parece que não houve erro (o que é errado)
+
+Mas ao elevar ao quadrado:
+5² = 25
+(-5)² = 25
+
+Agora:
+25 + 25 = 50 → o erro real é considerado corretamente
+
+Ou seja, o quadrado evita cancelamento e penaliza erros maiores.
+*/
+
+=== PARTE 4: FIBREASE FUNCTIONS E FIRESTORE === 
+
+// Exercício 1: Crie uma Firebase Function do tipo onRequest chamada helloApi. A função deve responder uma requisição HTTP simples retornando um JSON com a mensagem "Olá, Firebase Functions!" e um campo timestamp com a data e hora da execução.
+
+import { onRequest } from "firebase-functions/v2/https";
+
+export const helloApi = onRequest((request, response) => {
+  response.json({
+    message: "Olá, Firebase Functions!",
+    timestamp: new Date().toISOString(),
+  });
+});
+
+// Exercício 2: Crie uma Firebase Function do tipo onCall chamada somarNumeros. A função deve receber dois números enviados pelo app Flutter, validar se os dois valores foram informados e retornar a soma entre eles.
+
+import { onCall, HttpsError } from "firebase-functions/v2/https";
+
+export const somarNumeros = onCall((request) => {
+  const { a, b } = request.data;
+
+  if (a === undefined || b === undefined) {
+    throw new HttpsError(
+      "invalid-argument",
+      "Os dois números devem ser informados."
+    );
+  }
+
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new HttpsError(
+      "invalid-argument",
+      "Os dois valores devem ser números."
+    );
+  }
+
+  return { resultado: a + b };
+});
+
+// Exercício 3: Crie uma Firebase Function do tipo onRequest chamada calcularFrete. A função deve receber, via query string, os parâmetros distanciaKm e pesoKg. Com base nesses valores, calcule um valor simples de frete e retorne o resultado em JSON.
+
+import { onRequest } from "firebase-functions/v2/https";
+
+export const calcularFrete = onRequest((request, response) => {
+  const { distanciaKm, pesoKg } = request.query;
+
+  if (!distanciaKm || !pesoKg) {
+    response.status(400).json({
+      erro: "Os parâmetros distanciaKm e pesoKg são obrigatórios.",
+    });
+    return;
+  }
+
+  const distancia = parseFloat(distanciaKm);
+  const peso = parseFloat(pesoKg);
+
+  if (isNaN(distancia) || isNaN(peso)) {
+    response.status(400).json({
+      erro: "Os parâmetros devem ser números válidos.",
+    });
+    return;
+  }
+
+  const frete = distancia * 0.5 + peso * 2.0;
+
+  response.json({
+    distanciaKm: distancia,
+    pesoKg: peso,
+    valorFrete: frete.toFixed(2),
+  });
+});
+
+// Exercício 4: Crie uma Firebase Function do tipo onCall chamada validarCupom. A função deve receber um código de cupom e retornar se ele é válido ou inválido. Considere pelo menos três cupons válidos fixos no código, por exemplo TPDM10, FLUTTER15 e PUC20.
+
+import { onCall, HttpsError } from "firebase-functions/v2/https";
+
+const cuponsValidos = ["TPDM10", "FLUTTER15", "PUC20"];
+
+export const validarCupom = onCall((request) => {
+  const { cupom } = request.data;
+
+  if (!cupom) {
+    throw new HttpsError(
+      "invalid-argument",
+      "O código do cupom deve ser informado."
+    );
+  }
+
+  if (typeof cupom !== "string") {
+    throw new HttpsError(
+      "invalid-argument",
+      "O cupom deve ser uma string."
+    );
+  }
+
+  const cupomUpper = cupom.toUpperCase().trim();
+  const valido = cuponsValidos.includes(cupomUpper);
+
+  return {
+    cupom: cupomUpper,
+    valido,
+    mensagem: valido ? "Cupom válido! Desconto aplicado." : "Cupom inválido ou expirado.",
+  };
+});
+
+// Exercício 5: Crie uma Firebase Function do tipo onRequest chamada statusServidor. A função deve retornar um JSON informando que o servidor está ativo, qual método HTTP foi usado na requisição e qual foi o horário da chamada.
+
+import { onRequest } from "firebase-functions/v2/https";
+
+export const statusServidor = onRequest((request, response) => {
+  response.json({
+    status: "ativo",
+    metodo: request.method,
+    horario: new Date().toISOString(),
+  });
+});
+
+// Exercício 6: Crie uma Firebase Function do tipo onCall chamada calcularMediaAluno. A função deve receber uma lista de notas, validar se a lista não está vazia e retornar a média do aluno junto com a situação: aprovado, recuperação ou reprovado.
+
+import { onCall, HttpsError } from "firebase-functions/v2/https";
+
+export const calcularMediaAluno = onCall((request) => {
+  const { notas } = request.data;
+
+  if (!notas || !Array.isArray(notas)) {
+    throw new HttpsError(
+      "invalid-argument",
+      "A lista de notas deve ser informada."
+    );
+  }
+
+  if (notas.length === 0) {
+    throw new HttpsError(
+      "invalid-argument",
+      "A lista de notas não pode estar vazia."
+    );
+  }
+
+  if (notas.some((nota) => typeof nota !== "number" || nota < 0 || nota > 10)) {
+    throw new HttpsError(
+      "invalid-argument",
+      "Todas as notas devem ser números entre 0 e 10."
+    );
+  }
+
+  const soma = notas.reduce((acc, nota) => acc + nota, 0);
+  const media = soma / notas.length;
+
+  let situacao;
+  if (media >= 7) {
+    situacao = "Aprovado";
+  } else if (media >= 5) {
+    situacao = "Recuperação";
+  } else {
+    situacao = "Reprovado";
+  }
+
+  return {
+    notas,
+    media: parseFloat(media.toFixed(2)),
+    situacao,
+  };
+});
+
+// Exercício 7: Crie uma Firebase Function do tipo onRequest chamada converterTemperatura. A função deve receber uma temperatura em Celsius pela query string e retornar a conversão para Fahrenheit e Kelvin.
+
+import { onRequest } from "firebase-functions/v2/https";
+
+export const converterTemperatura = onRequest((request, response) => {
+  const { celsius } = request.query;
+
+  if (!celsius) {
+    response.status(400).json({
+      erro: "O parâmetro celsius deve ser informado.",
+    });
+    return;
+  }
+
+  const temp = parseFloat(celsius);
+
+  if (isNaN(temp)) {
+    response.status(400).json({
+      erro: "O parâmetro celsius deve ser um número válido.",
+    });
+    return;
+  }
+
+  const fahrenheit = temp * (9 / 5) + 32;
+  const kelvin = temp + 273.15;
+
+  response.json({
+    celsius: temp,
+    fahrenheit: parseFloat(fahrenheit.toFixed(2)),
+    kelvin: parseFloat(kelvin.toFixed(2)),
+  });
+});
+
+// Exercício 8: Crie uma Firebase Function do tipo onCall chamada registrarFeedback. A função deve receber nome, email e mensagem, validar se os campos obrigatórios foram preenchidos e salvar o feedback em uma coleção chamada feedbacks no Firestore.
+
+import { onCall, HttpsError } from "firebase-functions/v2/https";
+import { getFirestore } from "firebase-admin/firestore";
+import { initializeApp } from "firebase-admin/app";
+
+initializeApp();
+
+const db = getFirestore();
+
+export const registrarFeedback = onCall(async (request) => {
+  const { nome, email, mensagem } = request.data;
+
+  if (!nome || !email || !mensagem) {
+    throw new HttpsError(
+      "invalid-argument",
+      "Os campos nome, email e mensagem são obrigatórios."
+    );
+  }
+
+  if (typeof nome !== "string" || typeof email !== "string" || typeof mensagem !== "string") {
+    throw new HttpsError(
+      "invalid-argument",
+      "Todos os campos devem ser strings."
+    );
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    throw new HttpsError(
+      "invalid-argument",
+      "O e-mail informado não é válido."
+    );
+  }
+
+  const feedback = {
+    nome: nome.trim(),
+    email: email.trim().toLowerCase(),
+    mensagem: mensagem.trim(),
+    criadoEm: new Date().toISOString(),
+  };
+
+  const docRef = await db.collection("feedbacks").add(feedback);
+
+  return {
+    sucesso: true,
+    id: docRef.id,
+    mensagem: "Feedback registrado com sucesso!",
+  };
+});
+
+// Exercício 9: Crie uma Firebase Function do tipo onRequest chamada listarProdutosPublicos. A função deve consultar a coleção produtos no Firestore e retornar apenas os produtos marcados com ativo: true.
+
+import { onRequest } from "firebase-functions/v2/https";
+import { getFirestore } from "firebase-admin/firestore";
+import { initializeApp } from "firebase-admin/app";
+
+initializeApp();
+
+const db = getFirestore();
+
+export const listarProdutosPublicos = onRequest(async (request, response) => {
+  const snapshot = await db.collection("produtos")
+    .where("ativo", "==", true)
+    .get();
+
+  if (snapshot.empty) {
+    response.json({
+      total: 0,
+      produtos: [],
+    });
+    return;
+  }
+
+  const produtos = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  response.json({
+    total: produtos.length,
+    produtos,
+  });
+});
+
+// Exercício 10: Crie uma Firebase Function do tipo onCall chamada criarPedido. A função deve receber os dados de um pedido enviado pelo app Flutter, validar se o usuário está autenticado, calcular o valor total com base nos itens recebidos e salvar o pedido em uma coleção chamada pedidos no Firestore.
+
+import { onCall, HttpsError } from "firebase-functions/v2/https";
+import { getFirestore } from "firebase-admin/firestore";
+import { initializeApp } from "firebase-admin/app";
+
+initializeApp();
+
+const db = getFirestore();
+
+export const criarPedido = onCall(async (request) => {
+  if (!request.auth) {
+    throw new HttpsError(
+      "unauthenticated",
+      "Você precisa estar autenticado para criar um pedido."
+    );
+  }
+
+  const { itens } = request.data;
+
+  if (!itens || !Array.isArray(itens)) {
+    throw new HttpsError(
+      "invalid-argument",
+      "A lista de itens deve ser informada."
+    );
+  }
+
+  if (itens.length === 0) {
+    throw new HttpsError(
+      "invalid-argument",
+      "O pedido deve conter pelo menos um item."
+    );
+  }
+
+  const itensValidos = itens.every(
+    (item) =>
+      typeof item.nome === "string" &&
+      typeof item.quantidade === "number" &&
+      typeof item.precoUnitario === "number" &&
+      item.quantidade > 0 &&
+      item.precoUnitario > 0
+  );
+
+  if (!itensValidos) {
+    throw new HttpsError(
+      "invalid-argument",
+      "Cada item deve ter nome, quantidade e precoUnitario válidos."
+    );
+  }
+
+  const itensCalculados = itens.map((item) => ({
+    ...item,
+    subtotal: parseFloat((item.quantidade * item.precoUnitario).toFixed(2)),
+  }));
+
+  const valorTotal = parseFloat(
+    itensCalculados
+      .reduce((acc, item) => acc + item.subtotal, 0)
+      .toFixed(2)
+  );
+
+  const pedido = {
+    usuarioId: request.auth.uid,
+    itens: itensCalculados,
+    valorTotal,
+    status: "pendente",
+    criadoEm: new Date().toISOString(),
+  };
+
+  const docRef = await db.collection("pedidos").add(pedido);
+
+  return {
+    sucesso: true,
+    pedidoId: docRef.id,
+    valorTotal,
+    mensagem: "Pedido criado com sucesso!",
+  };
+});
