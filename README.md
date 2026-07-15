@@ -74,83 +74,51 @@
 
 <br />
 
-<details open>
-  <summary><strong>1º Semestre · Concluído</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre1.svg" alt="Grade 1º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre1.svg" alt="Grade 1º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 
-<details open>
-  <summary><strong>2º Semestre · Concluído</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre2.svg" alt="Grade 2º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre2.svg" alt="Grade 2º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 
-<details open>
-  <summary><strong>3º Semestre · Concluído</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre3.svg" alt="Grade 3º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre3.svg" alt="Grade 3º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 
-<details>
-  <summary><strong>4º Semestre · Em andamento</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre4.svg" alt="Grade 4º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre4.svg" alt="Grade 4º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 
-<details>
-  <summary><strong>5º Semestre · Pendente</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre5.svg" alt="Grade 5º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre5.svg" alt="Grade 5º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 
-<details>
-  <summary><strong>6º Semestre · Pendente</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre6.svg" alt="Grade 6º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre6.svg" alt="Grade 6º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 
-<details>
-  <summary><strong>7º Semestre · Pendente</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre7.svg" alt="Grade 7º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre7.svg" alt="Grade 7º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 
-<details>
-  <summary><strong>8º Semestre · Pendente</strong></summary>
-  <br />
-  <p align="center">
-    <img src="assets/grade-semestre8.svg" alt="Grade 8º Semestre" width="900" style="max-width:100%; height:auto;" />
-  </p>
-</details>
+<p align="center">
+  <img src="assets/grade-semestre8.svg" alt="Grade 8º Semestre" width="900" style="max-width:100%; height:auto;" />
+</p>
 
 <br />
 <img src="assets/divider.svg" alt="" width="100%" />
