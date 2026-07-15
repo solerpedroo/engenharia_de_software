@@ -19,6 +19,17 @@ build/
 .flutter-plugins
 .flutter-plugins-dependencies
 
+# Node / JS
+node_modules/
+package-lock.json
+
+# Build outputs
+bin/
+obj/
+out/
+dist/
+coverage/
+
 # OS files
 .DS_Store
 Thumbs.db
@@ -26,6 +37,10 @@ desktop.ini
 
 # Logs
 *.log
+
+# Temporary / backup folders
+*_backup/
+*backup*/
 
 # Local environment files
 .env
