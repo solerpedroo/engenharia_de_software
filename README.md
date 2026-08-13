@@ -129,7 +129,15 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/pedro-henrique-contardi-soler/" target="_blank">LinkedIn</a> &middot;
-  <a href="mailto:pedrocsoler@hotmail.com">pedrocsoler@hotmail.com</a> &middot;
-  <a href="https://solerpedroo.github.io/portfolio-pedro/" target="_blank">Portfolio</a>
+  <a href="https://www.linkedin.com/in/pedro-henrique-contardi-soler/" target="_blank">
+    <img src="assets/btn-linkedin.svg" alt="LinkedIn" width="130" height="36" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="mailto:pedrocsoler@hotmail.com">
+    <img src="assets/btn-email.svg" alt="Email" width="130" height="36" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://solerpedroo.github.io/portfolio-pedro/" target="_blank">
+    <img src="assets/btn-portfolio.svg" alt="Portfolio" width="130" height="36" />
+  </a>
 </p>

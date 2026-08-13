@@ -1,0 +1,55 @@
+[
+  {
+    "nome": "Carlos Eduardo Souza",
+    "documento": {
+      "tipo": "CPF",
+      "valor": "123.456.789-00"
+    },
+    "habilitacao": {
+      "tipo": "CNH",
+      "numero": "01234567890",
+      "categoria": "B",
+      "dataEmissao": "2023-05-15",
+      "dataValidade": "2033-05-15",
+      "paisDeEmissao": "BRA"
+    },
+    "email": "carlos.souza@email.com",
+    "telefones": [
+      {
+        "codigoPais": "+55",
+        "codigoArea": "19",
+        "numero": "987654321",
+        "celular": true,
+        "whatsapp": true,
+        "principal": true
+      }
+    ]
+  },
+  {
+    "nome": "Michael Anderson",
+    "documento": {
+      "tipo": "PASSAPORTE",
+      "valor": "US987654321",
+      "paisDeEmissao": "EUA"
+    },
+    "habilitacao": {
+      "tipo": "CARTEIRA_ESTRANGEIRA",
+      "numero": "DL123456789",
+      "categoria": "C",
+      "dataEmissao": "2022-08-10",
+      "dataValidade": "2028-08-10",
+      "paisDeEmissao": "EUA"
+    },
+    "email": "michael.anderson@email.com",
+    "telefones": [
+      {
+        "codigoPais": "+1",
+        "codigoArea": "212",
+        "numero": "555-6789",
+        "celular": true,
+        "whatsapp": true,
+        "principal": true
+      }
+    ]
+  }
+]

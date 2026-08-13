@@ -1,0 +1,20 @@
+[
+  {
+    "placa": "ABC1D23",
+    "chassi": "9BWZZZ377VT004251",
+    "renavam": "12345678901",
+    "marca": "Chevrolet",
+    "modelo": "Onix",
+    "ano": 2024,
+    "status": "DISPONIVEL"
+  },
+  {
+    "placa": "XYZ2E45",
+    "chassi": "9BR53ZEC1P1234567",
+    "renavam": "98765432109",
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "ano": 2023,
+    "status": "ALUGADO"
+  }
+]

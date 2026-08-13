@@ -1,0 +1,85 @@
+[
+    {
+        "nome": "João Silva",
+        "tipo": "PESSOA_FISICA",
+        "documento": {
+            "tipo": "CPF",
+            "valor": "123.456.789-00"
+        },
+        "email": "joao@joao.com",
+        "telefones": [
+            {
+                "codigoPais": "+55",
+                "codigoArea": "11",
+                "numero": "987654321",
+                "celular": true,
+                "whatsapp": true,
+                "principal": true
+            }
+            
+        ], 
+        "endereco": {
+            "logradouro": "Av. Paulista",
+            "numero": "1540",
+            "bairro": "Centro",
+            "cidade": "São Paulo",
+            "estado": "SP",
+            "cep": "10000-009"
+        }
+    },
+    {
+        "nome": "Peter Till",
+        "tipo": "PESSOA_FISICA",
+        "documento": {
+            "tipo": "PASSAPORTE",
+            "valor": "US123123123",
+            "paisDeEmissao": "EUA"
+        },
+        "email": "peter@till.com",
+        "telefones": [
+            {
+                "codigoPais": "+1",
+                "codigoArea": "212",
+                "numero": "555-1234",
+                "celular": false,
+                "whatsapp": false,
+                "principal": true
+            }
+        ], 
+        "endereco":{
+            "zipCode": "10000-009",
+            "firstLine": "5th Avenue 1540",
+            "secondLine": "Apt 101",
+            "city": "New York",
+            "state": "NY",
+            "country": "USA"
+        }
+    },
+    {
+        "nome": "Sociedade Campineira de Educação e Instrução - SCEI",
+        "tipo": "PESSOA_JURIDICA",
+        "documento":{
+            "tipo": "CNPJ",
+            "valor": "12.345.678/0001-90"
+        },
+        "email": "scei@scei.com",
+        "telefones": [
+            {
+                "codigoPais": "+55",
+                "codigoArea": "19",
+                "numero": "3343-7000",
+                "celular": false,
+                "whatsapp": false,
+                "principal": true
+            }
+        ],
+        "endereco": {
+            "logradouro": "Rua Prof. Dr. Euclides de Jesus Zerbini",
+            "numero": "1516",
+            "bairro": "Pq das Universidades",
+            "cidade": "Campinas",
+            "estado": "SP",
+            "cep": "13000-000"
+        }
+    }
+]
