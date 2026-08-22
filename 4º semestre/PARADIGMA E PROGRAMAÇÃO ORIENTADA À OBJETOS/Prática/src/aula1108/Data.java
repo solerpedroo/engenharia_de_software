@@ -1,6 +1,6 @@
 package aula1108;
 
-public class Data implements Cloneable, Comparable<Data>
+public class Data
 {
     private byte  dia, mes;
     private short ano;
