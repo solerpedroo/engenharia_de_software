@@ -4,7 +4,7 @@ public class Main
 {
     public static void main (String[] args)
     {
-        System.out.println(Data.getQtd()); // 0
+        // System.out.println(Data.getQtd()); // 0
         System.out.println(Data.isBissexto((short)2000)); // true
         System.out.println(Data.isValida((byte)10,(byte)8,(short)2026)); // true
 

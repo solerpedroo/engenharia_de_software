@@ -1,0 +1,53 @@
+[
+  {
+    "tipo": "ENTRADA",
+    "material": "PLA",
+    "cor": "PRETO",
+    "marca": "Marca A",
+    "quantidade": 1000,
+    "unidade": "G",
+    "origem": "COMPRA",
+    "fornecedor": {
+      "nome": "3D Filamentos Brasil"
+    },
+    "valor": 105.00,
+    "data": "2026-08-01"
+  },
+  {
+    "tipo": "ENTRADA",
+    "material": "PLA",
+    "cor": "AZUL",
+    "marca": "Marca B",
+    "quantidade": 1000,
+    "unidade": "G",
+    "origem": "COMPRA",
+    "fornecedor": {
+      "nome": "3D Filamentos Brasil"
+    },
+    "valor": 110.00,
+    "data": "2026-08-01"
+  },
+  {
+    "tipo": "ENTRADA",
+    "material": "PLA",
+    "cor": "BRANCO",
+    "marca": "Marca C",
+    "quantidade": 1000,
+    "unidade": "G",
+    "origem": "COMPRA",
+    "fornecedor": {
+      "nome": "Filamentos Premium"
+    },
+    "valor": 90.00,
+    "data": "2026-08-02"
+  },
+  {
+    "tipo": "SAIDA",
+    "material": "PLA",
+    "cor": "VERMELHO",
+    "quantidade": 40,
+    "unidade": "G",
+    "origem": "IMPRESSAO",
+    "data": "2026-08-19"
+  }
+]

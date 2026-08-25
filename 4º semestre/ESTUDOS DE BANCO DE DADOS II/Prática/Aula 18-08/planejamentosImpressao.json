@@ -1,0 +1,119 @@
+[
+  {
+    "nome": "Boneco XPTO - Lote 01",
+    "tipoDemanda": "PRODUTO_PROPRIO",
+    "modelo3D": {
+      "nome": "Boneco XPTO"
+    },
+    "impressora": {
+      "nome": "Printer Farm 02"
+    },
+    "quantidade": 1,
+    "dadosFatiador": {
+      "tempoEstimado": "03:00:00",
+      "tempoEstimadoHoras": 3
+    },
+    "filamentos": [
+      {
+        "material": "PLA",
+        "cor": "AZUL",
+        "quantidade": 30,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.11,
+        "custoEstimado": 3.30
+      },
+      {
+        "material": "PLA",
+        "cor": "BRANCO",
+        "quantidade": 10,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.12,
+        "custoEstimado": 1.20
+      },
+      {
+        "material": "PLA",
+        "cor": "PRETO",
+        "quantidade": 5,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.105,
+        "custoEstimado": 0.525
+      },
+      {
+        "material": "PLA",
+        "cor": "VERMELHO",
+        "quantidade": 40,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.129,
+        "custoEstimado": 5.16
+      }
+    ],
+    "custosAdicionais": [
+      {
+        "tipo": "MONTAGEM",
+        "descricao": "Montagem da peça",
+        "valor": 5.00
+      },
+      {
+        "tipo": "EMBALAGEM",
+        "descricao": "Saquinho de embalagem",
+        "valor": 2.00
+      },
+      {
+        "tipo": "LICENCA",
+        "descricao": "Licenca comercial",
+        "valor": 0
+      }
+    ],
+    "custos": {
+      "filamento": 10.185,
+      "energia": 7.50,
+      "adicionais": 7.00,
+      "totalEstimado": 24.685
+    },
+    "status": "PLANEJADO",
+    "dataPlanejamento": "2026-08-19"
+  },
+  {
+    "nome": "Miniatura sob encomenda",
+    "tipoDemanda": "SOB_ENCOMENDA",
+    "cliente": {
+      "nome": "João da Silva"
+    },
+    "modelo3D": {
+      "nome": "Miniatura Personalizada"
+    },
+    "impressora": {
+      "nome": "Printer Farm 01"
+    },
+    "quantidade": 1,
+    "dadosFatiador": {
+      "tempoEstimado": "02:15:00",
+      "tempoEstimadoHoras": 2.25
+    },
+    "filamentos": [
+      {
+        "material": "PLA",
+        "cor": "PRETO",
+        "quantidade": 60,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.105,
+        "custoEstimado": 6.30
+      }
+    ],
+    "custosAdicionais": [
+      {
+        "tipo": "ACABAMENTO",
+        "descricao": "Pintura manual",
+        "valor": 8.00
+      }
+    ],
+    "custos": {
+      "filamento": 6.30,
+      "energia": 5.625,
+      "adicionais": 8.00,
+      "totalEstimado": 19.925
+    },
+    "status": "PLANEJADO",
+    "dataPlanejamento": "2026-08-19"
+  }
+]

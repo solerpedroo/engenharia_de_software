@@ -1,0 +1,40 @@
+[
+  {
+    "nome": "João da Silva",
+    "tipo": "PESSOA_FISICA",
+    "documento": {
+      "tipo": "CPF",
+      "valor": "123.456.789-00"
+    },
+    "email": "joao@email.com",
+    "telefones": [
+      {
+        "codigoPais": "+55",
+        "codigoArea": "19",
+        "numero": "987654321",
+        "celular": true,
+        "whatsapp": true,
+        "principal": true
+      }
+    ]
+  },
+  {
+    "nome": "Maria Oliveira",
+    "tipo": "PESSOA_FISICA",
+    "documento": {
+      "tipo": "CPF",
+      "valor": "987.654.321-00"
+    },
+    "email": "maria@email.com",
+    "telefones": [
+      {
+        "codigoPais": "+55",
+        "codigoArea": "19",
+        "numero": "998877665",
+        "celular": true,
+        "whatsapp": true,
+        "principal": true
+      }
+    ]
+  }
+]

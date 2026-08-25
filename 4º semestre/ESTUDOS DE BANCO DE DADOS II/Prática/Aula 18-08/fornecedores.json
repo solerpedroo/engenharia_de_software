@@ -1,0 +1,56 @@
+[
+  {
+    "nome": "3D Filamentos Brasil",
+    "tipo": "PESSOA_JURIDICA",
+    "documento": {
+      "tipo": "CNPJ",
+      "valor": "12.345.678/0001-90"
+    },
+    "email": "contato@3dfilamentos.com.br",
+    "telefones": [
+      {
+        "codigoPais": "+55",
+        "codigoArea": "19",
+        "numero": "323456789",
+        "celular": false,
+        "whatsapp": false,
+        "principal": true
+      }
+    ],
+    "endereco": {
+      "logradouro": "Rua das Impressoras",
+      "numero": "500",
+      "bairro": "Distrito Industrial",
+      "cidade": "Campinas",
+      "estado": "SP",
+      "cep": "13000-100"
+    }
+  },
+  {
+    "nome": "Filamentos Premium",
+    "tipo": "PESSOA_JURIDICA",
+    "documento": {
+      "tipo": "CNPJ",
+      "valor": "98.765.432/0001-10"
+    },
+    "email": "vendas@filamentospremium.com.br",
+    "telefones": [
+      {
+        "codigoPais": "+55",
+        "codigoArea": "11",
+        "numero": "33445566",
+        "celular": false,
+        "whatsapp": false,
+        "principal": true
+      }
+    ],
+    "endereco": {
+      "logradouro": "Avenida Tecnologia",
+      "numero": "1500",
+      "bairro": "Centro Empresarial",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cep": "04500-000"
+    }
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "material": "PLA",
+    "cor": "BRANCO",
+    "preco": 90.00,
+    "peso": 1000,
+    "unidadePeso": "G",
+    "precoPorGrama": 0.09,
+    "origem": "COMPRA",
+    "dataReferencia": "2026-08-02"
+  },
+  {
+    "material": "PLA",
+    "cor": "BRANCO",
+    "preco": 120.00,
+    "peso": 1000,
+    "unidadePeso": "G",
+    "precoPorGrama": 0.12,
+    "origem": "COTACAO_FORNECEDOR",
+    "fornecedor": {
+      "nome": "Filamentos Premium"
+    },
+    "dataReferencia": "2026-08-10"
+  },
+  {
+    "material": "PLA",
+    "cor": "AZUL",
+    "preco": 110.00,
+    "peso": 1000,
+    "unidadePeso": "G",
+    "precoPorGrama": 0.11,
+    "origem": "COMPRA",
+    "dataReferencia": "2026-08-01"
+  },
+  {
+    "material": "PLA",
+    "cor": "PRETO",
+    "preco": 105.00,
+    "peso": 1000,
+    "unidadePeso": "G",
+    "precoPorGrama": 0.105,
+    "origem": "COMPRA",
+    "dataReferencia": "2026-08-01"
+  },
+  {
+    "material": "PLA",
+    "cor": "VERMELHO",
+    "preco": 129.00,
+    "peso": 1000,
+    "unidadePeso": "G",
+    "precoPorGrama": 0.129,
+    "origem": "COMPRA",
+    "dataReferencia": "2026-08-03"
+  }
+]

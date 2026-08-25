@@ -1,0 +1,58 @@
+[
+  {
+    "material": "PLA",
+    "cor": "PRETO",
+    "marca": "Marca A",
+    "pesoOriginal": 1000,
+    "quantidadeDisponivel": 750,
+    "unidadePeso": "G",
+    "precoPago": 105.00,
+    "fornecedor": {
+      "nome": "3D Filamentos Brasil"
+    },
+    "dataCompra": "2026-08-01",
+    "status": "DISPONIVEL"
+  },
+  {
+    "material": "PLA",
+    "cor": "AZUL",
+    "marca": "Marca B",
+    "pesoOriginal": 1000,
+    "quantidadeDisponivel": 650,
+    "unidadePeso": "G",
+    "precoPago": 110.00,
+    "fornecedor": {
+      "nome": "3D Filamentos Brasil"
+    },
+    "dataCompra": "2026-08-01",
+    "status": "DISPONIVEL"
+  },
+  {
+    "material": "PLA",
+    "cor": "BRANCO",
+    "marca": "Marca C",
+    "pesoOriginal": 1000,
+    "quantidadeDisponivel": 500,
+    "unidadePeso": "G",
+    "precoPago": 90.00,
+    "fornecedor": {
+      "nome": "Filamentos Premium"
+    },
+    "dataCompra": "2026-08-02",
+    "status": "DISPONIVEL"
+  },
+  {
+    "material": "PLA",
+    "cor": "VERMELHO",
+    "marca": "Marca D",
+    "pesoOriginal": 1000,
+    "quantidadeDisponivel": 900,
+    "unidadePeso": "G",
+    "precoPago": 129.00,
+    "fornecedor": {
+      "nome": "Filamentos Premium"
+    },
+    "dataCompra": "2026-08-03",
+    "status": "DISPONIVEL"
+  }
+]

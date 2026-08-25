@@ -1,0 +1,22 @@
+[
+  {
+    "nome": "Printer Farm 01",
+    "marca": "Creality",
+    "modelo": "K1 Max",
+    "tecnologia": "FDM",
+    "multicolorida": false,
+    "quantidadeCores": 1,
+    "custoEnergiaHora": 2.50,
+    "status": "DISPONIVEL"
+  },
+  {
+    "nome": "Printer Farm 02",
+    "marca": "Bambu Lab",
+    "modelo": "X1 Carbon",
+    "tecnologia": "FDM",
+    "multicolorida": true,
+    "quantidadeCores": 4,
+    "custoEnergiaHora": 3.20,
+    "status": "DISPONIVEL"
+  }
+]
