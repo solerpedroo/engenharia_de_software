@@ -1,0 +1,361 @@
+[
+  {
+    "codigo": "12490-P",
+    "nome": "Estudos de Bancos de Dados 2 - Prática",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 30,
+        "qtdeAtualDeMatriculados": 29,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 1,
+        "docente": {
+          "RP": "4567890",
+          "nome": "Steve Jobs"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-01T08:00:00",
+            "dataHoraFim": "2026-08-01T09:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-07T08:00:00",
+            "dataHoraFim": "2026-08-07T09:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      },
+      {
+        "codigo": "0102",
+        "qtdeInicialDeMatriculados": 40,
+        "qtdeAtualDeMatriculados": 40,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "890392",
+          "nome": "Ada Lovelace"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-02T10:00:00",
+            "dataHoraFim": "2026-08-02T11:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-08T10:00:00",
+            "dataHoraFim": "2026-08-08T11:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12490-T",
+    "nome": "Estudos de Bancos de Dados 2 - Teoria",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 35,
+        "qtdeAtualDeMatriculados": 35,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100001",
+          "nome": "Alan Turing"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-04T14:00:00",
+            "dataHoraFim": "2026-08-04T15:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-11T14:00:00",
+            "dataHoraFim": "2026-08-11T15:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12501-P",
+    "nome": "Engenharia de Software 2 - Prática",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 32,
+        "qtdeAtualDeMatriculados": 31,
+        "trancamentos": 1,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100002",
+          "nome": "Grace Hopper"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-05T08:00:00",
+            "dataHoraFim": "2026-08-05T09:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-12T08:00:00",
+            "dataHoraFim": "2026-08-12T09:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12501-T",
+    "nome": "Engenharia de Software 2 - Teoria",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 38,
+        "qtdeAtualDeMatriculados": 38,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100003",
+          "nome": "Donald Knuth"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-06T10:00:00",
+            "dataHoraFim": "2026-08-06T11:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12600-P",
+    "nome": "Sistemas Distribuídos - Prática",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 28,
+        "qtdeAtualDeMatriculados": 28,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100004",
+          "nome": "Barbara Liskov"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-06T14:00:00",
+            "dataHoraFim": "2026-08-06T15:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-13T14:00:00",
+            "dataHoraFim": "2026-08-13T15:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12600-T",
+    "nome": "Sistemas Distribuídos - Teoria",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 30,
+        "qtdeAtualDeMatriculados": 30,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100005",
+          "nome": "Linus Torvalds"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-07T14:00:00",
+            "dataHoraFim": "2026-08-07T15:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12710-P",
+    "nome": "Interface Humano-Computador - Prática",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 25,
+        "qtdeAtualDeMatriculados": 25,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100006",
+          "nome": "Margaret Hamilton"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-09T08:00:00",
+            "dataHoraFim": "2026-08-09T09:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-16T08:00:00",
+            "dataHoraFim": "2026-08-16T09:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12710-T",
+    "nome": "Interface Humano-Computador - Teoria",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 27,
+        "qtdeAtualDeMatriculados": 27,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100007",
+          "nome": "James Gosling"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-10T10:00:00",
+            "dataHoraFim": "2026-08-10T11:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12820-P",
+    "nome": "Gestão de Projetos de Software - Prática",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 33,
+        "qtdeAtualDeMatriculados": 32,
+        "trancamentos": 0,
+        "desistencias": 1,
+        "transferencias": 0,
+        "docente": {
+          "RP": "100008",
+          "nome": "Dennis Ritchie"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-10T14:00:00",
+            "dataHoraFim": "2026-08-10T15:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-17T14:00:00",
+            "dataHoraFim": "2026-08-17T15:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "codigo": "12930-T",
+    "nome": "Métodos Ágeis - Teoria",
+    "cargaHorariaTotal": 40,
+    "curso": "Engenharia de Software",
+    "periodo": 4,
+    "anoCalendario": 2026,
+    "semestreCalendario": 2,
+    "turmas": [
+      {
+        "codigo": "0101",
+        "qtdeInicialDeMatriculados": 36,
+        "qtdeAtualDeMatriculados": 36,
+        "trancamentos": 0,
+        "desistencias": 0,
+        "transferencias": 0,
+        "docente": {
+          "RP": "4567890",
+          "nome": "Steve Jobs"
+        },
+        "agendaDeAulas": [
+          {
+            "dataHoraInicio": "2026-08-11T08:00:00",
+            "dataHoraFim": "2026-08-11T09:40:00",
+            "qtdeHorasAula": 2
+          },
+          {
+            "dataHoraInicio": "2026-08-18T08:00:00",
+            "dataHoraFim": "2026-08-18T09:40:00",
+            "qtdeHorasAula": 2
+          }
+        ]
+      }
+    ]
+  }
+]

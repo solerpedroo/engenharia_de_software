@@ -1,0 +1,42 @@
+[
+  {
+    "RP": "4567890",
+    "nome": "Steve Jobs"
+  },
+  {
+    "RP": "890392",
+    "nome": "Ada Lovelace"
+  },
+  {
+    "RP": "100001",
+    "nome": "Alan Turing"
+  },
+  {
+    "RP": "100002",
+    "nome": "Grace Hopper"
+  },
+  {
+    "RP": "100003",
+    "nome": "Donald Knuth"
+  },
+  {
+    "RP": "100004",
+    "nome": "Barbara Liskov"
+  },
+  {
+    "RP": "100005",
+    "nome": "Linus Torvalds"
+  },
+  {
+    "RP": "100006",
+    "nome": "Margaret Hamilton"
+  },
+  {
+    "RP": "100007",
+    "nome": "James Gosling"
+  },
+  {
+    "RP": "100008",
+    "nome": "Dennis Ritchie"
+  }
+]

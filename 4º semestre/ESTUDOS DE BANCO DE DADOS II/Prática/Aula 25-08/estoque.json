@@ -1,0 +1,32 @@
+[
+  {
+    "produto": "Boneco XPTO",
+    "lote": "XPTO-001",
+    "dataProducao": "2026-08-19",
+    "quantidadeProduzida": 10,
+    "quantidadeArmazenada": 10,
+    "quantidadeDisponivelVenda": 10,
+    "quantidadeReservada": 0,
+    "quantidadeVendida": 0,
+    "localizacao": {
+      "tipo": "PRATELEIRA",
+      "identificacao": "A1"
+    },
+    "status": "DISPONIVEL_VENDA"
+  },
+  {
+    "produto": "Chaveiro Personagem Z",
+    "lote": "CHAVEIRO-001",
+    "dataProducao": "2026-08-20",
+    "quantidadeProduzida": 20,
+    "quantidadeArmazenada": 15,
+    "quantidadeDisponivelVenda": 15,
+    "quantidadeReservada": 0,
+    "quantidadeVendida": 5,
+    "localizacao": {
+      "tipo": "PRATELEIRA",
+      "identificacao": "B2"
+    },
+    "status": "DISPONIVEL_VENDA"
+  }
+]

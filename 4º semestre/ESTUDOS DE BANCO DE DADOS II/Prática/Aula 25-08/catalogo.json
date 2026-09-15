@@ -1,0 +1,40 @@
+[
+  {
+    "nome": "Boneco XPTO",
+    "categoria": "COLECIONAVEIS",
+    "descricao": "Boneco colecionável do personagem XPTO.",
+    "origem": "PRODUTO_PROPRIO",
+    "precoVenda": 39.90,
+    "unidadeVenda": "UNIDADE",
+    "canaisVenda": [
+      "LOJA_FISICA",
+      "WEB"
+    ],
+    "modelo3D": {
+      "nome": "Boneco XPTO",
+      "arquivo": "boneco_xpto.stl"
+    },
+    "status": "ATIVO"
+  },
+  {
+    "nome": "Chaveiro Personagem Z",
+    "categoria": "CHAVEIROS",
+    "descricao": "Chaveiro de personagem licenciado.",
+    "origem": "MODELO_LICENCIADO",
+    "precoVenda": 24.90,
+    "unidadeVenda": "UNIDADE",
+    "canaisVenda": [
+      "LOJA_FISICA",
+      "WEB"
+    ],
+    "modelo3D": {
+      "nome": "Chaveiro Personagem Z",
+      "arquivo": "chaveiro_z.stl"
+    },
+    "licenca": {
+      "possui": true,
+      "valor": 2.50
+    },
+    "status": "ATIVO"
+  }
+]

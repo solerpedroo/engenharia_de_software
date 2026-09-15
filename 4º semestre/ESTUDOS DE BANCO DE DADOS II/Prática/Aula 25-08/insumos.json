@@ -1,0 +1,84 @@
+[
+  {
+    "tipo": "FILAMENTO",
+    "material": "PLA",
+    "cor": "PRETO",
+    "marca": "Marca A",
+    "pesoOriginal": 1000,
+    "quantidadeDisponivel": 750,
+    "unidade": "G",
+    "precoPago": 105.00,
+    "fornecedor": {
+      "nome": "3D Filamentos Brasil"
+    },
+    "dataCompra": "2026-08-01",
+    "referenciaPreco": {
+      "precoPorGrama": 0.105,
+      "origem": "COMPRA",
+      "data": "2026-08-01"
+    },
+    "status": "DISPONIVEL"
+  },
+  {
+    "tipo": "FILAMENTO",
+    "material": "PLA",
+    "cor": "BRANCO",
+    "marca": "Marca C",
+    "pesoOriginal": 1000,
+    "quantidadeDisponivel": 500,
+    "unidade": "G",
+    "precoPago": 90.00,
+    "fornecedor": {
+      "nome": "Filamentos Premium"
+    },
+    "dataCompra": "2026-08-02",
+    "referenciaPreco": {
+      "precoPorGrama": 0.090,
+      "origem": "COMPRA",
+      "data": "2026-08-02"
+    },
+    "status": "DISPONIVEL"
+  },
+  {
+    "tipo": "FILAMENTO",
+    "material": "PLA",
+    "cor": "BRANCO",
+    "marca": "Marca D",
+    "pesoOriginal": 1000,
+    "quantidadeDisponivel": 0,
+    "unidade": "G",
+    "precoPago": 120.00,
+    "fornecedor": {
+      "nome": "3D Filamentos Brasil"
+    },
+    "dataCompra": "2026-08-10",
+    "referenciaPreco": {
+      "precoPorGrama": 0.120,
+      "origem": "COTACAO_FORNECEDOR",
+      "data": "2026-08-10"
+    },
+    "status": "REFERENCIA"
+  },
+  {
+    "tipo": "MATERIAL_ADICIONAL",
+    "nome": "Argola metálica",
+    "unidade": "UNIDADE",
+    "quantidadeDisponivel": 100,
+    "precoUnitario": 0.80,
+    "fornecedor": {
+      "nome": "Fornecedor de Acessórios"
+    },
+    "status": "DISPONIVEL"
+  },
+  {
+    "tipo": "MATERIAL_ADICIONAL",
+    "nome": "Saquinho de embalagem",
+    "unidade": "UNIDADE",
+    "quantidadeDisponivel": 200,
+    "precoUnitario": 0.50,
+    "fornecedor": {
+      "nome": "Fornecedor de Embalagens"
+    },
+    "status": "DISPONIVEL"
+  }
+]

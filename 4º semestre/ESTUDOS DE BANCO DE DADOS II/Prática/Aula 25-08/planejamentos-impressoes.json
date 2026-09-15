@@ -1,0 +1,88 @@
+[
+  {
+    "produto": {
+      "nome": "Boneco XPTO"
+    },
+    "tipoDemanda": "PRODUTO_PROPRIO",
+    "quantidade": 10,
+
+    "impressora": {
+      "nome": "Printer Farm 02",
+      "marca": "Bambu Lab",
+      "modelo": "X1 Carbon"
+    },
+
+    "dadosFatiador": {
+      "tempoEstimado": "30:00:00",
+      "tempoEstimadoHoras": 30
+    },
+
+    "filamentos": [
+      {
+        "material": "PLA",
+        "cor": "AZUL",
+        "quantidade": 300,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.110,
+        "custoEstimado": 33.00
+      },
+      {
+        "material": "PLA",
+        "cor": "BRANCO",
+        "quantidade": 100,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.120,
+        "custoEstimado": 12.00
+      },
+      {
+        "material": "PLA",
+        "cor": "PRETO",
+        "quantidade": 50,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.105,
+        "custoEstimado": 5.25
+      },
+      {
+        "material": "PLA",
+        "cor": "VERMELHO",
+        "quantidade": 400,
+        "unidade": "G",
+        "precoReferenciaPorGrama": 0.129,
+        "custoEstimado": 51.60
+      }
+    ],
+
+    "custosAdicionais": [
+      {
+        "tipo": "EMBALAGEM",
+        "descricao": "Saquinho individual",
+        "quantidade": 10,
+        "valorUnitario": 0.50,
+        "valorTotal": 5.00
+      },
+      {
+        "tipo": "MONTAGEM",
+        "descricao": "Montagem das peças",
+        "quantidade": 10,
+        "valorUnitario": 0.50,
+        "valorTotal": 5.00
+      }
+    ],
+
+    "custos": {
+      "filamentos": 101.85,
+      "energia": 75.00,
+      "custosAdicionais": 10.00,
+      "custoTotal": 186.85,
+      "custoPorUnidade": 18.685
+    },
+
+    "venda": {
+      "precoVendaEstimado": 39.90,
+      "margemEstimada": 53.17
+    },
+
+    "status": "PLANEJADO",
+    "dataPlanejamento": "2026-08-19"
+  }
+]
