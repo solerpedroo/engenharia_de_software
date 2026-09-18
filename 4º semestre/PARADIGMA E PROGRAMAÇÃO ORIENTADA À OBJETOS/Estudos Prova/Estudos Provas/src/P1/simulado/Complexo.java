@@ -1,4 +1,4 @@
-package P1;
+package P1.simulado;
 
 public class Complexo {
     private int a;
