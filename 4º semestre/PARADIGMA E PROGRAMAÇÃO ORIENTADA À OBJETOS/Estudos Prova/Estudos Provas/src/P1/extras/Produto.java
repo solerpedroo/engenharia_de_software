@@ -6,6 +6,10 @@ public class Produto implements Comparable<Produto>, Cloneable{
     private double preco;
     private int estoque;
 
+    public double getPreco() {
+        return preco;
+    }
+
     public Produto(String codigo, String descricao, double preco, int estoque) throws Exception{
         if(codigo == null) throw new Exception("Código não pode ser null");
         if(codigo.isEmpty()) throw new Exception("Código não pode ser vazio");
