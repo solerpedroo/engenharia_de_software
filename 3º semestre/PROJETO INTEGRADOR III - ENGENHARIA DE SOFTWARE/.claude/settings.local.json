@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -c '```mermaid' \"Anotações PI.md\")",
+      "Bash(start \"\" \"Estudos PI - Flutter Dart Firebase - Pedro Soler.html\")"
+    ]
+  }
+}
